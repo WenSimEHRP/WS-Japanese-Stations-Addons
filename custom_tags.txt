@@ -1,0 +1,5 @@
+DATE    :2024-03-07 08:10 UTC
+VERSION :0.1a
+URL     :https://www.placeholder.com
+TITLE   :WenSim's Japanese Stations Addons
+ABBRV   :WSJPS

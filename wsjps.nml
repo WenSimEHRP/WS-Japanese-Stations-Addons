@@ -1,0 +1,32 @@
+# 1 "wsjps_indexes.pnml"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "wsjps_indexes.pnml"
+# 1 "src/header.pnml" 1
+grf {
+   grfid: "WS\24\05";
+   name: string(STR_GRF_NAME);
+   desc: string(STR_GRF_DESC);
+   url: string(STR_GRF_URL);
+   version: 1;
+   min_compatible_version: 1;
+}
+# 2 "wsjps_indexes.pnml" 2
+# 1 "src/version_check.pnml" 1
+if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14,0)) {
+    error(FATAL, string(STR_OPENTTD));
+    exit;
+}
+# 3 "wsjps_indexes.pnml" 2
+# 1 "src/templates.pnml" 1
+template t_platform() {
+    []
+}
+# 4 "wsjps_indexes.pnml" 2
+# 1 "src\\stations\\dummy.pnml" 1
+# 5 "wsjps_indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\st1_something.pnml" 1
+spritelayout sl_st1_something_x(){
+    something
+}
+# 6 "wsjps_indexes.pnml" 2

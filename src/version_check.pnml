@@ -1,0 +1,4 @@
+if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14,0)) {
+    error(FATAL, string(STR_OPENTTD));
+    exit;
+}
