@@ -4,9 +4,7 @@ spriteset(s_%name_y_0) {t_platform_2("%name")}
 spriteset(s_%name_y_1) {t_platform_3("%name")}
 
 spritelayout sl_%name_x_0 {
-    ground {
-        sprite: GROUNDSPRITE_RAIL_X;
-    }
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_%name_x_0;
         xoffset: 0;  yoffset: 0;
