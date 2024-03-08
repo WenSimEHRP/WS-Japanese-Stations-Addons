@@ -1,0 +1,4 @@
+#include "src\stations\dummy.pnml"
+#include "src\stations\generated_stations\st1_cargo_platform.pnml"
+#include "src\stations\generated_stations\wp1_standard.pnml"
+#include "src\stations\generated_stations\wp1_tetsubashi.pnml"

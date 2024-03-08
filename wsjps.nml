@@ -1,7 +1,8 @@
-# 1 "wsjps_indexes.pnml"
+# 1 "wsjps.pnml"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "wsjps_indexes.pnml"
+# 1 "wsjps.pnml"
+# 1 "header.pnml" 1
 # 1 "src/header.pnml" 1
 grf {
    grfid: "WS\24\05";
@@ -11,22 +12,368 @@ grf {
    version: 1;
    min_compatible_version: 1;
 }
-# 2 "wsjps_indexes.pnml" 2
+# 2 "header.pnml" 2
 # 1 "src/version_check.pnml" 1
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14,0)) {
     error(FATAL, string(STR_OPENTTD));
     exit;
 }
-# 3 "wsjps_indexes.pnml" 2
+# 3 "header.pnml" 2
 # 1 "src/templates.pnml" 1
-template t_platform() {
-    []
-}
-# 4 "wsjps_indexes.pnml" 2
+# 20 "src/templates.pnml"
+template t_platform_0(name) {[65*0, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_1(name) {[65*1, 0, 64, 64, -51, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_2(name) {[65*2, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_3(name) {[65*3, 0, 64, 64, -11, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_4(name) {[65*4, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_5(name) {[65*5, 0, 64, 64, -51, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_6(name) {[65*6, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_7(name) {[65*7, 0, 64, 64, -11, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+# 4 "header.pnml" 2
+# 2 "wsjps.pnml" 2
+# 1 "indexes.pnml" 1
 # 1 "src\\stations\\dummy.pnml" 1
-# 5 "wsjps_indexes.pnml" 2
-# 1 "src\\stations\\generated_stations\\st1_something.pnml" 1
-spritelayout sl_st1_something_x(){
-    something
+# 2 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\st1_cargo_platform.pnml" 1
+spriteset(s_st1_cargo_platform_x_0) {t_platform_0("st1_cargo_platform")}
+spriteset(s_st1_cargo_platform_x_1) {t_platform_1("st1_cargo_platform")}
+spriteset(s_st1_cargo_platform_y_0) {t_platform_2("st1_cargo_platform")}
+spriteset(s_st1_cargo_platform_y_1) {t_platform_3("st1_cargo_platform")}
+
+spritelayout sl_st1_cargo_platform_x_0 {
+    ground {
+        sprite: GROUNDSPRITE_RAIL_X;
+    }
+    building {
+        sprite: s_st1_cargo_platform_x_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
 }
-# 6 "wsjps_indexes.pnml" 2
+
+spritelayout sl_st1_cargo_platform_y_0 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_st1_cargo_platform_y_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_st1_cargo_platform_x_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_st1_cargo_platform_x_1;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_st1_cargo_platform_y_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_st1_cargo_platform_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_st1_cargo_platform_x_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_st1_cargo_platform_x_1;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+    building {
+        sprite: s_st1_cargo_platform_x_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_st1_cargo_platform_y_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_st1_cargo_platform_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+    building {
+        sprite: s_st1_cargo_platform_y_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+item (FEAT_STATIONS, stn_st1_cargo_platform_0) {
+    property {
+        class: "WSJ0";
+        classname: string(CLS_WSJ0);
+        name: string(STN_ST1_CARGO_PLATFORM);
+    }
+    graphics {
+        sprite_layouts: [sl_st1_cargo_platform_x_0, sl_st1_cargo_platform_y_0];
+        s_st1_cargo_platform_x_0;
+    }
+}
+
+item (FEAT_STATIONS, stn_st1_cargo_platform_1) {
+    property {
+        class: "WSJ0";
+        classname: string(CLS_WSJ0);
+        name: string(STN_ST1_CARGO_PLATFORM);
+    }
+    graphics {
+        sprite_layouts: [sl_st1_cargo_platform_x_1, sl_st1_cargo_platform_y_1];
+        s_st1_cargo_platform_x_0;
+    }
+}
+
+item (FEAT_STATIONS, stn_st1_cargo_platform_2) {
+    property {
+        class: "WSJ0";
+        classname: string(CLS_WSJ0);
+        name: string(STN_ST1_CARGO_PLATFORM);
+    }
+    graphics {
+        sprite_layouts: [sl_st1_cargo_platform_x_2, sl_st1_cargo_platform_y_2];
+        s_st1_cargo_platform_x_0;
+    }
+}
+# 3 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\wp1_standard.pnml" 1
+spriteset(s_wp1_standard_x_0) {t_platform_0("wp1_standard")}
+spriteset(s_wp1_standard_x_1) {t_platform_1("wp1_standard")}
+spriteset(s_wp1_standard_y_0) {t_platform_2("wp1_standard")}
+spriteset(s_wp1_standard_y_1) {t_platform_3("wp1_standard")}
+
+spritelayout sl_wp1_standard_x_0 {
+    ground {
+        sprite: GROUNDSPRITE_RAIL_X;
+    }
+    building {
+        sprite: s_wp1_standard_x_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_standard_y_0 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_standard_y_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_standard_x_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_wp1_standard_x_1;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_standard_y_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_standard_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_standard_x_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_wp1_standard_x_1;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+    building {
+        sprite: s_wp1_standard_x_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_standard_y_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_standard_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+    building {
+        sprite: s_wp1_standard_y_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+item (FEAT_STATIONS, stn_wp1_standard_0) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_STANDARD);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_standard_x_0, sl_wp1_standard_y_0];
+        s_wp1_standard_x_0;
+    }
+}
+
+item (FEAT_STATIONS, stn_wp1_standard_1) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_STANDARD);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1];
+        s_wp1_standard_x_0;
+    }
+}
+
+item (FEAT_STATIONS, stn_wp1_standard_2) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_STANDARD);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_standard_x_2, sl_wp1_standard_y_2];
+        s_wp1_standard_x_0;
+    }
+}
+# 4 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\wp1_tetsubashi.pnml" 1
+spriteset(s_wp1_tetsubashi_x_0) {t_platform_0("wp1_tetsubashi")}
+spriteset(s_wp1_tetsubashi_x_1) {t_platform_1("wp1_tetsubashi")}
+spriteset(s_wp1_tetsubashi_y_0) {t_platform_2("wp1_tetsubashi")}
+spriteset(s_wp1_tetsubashi_y_1) {t_platform_3("wp1_tetsubashi")}
+
+spritelayout sl_wp1_tetsubashi_x_0 {
+    ground {
+        sprite: GROUNDSPRITE_RAIL_X;
+    }
+    building {
+        sprite: s_wp1_tetsubashi_x_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_tetsubashi_y_0 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_tetsubashi_y_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_tetsubashi_x_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_wp1_tetsubashi_x_1;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_tetsubashi_y_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_tetsubashi_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_tetsubashi_x_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_wp1_tetsubashi_x_1;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+    building {
+        sprite: s_wp1_tetsubashi_x_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_tetsubashi_y_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_tetsubashi_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+    building {
+        sprite: s_wp1_tetsubashi_y_0;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+item (FEAT_STATIONS, stn_wp1_tetsubashi_0) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_TETSUBASHI);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_tetsubashi_x_0, sl_wp1_tetsubashi_y_0];
+        s_wp1_tetsubashi_x_0;
+    }
+}
+
+item (FEAT_STATIONS, stn_wp1_tetsubashi_1) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_TETSUBASHI);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_tetsubashi_x_1, sl_wp1_tetsubashi_y_1];
+        s_wp1_tetsubashi_x_0;
+    }
+}
+
+item (FEAT_STATIONS, stn_wp1_tetsubashi_2) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_TETSUBASHI);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_tetsubashi_x_2, sl_wp1_tetsubashi_y_2];
+        s_wp1_tetsubashi_x_0;
+    }
+}
+# 5 "indexes.pnml" 2
+# 2 "wsjps.pnml" 2

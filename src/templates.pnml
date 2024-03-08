@@ -1,3 +1,27 @@
-template t_platform() {
-    []
-}
+#define OFFSET_X_0 -31
+#define OFFSET_X_1 -51
+#define OFFSET_X_2 -31
+#define OFFSET_X_3 -11
+#define OFFSET_X_4 -31
+#define OFFSET_X_5 -51
+#define OFFSET_X_6 -31
+#define OFFSET_X_7 -11
+
+#define OFFSET_Y_0 -33
+#define OFFSET_Y_1 -43
+#define OFFSET_Y_2 -33
+#define OFFSET_Y_3 -43
+#define OFFSET_Y_4 -33
+#define OFFSET_Y_5 -43
+#define OFFSET_Y_6 -33
+#define OFFSET_Y_7 -43
+// offset part
+
+template t_platform_0(name) {[65*0, 0, 64, 64, OFFSET_X_0, OFFSET_Y_0, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_1(name) {[65*1, 0, 64, 64, OFFSET_X_1, OFFSET_Y_1, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_2(name) {[65*2, 0, 64, 64, OFFSET_X_2, OFFSET_Y_2, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_3(name) {[65*3, 0, 64, 64, OFFSET_X_3, OFFSET_Y_3, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_4(name) {[65*4, 0, 64, 64, OFFSET_X_4, OFFSET_Y_4, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_5(name) {[65*5, 0, 64, 64, OFFSET_X_5, OFFSET_Y_5, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_6(name) {[65*6, 0, 64, 64, OFFSET_X_6, OFFSET_Y_6, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_7(name) {[65*7, 0, 64, 64, OFFSET_X_7, OFFSET_Y_7, "src/stations/generated_stations/gfx/" + name + ".png"]}

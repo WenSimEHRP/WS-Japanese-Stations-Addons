@@ -71,7 +71,7 @@ def main():
 
     files = GetFileList('src/stations/generated_stations/gfx', 'png')
     files_original_name = [file.split('\\')[-1].split('.')[0] for file in files]
-    files_original_name_capitalized = [f'STN_{file.upper():<36}:{file.split("_")[-1].capitalize()}' for file in files_original_name]
+    files_original_name_capitalized = [f'STN_{file.upper():<36}:{(" ".join(file.split("_")[1:])).capitalize()}' for file in files_original_name]
 
     for file in files_original_name:
         # create the new files

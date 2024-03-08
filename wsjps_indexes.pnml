@@ -1,5 +1,0 @@
-#include "src/header.pnml"
-#include "src/version_check.pnml"
-#include "src/templates.pnml"
-#include "src\stations\dummy.pnml"
-#include "src\stations\generated_stations\st1_something.pnml"

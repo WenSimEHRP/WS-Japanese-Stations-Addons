@@ -1,111 +1,111 @@
-spriteset(s_%name_x_0) {t_platform_0("%name")}
-spriteset(s_%name_x_1) {t_platform_1("%name")}
-spriteset(s_%name_y_0) {t_platform_2("%name")}
-spriteset(s_%name_y_1) {t_platform_3("%name")}
+spriteset(s_wp1_standard_x_0) {t_platform_0("wp1_standard")}
+spriteset(s_wp1_standard_x_1) {t_platform_1("wp1_standard")}
+spriteset(s_wp1_standard_y_0) {t_platform_2("wp1_standard")}
+spriteset(s_wp1_standard_y_1) {t_platform_3("wp1_standard")}
 
-spritelayout sl_%name_x_0 {
+spritelayout sl_wp1_standard_x_0 {
     ground {
         sprite: GROUNDSPRITE_RAIL_X;
     }
     building {
-        sprite: s_%name_x_0;
+        sprite: s_wp1_standard_x_0;
         xoffset: 0;  yoffset: 0;
         zoffset: 0;  xextent: 16;
         yextent: 6;  zextent: 6;
     }
 }
 
-spritelayout sl_%name_y_0 {
+spritelayout sl_wp1_standard_y_0 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
-        sprite: s_%name_y_0;
+        sprite: s_wp1_standard_y_0;
         xoffset: 0;  yoffset: 0;
         zoffset: 0;  xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
 
-spritelayout sl_%name_x_1 {
+spritelayout sl_wp1_standard_x_1 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
-        sprite: s_%name_x_1;
+        sprite: s_wp1_standard_x_1;
         xoffset: 0;  yoffset: 10;
         zoffset: 0;  xextent: 16;
         yextent: 6;  zextent: 6;
     }
 }
 
-spritelayout sl_%name_y_1 {
+spritelayout sl_wp1_standard_y_1 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
-        sprite: s_%name_y_1;
+        sprite: s_wp1_standard_y_1;
         xoffset: 10; yoffset: 0;
         zoffset: 0;  xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
 
-spritelayout sl_%name_x_2 {
+spritelayout sl_wp1_standard_x_2 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
-        sprite: s_%name_x_1;
+        sprite: s_wp1_standard_x_1;
         xoffset: 0;  yoffset: 10;
         zoffset: 0;  xextent: 16;
         yextent: 6;  zextent: 6;
     }
     building {
-        sprite: s_%name_x_0;
+        sprite: s_wp1_standard_x_0;
         xoffset: 0;  yoffset: 0;
         zoffset: 0;  xextent: 16;
         yextent: 6;  zextent: 6;
     }
 }
 
-spritelayout sl_%name_y_2 {
+spritelayout sl_wp1_standard_y_2 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
-        sprite: s_%name_y_1;
+        sprite: s_wp1_standard_y_1;
         xoffset: 10; yoffset: 0;
         zoffset: 0;  xextent: 6;
         yextent: 16; zextent: 6;
     }
     building {
-        sprite: s_%name_y_0;
+        sprite: s_wp1_standard_y_0;
         xoffset: 0;  yoffset: 0;
         zoffset: 0;  xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
 
-item (FEAT_STATIONS, stn_%name_0) {
+item (FEAT_STATIONS, stn_wp1_standard_0) {
     property {
         class:          "WAYP";
-        name:           string(STN_$name);
+        name:           string(STN_WP1_STANDARD);
     }
     graphics {
-        sprite_layouts: [sl_%name_x_0, sl_%name_y_0];
-        s_%name_x_0;
+        sprite_layouts: [sl_wp1_standard_x_0, sl_wp1_standard_y_0];
+        s_wp1_standard_x_0;
     }
 }
 
-item (FEAT_STATIONS, stn_%name_1) {
+item (FEAT_STATIONS, stn_wp1_standard_1) {
     property {
         class:          "WAYP";
-        name:           string(STN_$name);
+        name:           string(STN_WP1_STANDARD);
     }
     graphics {
-        sprite_layouts: [sl_%name_x_1, sl_%name_y_1];
-        s_%name_x_0;
+        sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1];
+        s_wp1_standard_x_0;
     }
 }
 
-item (FEAT_STATIONS, stn_%name_2) {
+item (FEAT_STATIONS, stn_wp1_standard_2) {
     property {
         class:          "WAYP";
-        name:           string(STN_$name);
+        name:           string(STN_WP1_STANDARD);
     }
     graphics {
-        sprite_layouts: [sl_%name_x_2, sl_%name_y_2];
-        s_%name_x_0;
+        sprite_layouts: [sl_wp1_standard_x_2, sl_wp1_standard_y_2];
+        s_wp1_standard_x_0;
     }
 }
