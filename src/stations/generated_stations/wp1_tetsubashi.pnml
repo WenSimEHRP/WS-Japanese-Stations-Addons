@@ -48,14 +48,14 @@ spritelayout sl_wp1_tetsubashi_y_1 {
 spritelayout sl_wp1_tetsubashi_x_2 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
-        sprite: s_wp1_tetsubashi_x_1;
-        xoffset: 0;  yoffset: 10;
+        sprite: s_wp1_tetsubashi_x_0;
+        xoffset: 0;  yoffset: 0;
         zoffset: 0;  xextent: 16;
         yextent: 6;  zextent: 6;
     }
     building {
-        sprite: s_wp1_tetsubashi_x_0;
-        xoffset: 0;  yoffset: 0;
+        sprite: s_wp1_tetsubashi_x_1;
+        xoffset: 0;  yoffset: 10;
         zoffset: 0;  xextent: 16;
         yextent: 6;  zextent: 6;
     }
@@ -64,14 +64,14 @@ spritelayout sl_wp1_tetsubashi_x_2 {
 spritelayout sl_wp1_tetsubashi_y_2 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
-        sprite: s_wp1_tetsubashi_y_1;
-        xoffset: 10; yoffset: 0;
+        sprite: s_wp1_tetsubashi_y_0;
+        xoffset: 0;  yoffset: 0;
         zoffset: 0;  xextent: 6;
         yextent: 16; zextent: 6;
     }
     building {
-        sprite: s_wp1_tetsubashi_y_0;
-        xoffset: 0;  yoffset: 0;
+        sprite: s_wp1_tetsubashi_y_1;
+        xoffset: 10; yoffset: 0;
         zoffset: 0;  xextent: 6;
         yextent: 16; zextent: 6;
     }
