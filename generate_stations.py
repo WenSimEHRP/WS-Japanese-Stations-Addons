@@ -75,7 +75,7 @@ def main():
 
     for file in files_original_name:
         # create the new files
-        file_data = ProcessPnmlFile(f'src/stations/generated_stations/{file.split("_")[0]}.pnml.template', file)
+        file_data = ProcessPnmlFile(f'src/stations/generated_stations/templates/{file.split("_")[0]}.pnml.template', file)
         WriteFile(f'src/stations/generated_stations/{file}.pnml', file_data)
 
     WriteFile('src/stations/generated_stations/stations.lng', files_original_name_capitalized)
