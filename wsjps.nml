@@ -207,6 +207,116 @@ item (FEAT_STATIONS, stn_st2_extended_platform_45) { property { class: "WSJ1"; c
 # 5 ".\\_index_st2.pnml.template" 2
 }
 # 6 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\st2_extended_platform_white.pnml" 1
+# 1 ".\\_index_st2.pnml.template"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\_index_st2.pnml.template"
+# 1 ".\\templates/spriteset_extended.pnml.template" 1
+spriteset(s_st2_extended_platform_white_x_0) {t_platform_extended_0 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_y_0) {t_platform_extended_6 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_x_1) {t_platform_extended_1 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_y_1) {t_platform_extended_7 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_x_2) {t_platform_extended_2 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_y_2) {t_platform_extended_8 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_x_3) {t_platform_extended_3 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_y_3) {t_platform_extended_9 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_x_4) {t_platform_extended_4 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_y_4) {t_platform_extended_10 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_x_5) {t_platform_extended_5 ("st2_extended_platform_white")}
+spriteset(s_st2_extended_platform_white_y_5) {t_platform_extended_11 ("st2_extended_platform_white")}
+# 2 ".\\_index_st2.pnml.template" 2
+# 1 ".\\templates/spritelayout_extended.pnml.template" 1
+# 33 ".\\templates/spritelayout_extended.pnml.template"
+spritelayout sl_st2_extended_platform_white_x_0 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_0 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_1 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_1; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_1 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_1; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_01 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_white_x_1; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_01 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_white_y_1; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_2 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_2 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_3 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_3; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_3 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_3; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_23 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_white_x_3; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_23 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_white_y_3; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_4 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_4 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_5 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_5; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_5 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_5; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_x_45 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_x_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_white_x_5; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_white_y_45 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_y_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_white_y_5; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+# 3 ".\\_index_st2.pnml.template" 2
+if (param_stations) {
+# 1 ".\\templates/item_station_extended.pnml.template" 1
+# 14 ".\\templates/item_station_extended.pnml.template"
+item (FEAT_STATIONS, stn_st2_extended_platform_white_0) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_0, sl_st2_extended_platform_white_y_0]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_1) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_1, sl_st2_extended_platform_white_y_1]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_2) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_2, sl_st2_extended_platform_white_y_2]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_3) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_3, sl_st2_extended_platform_white_y_3]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_4) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_4, sl_st2_extended_platform_white_y_4]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_5) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_5, sl_st2_extended_platform_white_y_5]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_01) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_01, sl_st2_extended_platform_white_y_01]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_23) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_23, sl_st2_extended_platform_white_y_23]; s_st2_extended_platform_white_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_white_45) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_45, sl_st2_extended_platform_white_y_45]; s_st2_extended_platform_white_x_0; } }
+# 5 ".\\_index_st2.pnml.template" 2
+}
+# 7 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\st2_extended_platform_yellow.pnml" 1
+# 1 ".\\_index_st2.pnml.template"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\_index_st2.pnml.template"
+# 1 ".\\templates/spriteset_extended.pnml.template" 1
+spriteset(s_st2_extended_platform_yellow_x_0) {t_platform_extended_0 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_y_0) {t_platform_extended_6 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_x_1) {t_platform_extended_1 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_y_1) {t_platform_extended_7 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_x_2) {t_platform_extended_2 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_y_2) {t_platform_extended_8 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_x_3) {t_platform_extended_3 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_y_3) {t_platform_extended_9 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_x_4) {t_platform_extended_4 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_y_4) {t_platform_extended_10 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_x_5) {t_platform_extended_5 ("st2_extended_platform_yellow")}
+spriteset(s_st2_extended_platform_yellow_y_5) {t_platform_extended_11 ("st2_extended_platform_yellow")}
+# 2 ".\\_index_st2.pnml.template" 2
+# 1 ".\\templates/spritelayout_extended.pnml.template" 1
+# 33 ".\\templates/spritelayout_extended.pnml.template"
+spritelayout sl_st2_extended_platform_yellow_x_0 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_0 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_1 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_1; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_1 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_1; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_01 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_x_1; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_01 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_0; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_y_1; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_2 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_2 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_3 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_3; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_3 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_3; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_23 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_x_3; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_23 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_2; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_y_3; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_4 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_4 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_5 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_5; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_5 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_5; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_x_45 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_x_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_x_5; xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_st2_extended_platform_yellow_y_45 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_y_4; xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_y_5; xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+# 3 ".\\_index_st2.pnml.template" 2
+if (param_stations) {
+# 1 ".\\templates/item_station_extended.pnml.template" 1
+# 14 ".\\templates/item_station_extended.pnml.template"
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_0) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_0, sl_st2_extended_platform_yellow_y_0]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_1) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_1, sl_st2_extended_platform_yellow_y_1]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_2) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_2, sl_st2_extended_platform_yellow_y_2]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_3) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_3, sl_st2_extended_platform_yellow_y_3]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_4) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_4, sl_st2_extended_platform_yellow_y_4]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_5) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_5, sl_st2_extended_platform_yellow_y_5]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_01) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_01, sl_st2_extended_platform_yellow_y_01]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_23) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_23, sl_st2_extended_platform_yellow_y_23]; s_st2_extended_platform_yellow_x_0; } }
+item (FEAT_STATIONS, stn_st2_extended_platform_yellow_45) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_45, sl_st2_extended_platform_yellow_y_45]; s_st2_extended_platform_yellow_x_0; } }
+# 5 ".\\_index_st2.pnml.template" 2
+}
+# 8 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_cement_barrier.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -236,7 +346,7 @@ item (FEAT_STATIONS, stn_wp1_cement_barrier_1) { property { class: "WAYP"; name:
 item (FEAT_STATIONS, stn_wp1_cement_barrier_01) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER); } graphics { sprite_layouts: [sl_wp1_cement_barrier_x_01, sl_wp1_cement_barrier_y_01]; s_wp1_cement_barrier_x_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 7 "indexes.pnml" 2
+# 9 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_cement_barrier_bridge.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -266,7 +376,7 @@ item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_1) { property { class: "WAYP"
 item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_01) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER_BRIDGE); } graphics { sprite_layouts: [sl_wp1_cement_barrier_bridge_x_01, sl_wp1_cement_barrier_bridge_y_01]; s_wp1_cement_barrier_bridge_x_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 8 "indexes.pnml" 2
+# 10 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_standard.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -296,7 +406,7 @@ item (FEAT_STATIONS, stn_wp1_standard_1) { property { class: "WAYP"; name: strin
 item (FEAT_STATIONS, stn_wp1_standard_01) { property { class: "WAYP"; name: string(STN_WP1_STANDARD); } graphics { sprite_layouts: [sl_wp1_standard_x_01, sl_wp1_standard_y_01]; s_wp1_standard_x_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 9 "indexes.pnml" 2
+# 11 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_tetsubashi.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -326,5 +436,5 @@ item (FEAT_STATIONS, stn_wp1_tetsubashi_1) { property { class: "WAYP"; name: str
 item (FEAT_STATIONS, stn_wp1_tetsubashi_01) { property { class: "WAYP"; name: string(STN_WP1_TETSUBASHI); } graphics { sprite_layouts: [sl_wp1_tetsubashi_x_01, sl_wp1_tetsubashi_y_01]; s_wp1_tetsubashi_x_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 10 "indexes.pnml" 2
+# 12 "indexes.pnml" 2
 # 5 "wsjps.pnml" 2
