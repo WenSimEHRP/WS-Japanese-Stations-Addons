@@ -1,38 +1,25 @@
-#define OFFSET_X_0 -31
-#define OFFSET_X_1 -51
-#define OFFSET_X_2 -31
-#define OFFSET_X_3 -11
-#define OFFSET_X_4 -31
-#define OFFSET_X_5 -51
-#define OFFSET_X_6 -31
-#define OFFSET_X_7 -11
-
-#define OFFSET_Y_0 -33
-#define OFFSET_Y_1 -43
-#define OFFSET_Y_2 -33
-#define OFFSET_Y_3 -43
-#define OFFSET_Y_4 -33
-#define OFFSET_Y_5 -43
-#define OFFSET_Y_6 -33
-#define OFFSET_Y_7 -43
+#define SIZE_X 64
+#define SIZE_Y 64
+#define SIZE_X_EXTENDED 64*3
+#define SIZE_Y_EXTENDED 64*3
 
 #define PATH "src/stations/generated_stations/gfx/" + name + ".png"
 // offset part
 
-template t_platform_0(name) {[65*0, 0, 64, 64, OFFSET_X_0, OFFSET_Y_0, PATH]}
-template t_platform_1(name) {[65*1, 0, 64, 64, OFFSET_X_1, OFFSET_Y_1, PATH]}
-template t_platform_2(name) {[65*2, 0, 64, 64, OFFSET_X_2, OFFSET_Y_2, PATH]}
-template t_platform_3(name) {[65*3, 0, 64, 64, OFFSET_X_3, OFFSET_Y_3, PATH]}
-template t_platform_4(name) {[65*4, 0, 64, 64, OFFSET_X_4, OFFSET_Y_4, PATH]}
-template t_platform_5(name) {[65*5, 0, 64, 64, OFFSET_X_5, OFFSET_Y_5, PATH]}
-template t_platform_6(name) {[65*6, 0, 64, 64, OFFSET_X_6, OFFSET_Y_6, PATH]}
-template t_platform_7(name) {[65*7, 0, 64, 64, OFFSET_X_7, OFFSET_Y_7, PATH]}
+template t_platform_0(name) {[(SIZE_X + 1)*0, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
+template t_platform_1(name) {[(SIZE_X + 1)*1, 0, SIZE_X, SIZE_Y, -51, -43, PATH]}
+template t_platform_2(name) {[(SIZE_X + 1)*2, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
+template t_platform_3(name) {[(SIZE_X + 1)*3, 0, SIZE_X, SIZE_Y, -11, -43, PATH]}
+template t_platform_4(name) {[(SIZE_X + 1)*4, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
+template t_platform_5(name) {[(SIZE_X + 1)*5, 0, SIZE_X, SIZE_Y, -51, -43, PATH]}
+template t_platform_6(name) {[(SIZE_X + 1)*6, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
+template t_platform_7(name) {[(SIZE_X + 1)*7, 0, SIZE_X, SIZE_Y, -11, -43, PATH]}
 
-template t_platform_extended_0(name) {[65*0, 0, 64, 64, OFFSET_X_0, OFFSET_Y_0, PATH]}
-template t_platform_extended_1(name) {[65*1, 0, 64, 64, OFFSET_X_1, OFFSET_Y_1, PATH]}
-template t_platform_extended_2(name) {[65*2, 0, 64, 64, OFFSET_X_2, OFFSET_Y_2, PATH]}
-template t_platform_extended_3(name) {[65*3, 0, 64, 64, OFFSET_X_3, OFFSET_Y_3, PATH]}
-template t_platform_extended_4(name) {[65*4, 0, 64, 64, OFFSET_X_4, OFFSET_Y_4, PATH]}
-template t_platform_extended_5(name) {[65*5, 0, 64, 64, OFFSET_X_5, OFFSET_Y_5, PATH]}
-template t_platform_extended_6(name) {[65*6, 0, 64, 64, OFFSET_X_6, OFFSET_Y_6, PATH]}
-template t_platform_extended_7(name) {[65*7, 0, 64, 64, OFFSET_X_7, OFFSET_Y_7, PATH]}
+template t_platform_extended_0(name) {[(SIZE_X_EXTENDED + 1)*0, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -31, -33, PATH]}
+template t_platform_extended_1(name) {[(SIZE_X_EXTENDED + 1)*1, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -51, -43, PATH]}
+template t_platform_extended_2(name) {[(SIZE_X_EXTENDED + 1)*2, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -31, -33, PATH]}
+template t_platform_extended_3(name) {[(SIZE_X_EXTENDED + 1)*3, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -11, -43, PATH]}
+template t_platform_extended_4(name) {[(SIZE_X_EXTENDED + 1)*4, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -31, -33, PATH]}
+template t_platform_extended_5(name) {[(SIZE_X_EXTENDED + 1)*5, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -51, -43, PATH]}
+template t_platform_extended_6(name) {[(SIZE_X_EXTENDED + 1)*6, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -31, -33, PATH]}
+template t_platform_extended_7(name) {[(SIZE_X_EXTENDED + 1)*7, 0, SIZE_X_EXTENDED, SIZE_Y_EXTENDED, -11, -43, PATH]}
