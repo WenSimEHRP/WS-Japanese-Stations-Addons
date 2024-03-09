@@ -1,8 +1,8 @@
 @echo off
 :start
 py get_date.py
-py combine.py
 py generate_stations.py
+py combine.py
 gcc -E -x c -o wsjps.nml wsjps.pnml
 gcc -E -x c -P -o lang\english.lng lang\anglische.lng.template
 nmlc wsjps.nml

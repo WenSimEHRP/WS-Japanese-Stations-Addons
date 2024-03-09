@@ -4,9 +4,7 @@ spriteset(s_st1_cargo_platform_y_0) {t_platform_2("st1_cargo_platform")}
 spriteset(s_st1_cargo_platform_y_1) {t_platform_3("st1_cargo_platform")}
 
 spritelayout sl_st1_cargo_platform_x_0 {
-    ground {
-        sprite: GROUNDSPRITE_RAIL_X;
-    }
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_st1_cargo_platform_x_0;
         xoffset: 0;  yoffset: 0;

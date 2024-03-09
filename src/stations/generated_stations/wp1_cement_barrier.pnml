@@ -4,9 +4,7 @@ spriteset(s_wp1_cement_barrier_y_0) {t_platform_2("wp1_cement_barrier")}
 spriteset(s_wp1_cement_barrier_y_1) {t_platform_3("wp1_cement_barrier")}
 
 spritelayout sl_wp1_cement_barrier_x_0 {
-    ground {
-        sprite: GROUNDSPRITE_RAIL_X;
-    }
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_wp1_cement_barrier_x_0;
         xoffset: 0;  yoffset: 0;
