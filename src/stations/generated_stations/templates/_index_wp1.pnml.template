@@ -1,0 +1,6 @@
+#include "templates/spriteset_x_y.pnml.template"
+#include "templates/spritelayout_x_y.pnml.template"
+
+if (param_waypoints) {
+    #include "templates/item_waypoint_x_y.pnml.template"
+}

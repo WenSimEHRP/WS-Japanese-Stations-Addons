@@ -1,0 +1,6 @@
+#include "templates/spriteset_x_y.pnml.template"
+#include "templates/spritelayout_x_y.pnml.template"
+
+if (param_stations) {
+    #include "templates/item_station_x_y.pnml.template"
+}

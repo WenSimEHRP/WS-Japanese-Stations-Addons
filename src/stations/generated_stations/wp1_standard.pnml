@@ -1,15 +1,21 @@
+# 1 ".\\_index_wp1.pnml.template"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\_index_wp1.pnml.template"
+# 1 ".\\templates/spriteset_x_y.pnml.template" 1
 spriteset(s_wp1_standard_x_0) {t_platform_0("wp1_standard")}
 spriteset(s_wp1_standard_x_1) {t_platform_1("wp1_standard")}
 spriteset(s_wp1_standard_y_0) {t_platform_2("wp1_standard")}
 spriteset(s_wp1_standard_y_1) {t_platform_3("wp1_standard")}
-
+# 2 ".\\_index_wp1.pnml.template" 2
+# 1 ".\\templates/spritelayout_x_y.pnml.template" 1
 spritelayout sl_wp1_standard_x_0 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_wp1_standard_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
 }
 
@@ -17,8 +23,8 @@ spritelayout sl_wp1_standard_y_0 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
         sprite: s_wp1_standard_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
@@ -27,9 +33,9 @@ spritelayout sl_wp1_standard_x_1 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_wp1_standard_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
 }
 
@@ -38,7 +44,7 @@ spritelayout sl_wp1_standard_y_1 {
     building {
         sprite: s_wp1_standard_y_1;
         xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
@@ -47,15 +53,15 @@ spritelayout sl_wp1_standard_x_2 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_wp1_standard_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
     building {
         sprite: s_wp1_standard_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
 }
 
@@ -63,48 +69,50 @@ spritelayout sl_wp1_standard_y_2 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
         sprite: s_wp1_standard_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
     building {
         sprite: s_wp1_standard_y_1;
         xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
+# 3 ".\\_index_wp1.pnml.template" 2
+
 if (param_waypoints) {
-    item (FEAT_STATIONS, stn_wp1_standard_0) {
-        property {
-            class:          "WAYP";
-            name:           string(STN_WP1_STANDARD);
-        }
-        graphics {
-            sprite_layouts: [sl_wp1_standard_x_0, sl_wp1_standard_y_0];
-            s_wp1_standard_x_0;
-        }
+# 1 ".\\templates/item_waypoint_x_y.pnml.template" 1
+item (FEAT_STATIONS, stn_wp1_standard_0) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_STANDARD);
     }
-
-    item (FEAT_STATIONS, stn_wp1_standard_1) {
-        property {
-            class:          "WAYP";
-            name:           string(STN_WP1_STANDARD);
-        }
-        graphics {
-            sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1];
-            s_wp1_standard_x_0;
-        }
+    graphics {
+        sprite_layouts: [sl_wp1_standard_x_0, sl_wp1_standard_y_0];
+        s_wp1_standard_x_0;
     }
-
-    item (FEAT_STATIONS, stn_wp1_standard_2) {
-        property {
-            class:          "WAYP";
-            name:           string(STN_WP1_STANDARD);
-        }
-        graphics {
-            sprite_layouts: [sl_wp1_standard_x_2, sl_wp1_standard_y_2];
-            s_wp1_standard_x_0;
-        }
+}
+item (FEAT_STATIONS, stn_wp1_standard_1) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_STANDARD);
     }
+    graphics {
+        sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1];
+        s_wp1_standard_x_0;
+    }
+}
+item (FEAT_STATIONS, stn_wp1_standard_2) {
+    property {
+        class: "WAYP";
+        name: string(STN_WP1_STANDARD);
+    }
+    graphics {
+        sprite_layouts: [sl_wp1_standard_x_2, sl_wp1_standard_y_2];
+        s_wp1_standard_x_0;
+    }
+}
+# 6 ".\\_index_wp1.pnml.template" 2
 }

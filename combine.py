@@ -18,6 +18,7 @@ def main():
     for index in indexes:
         output_data.append(f'#include "{index}"\n')
     write_file('indexes.pnml', output_data)
+    print('Indexes generated')
 
 if __name__ == '__main__':
     main()

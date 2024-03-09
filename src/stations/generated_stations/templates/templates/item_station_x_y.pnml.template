@@ -1,0 +1,33 @@
+item (FEAT_STATIONS, stn_%name_0) {
+    property {
+        class:          "WSJ0";
+        classname:      string(CLS_WSJ0);
+        name:           string(STN_$name);
+    }
+    graphics {
+        sprite_layouts: [sl_%name_x_0, sl_%name_y_0];
+        s_%name_x_0;
+    }
+}
+item (FEAT_STATIONS, stn_%name_1) {
+    property {
+        class:          "WSJ0";
+        classname:      string(CLS_WSJ0);
+        name:           string(STN_$name);
+    }
+    graphics {
+        sprite_layouts: [sl_%name_x_1, sl_%name_y_1];
+        s_%name_x_0;
+    }
+}
+item (FEAT_STATIONS, stn_%name_2) {
+    property {
+        class:          "WSJ0";
+        classname:      string(CLS_WSJ0);
+        name:           string(STN_$name);
+    }
+    graphics {
+        sprite_layouts: [sl_%name_x_2, sl_%name_y_2];
+        s_%name_x_0;
+    }
+}

@@ -79,6 +79,7 @@ def main():
         WriteFile(f'src/stations/generated_stations/{file}.pnml', file_data)
 
     WriteFile('src/stations/generated_stations/stations.lng', files_original_name_capitalized)
+    print('Stations generated')
 
 if __name__ == "__main__":
     main()

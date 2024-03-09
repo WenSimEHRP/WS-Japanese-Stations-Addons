@@ -20,3 +20,5 @@ for index,item in enumerate(content):
 # write the new content back to the file
 with open("custom_tags.txt", "w") as f:
     f.write("".join(content))
+
+print("Date and time updated in custom_tags.txt")

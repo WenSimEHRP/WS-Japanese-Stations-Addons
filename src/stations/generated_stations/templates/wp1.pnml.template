@@ -1,15 +1,21 @@
+# 1 ".\\_index_wp1.pnml.template"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\_index_wp1.pnml.template"
+# 1 ".\\templates/spriteset_x_y.pnml.template" 1
 spriteset(s_%name_x_0) {t_platform_0("%name")}
 spriteset(s_%name_x_1) {t_platform_1("%name")}
 spriteset(s_%name_y_0) {t_platform_2("%name")}
 spriteset(s_%name_y_1) {t_platform_3("%name")}
-
+# 2 ".\\_index_wp1.pnml.template" 2
+# 1 ".\\templates/spritelayout_x_y.pnml.template" 1
 spritelayout sl_%name_x_0 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_%name_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
 }
 
@@ -17,8 +23,8 @@ spritelayout sl_%name_y_0 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
         sprite: s_%name_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
@@ -27,9 +33,9 @@ spritelayout sl_%name_x_1 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_%name_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
 }
 
@@ -38,7 +44,7 @@ spritelayout sl_%name_y_1 {
     building {
         sprite: s_%name_y_1;
         xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
@@ -47,15 +53,15 @@ spritelayout sl_%name_x_2 {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     building {
         sprite: s_%name_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
     building {
         sprite: s_%name_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
+        xoffset: 0; yoffset: 10;
+        zoffset: 0; xextent: 16;
+        yextent: 6; zextent: 6;
     }
 }
 
@@ -63,48 +69,50 @@ spritelayout sl_%name_y_2 {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     building {
         sprite: s_%name_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        xoffset: 0; yoffset: 0;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
     building {
         sprite: s_%name_y_1;
         xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
+        zoffset: 0; xextent: 6;
         yextent: 16; zextent: 6;
     }
 }
+# 3 ".\\_index_wp1.pnml.template" 2
+
 if (param_waypoints) {
-    item (FEAT_STATIONS, stn_%name_0) {
-        property {
-            class:          "WAYP";
-            name:           string(STN_$name);
-        }
-        graphics {
-            sprite_layouts: [sl_%name_x_0, sl_%name_y_0];
-            s_%name_x_0;
-        }
+# 1 ".\\templates/item_waypoint_x_y.pnml.template" 1
+item (FEAT_STATIONS, stn_%name_0) {
+    property {
+        class: "WAYP";
+        name: string(STN_$name);
     }
-
-    item (FEAT_STATIONS, stn_%name_1) {
-        property {
-            class:          "WAYP";
-            name:           string(STN_$name);
-        }
-        graphics {
-            sprite_layouts: [sl_%name_x_1, sl_%name_y_1];
-            s_%name_x_0;
-        }
+    graphics {
+        sprite_layouts: [sl_%name_x_0, sl_%name_y_0];
+        s_%name_x_0;
     }
-
-    item (FEAT_STATIONS, stn_%name_2) {
-        property {
-            class:          "WAYP";
-            name:           string(STN_$name);
-        }
-        graphics {
-            sprite_layouts: [sl_%name_x_2, sl_%name_y_2];
-            s_%name_x_0;
-        }
+}
+item (FEAT_STATIONS, stn_%name_1) {
+    property {
+        class: "WAYP";
+        name: string(STN_$name);
     }
+    graphics {
+        sprite_layouts: [sl_%name_x_1, sl_%name_y_1];
+        s_%name_x_0;
+    }
+}
+item (FEAT_STATIONS, stn_%name_2) {
+    property {
+        class: "WAYP";
+        name: string(STN_$name);
+    }
+    graphics {
+        sprite_layouts: [sl_%name_x_2, sl_%name_y_2];
+        s_%name_x_0;
+    }
+}
+# 6 ".\\_index_wp1.pnml.template" 2
 }
