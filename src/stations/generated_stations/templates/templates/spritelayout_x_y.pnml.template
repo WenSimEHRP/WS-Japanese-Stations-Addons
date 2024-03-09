@@ -1,71 +1,38 @@
-spritelayout sl_%name_x_0 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
+#define SPRITELAYOUT_PLAT(Utype, type, num, _xoffset, _yoffset, _zoffset,  \
+                                _xextent, _yextent, _zextent)              \
+spritelayout sl_%name_##type##_##num {                                     \
+    ground {sprite: GROUNDSPRITE_RAIL_##Utype;}                            \
+    building {                                                             \
+        sprite: s_%name_##type##_##num;                                    \
+        xoffset: _xoffset;  yoffset: _yoffset;                             \
+        zoffset: _zoffset;  xextent: _xextent;                             \
+        yextent: _yextent;  zextent: _zextent;                             \
+    }                                                                      \
+}                                                                          \
 
-spritelayout sl_%name_y_0 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
+#define SPRITELAYOUT_DUAL(Utype, type, sp1, sp2, _xoffset, _yoffset, _zoffset, \
+                                _xextent, _yextent, _zextent,                  \
+                                $xoffset, $yoffset, $zoffset,                  \
+                                $xextent, $yextent, $zextent)                  \
+spritelayout sl_%name_##type##_##sp1##sp2 {                                    \
+    ground {sprite: GROUNDSPRITE_RAIL_##Utype;}                                \
+    building {                                                                 \
+        sprite: s_%name_##type##_##sp1;                                        \
+        xoffset: _xoffset;  yoffset: _yoffset;                                 \
+        zoffset: _zoffset;  xextent: _xextent;                                 \
+        yextent: _yextent;  zextent: _zextent;                                 \
+    }                                                                          \
+    building {                                                                 \
+        sprite: s_%name_##type##_##sp2;                                        \
+        xoffset: $xoffset;  yoffset: $yoffset;                                 \
+        zoffset: $zoffset;  xextent: $xextent;                                 \
+        yextent: $yextent;  zextent: $zextent;                                 \
+    }                                                                          \
+}                                                                              \
 
-spritelayout sl_%name_x_1 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_1 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_1;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_2 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-    building {
-        sprite: s_%name_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_2 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-    building {
-        sprite: s_%name_y_1;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
+SPRITELAYOUT_PLAT(X, x, 0, 0, 0, 0, 16, 6, 6)
+SPRITELAYOUT_PLAT(Y, y, 0, 0, 0, 0, 6, 16, 6)
+SPRITELAYOUT_PLAT(X, x, 1, 0, 10, 0, 16, 6, 6)
+SPRITELAYOUT_PLAT(Y, y, 1, 10, 0, 0, 6, 16, 6)
+SPRITELAYOUT_DUAL(X, x, 0, 1, 0, 0, 0, 16, 6, 6, 0, 10, 0, 16, 6, 6)
+SPRITELAYOUT_DUAL(Y, y, 0, 1, 0, 0, 0, 6, 16, 6, 10, 0, 0, 6, 16, 6)

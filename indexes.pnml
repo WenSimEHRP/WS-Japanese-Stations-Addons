@@ -2,6 +2,7 @@
 #include "src\stations\generated_stations\st1_cargo_platform.pnml"
 #include "src\stations\generated_stations\st1_underground_entrance.pnml"
 #include "src\stations\generated_stations\st1_underground_entrance_stairs.pnml"
+#include "src\stations\generated_stations\st2_extended_platform.pnml"
 #include "src\stations\generated_stations\wp1_cement_barrier.pnml"
 #include "src\stations\generated_stations\wp1_cement_barrier_bridge.pnml"
 #include "src\stations\generated_stations\wp1_standard.pnml"

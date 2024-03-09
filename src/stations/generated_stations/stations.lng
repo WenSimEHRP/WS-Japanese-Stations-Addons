@@ -1,6 +1,7 @@
 STN_ST1_CARGO_PLATFORM                  :Cargo platform
 STN_ST1_UNDERGROUND_ENTRANCE            :Underground entrance
 STN_ST1_UNDERGROUND_ENTRANCE_STAIRS     :Underground entrance stairs
+STN_ST2_EXTENDED_PLATFORM               :Extended platform
 STN_WP1_CEMENT_BARRIER                  :Cement barrier
 STN_WP1_CEMENT_BARRIER_BRIDGE           :Cement barrier bridge
 STN_WP1_STANDARD                        :Standard

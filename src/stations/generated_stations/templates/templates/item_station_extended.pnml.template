@@ -1,7 +1,8 @@
 #define ITEM_STATION(num)                                       \
 item (FEAT_STATIONS, stn_%name_##num) {                         \
     property {                                                  \
-        class:          "WAYP";                                 \
+        class:          "WSJ1";                                 \
+        classname:      string(CLS_WSJ1);                       \
         name:           string(STN_$name);                      \
     }                                                           \
     graphics {                                                  \
@@ -12,4 +13,10 @@ item (FEAT_STATIONS, stn_%name_##num) {                         \
 
 ITEM_STATION(0)
 ITEM_STATION(1)
+ITEM_STATION(2)
+ITEM_STATION(3)
+ITEM_STATION(4)
+ITEM_STATION(5)
 ITEM_STATION(01)
+ITEM_STATION(23)
+ITEM_STATION(45)
