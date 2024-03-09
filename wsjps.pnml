@@ -1,2 +1,5 @@
-#include "header.pnml"
+#include "src/header.pnml"
+#include "src/version_check.pnml"
+#include "src/templates.pnml"
+
 #include "indexes.pnml"

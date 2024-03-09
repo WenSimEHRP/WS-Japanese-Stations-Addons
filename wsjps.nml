@@ -2,7 +2,6 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "wsjps.pnml"
-# 1 "header.pnml" 1
 # 1 "src/header.pnml" 1
 grf {
     grfid: "WS\24\05";
@@ -28,13 +27,13 @@ grf {
             }
         }
 }
-# 2 "header.pnml" 2
+# 2 "wsjps.pnml" 2
 # 1 "src/version_check.pnml" 1
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(12,0)) {
     error(FATAL, string(STR_OPENTTD));
     exit;
 }
-# 3 "header.pnml" 2
+# 3 "wsjps.pnml" 2
 # 1 "src/templates.pnml" 1
 # 22 "src/templates.pnml"
 template t_platform_0(name) {[65*0, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
@@ -54,8 +53,8 @@ template t_platform_extended_4(name) {[65*4, 0, 64, 64, -31, -33, "src/stations/
 template t_platform_extended_5(name) {[65*5, 0, 64, 64, -51, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_platform_extended_6(name) {[65*6, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_platform_extended_7(name) {[65*7, 0, 64, 64, -11, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
-# 4 "header.pnml" 2
-# 2 "wsjps.pnml" 2
+# 4 "wsjps.pnml" 2
+
 # 1 "indexes.pnml" 1
 # 1 "src\\stations\\dummy.pnml" 1
 # 2 "indexes.pnml" 2
@@ -908,4 +907,4 @@ item (FEAT_STATIONS, stn_wp1_tetsubashi_2) {
 # 6 ".\\_index_wp1.pnml.template" 2
 }
 # 9 "indexes.pnml" 2
-# 2 "wsjps.pnml" 2
+# 5 "wsjps.pnml" 2
