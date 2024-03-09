@@ -1,5 +1,6 @@
-DATE    :2024-03-08 06:09 UTC
+DATE    :2024-03-09 08:08 UTC
 VERSION :0.1a
 URL     :https://github.com/WenSimEHRP/WS-Japanese-Stations-Addons
 TITLE   :WenSim's Japanese Stations Addons
 ABBRV   :WSJPS
+OTTD_VER:12.0

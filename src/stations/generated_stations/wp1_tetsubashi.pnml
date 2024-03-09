@@ -76,36 +76,37 @@ spritelayout sl_wp1_tetsubashi_y_2 {
         yextent: 16; zextent: 6;
     }
 }
+if (param_waypoints) {
+    item (FEAT_STATIONS, stn_wp1_tetsubashi_0) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_TETSUBASHI);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_tetsubashi_x_0, sl_wp1_tetsubashi_y_0];
+            s_wp1_tetsubashi_x_0;
+        }
+    }
 
-item (FEAT_STATIONS, stn_wp1_tetsubashi_0) {
-    property {
-        class:          "WAYP";
-        name:           string(STN_WP1_TETSUBASHI);
+    item (FEAT_STATIONS, stn_wp1_tetsubashi_1) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_TETSUBASHI);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_tetsubashi_x_1, sl_wp1_tetsubashi_y_1];
+            s_wp1_tetsubashi_x_0;
+        }
     }
-    graphics {
-        sprite_layouts: [sl_wp1_tetsubashi_x_0, sl_wp1_tetsubashi_y_0];
-        s_wp1_tetsubashi_x_0;
-    }
-}
 
-item (FEAT_STATIONS, stn_wp1_tetsubashi_1) {
-    property {
-        class:          "WAYP";
-        name:           string(STN_WP1_TETSUBASHI);
-    }
-    graphics {
-        sprite_layouts: [sl_wp1_tetsubashi_x_1, sl_wp1_tetsubashi_y_1];
-        s_wp1_tetsubashi_x_0;
-    }
-}
-
-item (FEAT_STATIONS, stn_wp1_tetsubashi_2) {
-    property {
-        class:          "WAYP";
-        name:           string(STN_WP1_TETSUBASHI);
-    }
-    graphics {
-        sprite_layouts: [sl_wp1_tetsubashi_x_2, sl_wp1_tetsubashi_y_2];
-        s_wp1_tetsubashi_x_0;
+    item (FEAT_STATIONS, stn_wp1_tetsubashi_2) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_TETSUBASHI);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_tetsubashi_x_2, sl_wp1_tetsubashi_y_2];
+            s_wp1_tetsubashi_x_0;
+        }
     }
 }

@@ -76,39 +76,40 @@ spritelayout sl_st1_underground_entrance_y_2 {
         yextent: 16; zextent: 6;
     }
 }
+if (param_stations) {
+    item (FEAT_STATIONS, stn_st1_underground_entrance_0) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_UNDERGROUND_ENTRANCE);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_underground_entrance_x_0, sl_st1_underground_entrance_y_0];
+            s_st1_underground_entrance_x_0;
+        }
+    }
 
-item (FEAT_STATIONS, stn_st1_underground_entrance_0) {
-    property {
-        class:          "WSJ0";
-        classname:      string(CLS_WSJ0);
-        name:           string(STN_ST1_UNDERGROUND_ENTRANCE);
+    item (FEAT_STATIONS, stn_st1_underground_entrance_1) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_UNDERGROUND_ENTRANCE);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_underground_entrance_x_1, sl_st1_underground_entrance_y_1];
+            s_st1_underground_entrance_x_0;
+        }
     }
-    graphics {
-        sprite_layouts: [sl_st1_underground_entrance_x_0, sl_st1_underground_entrance_y_0];
-        s_st1_underground_entrance_x_0;
-    }
-}
 
-item (FEAT_STATIONS, stn_st1_underground_entrance_1) {
-    property {
-        class:          "WSJ0";
-        classname:      string(CLS_WSJ0);
-        name:           string(STN_ST1_UNDERGROUND_ENTRANCE);
-    }
-    graphics {
-        sprite_layouts: [sl_st1_underground_entrance_x_1, sl_st1_underground_entrance_y_1];
-        s_st1_underground_entrance_x_0;
-    }
-}
-
-item (FEAT_STATIONS, stn_st1_underground_entrance_2) {
-    property {
-        class:          "WSJ0";
-        classname:      string(CLS_WSJ0);
-        name:           string(STN_ST1_UNDERGROUND_ENTRANCE);
-    }
-    graphics {
-        sprite_layouts: [sl_st1_underground_entrance_x_2, sl_st1_underground_entrance_y_2];
-        s_st1_underground_entrance_x_0;
+    item (FEAT_STATIONS, stn_st1_underground_entrance_2) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_UNDERGROUND_ENTRANCE);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_underground_entrance_x_2, sl_st1_underground_entrance_y_2];
+            s_st1_underground_entrance_x_0;
+        }
     }
 }

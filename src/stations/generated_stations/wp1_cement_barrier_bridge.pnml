@@ -1,0 +1,112 @@
+spriteset(s_wp1_cement_barrier_bridge_x_0) {t_platform_0("wp1_cement_barrier_bridge")}
+spriteset(s_wp1_cement_barrier_bridge_x_1) {t_platform_1("wp1_cement_barrier_bridge")}
+spriteset(s_wp1_cement_barrier_bridge_y_0) {t_platform_2("wp1_cement_barrier_bridge")}
+spriteset(s_wp1_cement_barrier_bridge_y_1) {t_platform_3("wp1_cement_barrier_bridge")}
+
+spritelayout sl_wp1_cement_barrier_bridge_x_0 {
+    ground {
+        sprite: GROUNDSPRITE_RAIL_X;
+    }
+    building {
+        sprite: s_wp1_cement_barrier_bridge_x_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_cement_barrier_bridge_y_0 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_cement_barrier_bridge_y_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_cement_barrier_bridge_x_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_wp1_cement_barrier_bridge_x_1;
+        xoffset: 0;  yoffset: 10;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_cement_barrier_bridge_y_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_cement_barrier_bridge_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_cement_barrier_bridge_x_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_wp1_cement_barrier_bridge_x_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+    building {
+        sprite: s_wp1_cement_barrier_bridge_x_1;
+        xoffset: 0;  yoffset: 10;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+}
+
+spritelayout sl_wp1_cement_barrier_bridge_y_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_wp1_cement_barrier_bridge_y_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+    building {
+        sprite: s_wp1_cement_barrier_bridge_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+if (param_waypoints) {
+    item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_0) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_CEMENT_BARRIER_BRIDGE);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_cement_barrier_bridge_x_0, sl_wp1_cement_barrier_bridge_y_0];
+            s_wp1_cement_barrier_bridge_x_0;
+        }
+    }
+
+    item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_1) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_CEMENT_BARRIER_BRIDGE);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_cement_barrier_bridge_x_1, sl_wp1_cement_barrier_bridge_y_1];
+            s_wp1_cement_barrier_bridge_x_0;
+        }
+    }
+
+    item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_2) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_CEMENT_BARRIER_BRIDGE);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_cement_barrier_bridge_x_2, sl_wp1_cement_barrier_bridge_y_2];
+            s_wp1_cement_barrier_bridge_x_0;
+        }
+    }
+}

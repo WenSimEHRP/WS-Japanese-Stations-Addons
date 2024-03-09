@@ -1,0 +1,115 @@
+spriteset(s_st1_underground_entrance_stairs_x_0) {t_platform_0("st1_underground_entrance_stairs")}
+spriteset(s_st1_underground_entrance_stairs_x_1) {t_platform_1("st1_underground_entrance_stairs")}
+spriteset(s_st1_underground_entrance_stairs_y_0) {t_platform_2("st1_underground_entrance_stairs")}
+spriteset(s_st1_underground_entrance_stairs_y_1) {t_platform_3("st1_underground_entrance_stairs")}
+
+spritelayout sl_st1_underground_entrance_stairs_x_0 {
+    ground {
+        sprite: GROUNDSPRITE_RAIL_X;
+    }
+    building {
+        sprite: s_st1_underground_entrance_stairs_x_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+}
+
+spritelayout sl_st1_underground_entrance_stairs_y_0 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_st1_underground_entrance_stairs_y_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_st1_underground_entrance_stairs_x_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_st1_underground_entrance_stairs_x_1;
+        xoffset: 0;  yoffset: 10;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+}
+
+spritelayout sl_st1_underground_entrance_stairs_y_1 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_st1_underground_entrance_stairs_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+
+spritelayout sl_st1_underground_entrance_stairs_x_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_X;}
+    building {
+        sprite: s_st1_underground_entrance_stairs_x_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+    building {
+        sprite: s_st1_underground_entrance_stairs_x_1;
+        xoffset: 0;  yoffset: 10;
+        zoffset: 0;  xextent: 16;
+        yextent: 6;  zextent: 6;
+    }
+}
+
+spritelayout sl_st1_underground_entrance_stairs_y_2 {
+    ground {sprite: GROUNDSPRITE_RAIL_Y;}
+    building {
+        sprite: s_st1_underground_entrance_stairs_y_0;
+        xoffset: 0;  yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+    building {
+        sprite: s_st1_underground_entrance_stairs_y_1;
+        xoffset: 10; yoffset: 0;
+        zoffset: 0;  xextent: 6;
+        yextent: 16; zextent: 6;
+    }
+}
+if (param_stations) {
+    item (FEAT_STATIONS, stn_st1_underground_entrance_stairs_0) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_UNDERGROUND_ENTRANCE_STAIRS);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_underground_entrance_stairs_x_0, sl_st1_underground_entrance_stairs_y_0];
+            s_st1_underground_entrance_stairs_x_0;
+        }
+    }
+
+    item (FEAT_STATIONS, stn_st1_underground_entrance_stairs_1) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_UNDERGROUND_ENTRANCE_STAIRS);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_underground_entrance_stairs_x_1, sl_st1_underground_entrance_stairs_y_1];
+            s_st1_underground_entrance_stairs_x_0;
+        }
+    }
+
+    item (FEAT_STATIONS, stn_st1_underground_entrance_stairs_2) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_UNDERGROUND_ENTRANCE_STAIRS);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_underground_entrance_stairs_x_2, sl_st1_underground_entrance_stairs_y_2];
+            s_st1_underground_entrance_stairs_x_0;
+        }
+    }
+}

@@ -1,7 +1,12 @@
 ##grflangid 0x01
 //# important message!!! please only modify this file!!! DO NOT MODIFY english.lng!!!
-STR_OPENTTD         :{ABBRV} requires OpenTTD 14.0 or later. Please check your game installation.
+STR_OPENTTD         :{ABBRV} requires OpenTTD {OTTD_VER} or later. Please check your game installation.
 
+PARAM_ENABLE_WAYPOINTS          :Enable waypoints
+PARAM_ENABLE_WAYPOINTS_DESC     :Enable in-game waypoints.
+
+PARAM_ENABLE_STATIONS           :Enable stations
+PARAM_ENABLE_STATIONS_DESC      :Enable in-game stations.
 
 STR_GRF_NAME        :{TITLE} {VERSION}
 STR_GRF_DESC        :{WHITE}{DATE}{}{}{GOLD}{ABBRV}{BLACK} is a station set for OpenTTD.{}Made by WenSim.

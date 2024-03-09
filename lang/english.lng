@@ -1,10 +1,17 @@
 ##grflangid 0x01
-STR_OPENTTD :{ABBRV} requires OpenTTD 14.0 or later. Please check your game installation.
+STR_OPENTTD :{ABBRV} requires OpenTTD {OTTD_VER} or later. Please check your game installation.
+PARAM_ENABLE_WAYPOINTS :Enable waypoints
+PARAM_ENABLE_WAYPOINTS_DESC :Enable in-game waypoints.
+PARAM_ENABLE_STATIONS :Enable stations
+PARAM_ENABLE_STATIONS_DESC :Enable in-game stations.
 STR_GRF_NAME :{TITLE} {VERSION}
 STR_GRF_DESC :{WHITE}{DATE}{}{}{GOLD}{ABBRV}{BLACK} is a station set for OpenTTD.{}Made by WenSim.
 STR_GRF_URL :{URL}
 CLS_WSJ0 :{PUSH_COLOUR}{LTBLUE}{ABBRV}{POP_COLOUR} Generated Stations
 STN_ST1_CARGO_PLATFORM :Cargo platform
 STN_ST1_UNDERGROUND_ENTRANCE :Underground entrance
+STN_ST1_UNDERGROUND_ENTRANCE_STAIRS :Underground entrance stairs
+STN_WP1_CEMENT_BARRIER :Cement barrier
+STN_WP1_CEMENT_BARRIER_BRIDGE :Cement barrier bridge
 STN_WP1_STANDARD :Standard
 STN_WP1_TETSUBASHI :Tetsubashi

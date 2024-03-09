@@ -76,36 +76,37 @@ spritelayout sl_wp1_standard_y_2 {
         yextent: 16; zextent: 6;
     }
 }
+if (param_waypoints) {
+    item (FEAT_STATIONS, stn_wp1_standard_0) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_STANDARD);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_standard_x_0, sl_wp1_standard_y_0];
+            s_wp1_standard_x_0;
+        }
+    }
 
-item (FEAT_STATIONS, stn_wp1_standard_0) {
-    property {
-        class:          "WAYP";
-        name:           string(STN_WP1_STANDARD);
+    item (FEAT_STATIONS, stn_wp1_standard_1) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_STANDARD);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1];
+            s_wp1_standard_x_0;
+        }
     }
-    graphics {
-        sprite_layouts: [sl_wp1_standard_x_0, sl_wp1_standard_y_0];
-        s_wp1_standard_x_0;
-    }
-}
 
-item (FEAT_STATIONS, stn_wp1_standard_1) {
-    property {
-        class:          "WAYP";
-        name:           string(STN_WP1_STANDARD);
-    }
-    graphics {
-        sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1];
-        s_wp1_standard_x_0;
-    }
-}
-
-item (FEAT_STATIONS, stn_wp1_standard_2) {
-    property {
-        class:          "WAYP";
-        name:           string(STN_WP1_STANDARD);
-    }
-    graphics {
-        sprite_layouts: [sl_wp1_standard_x_2, sl_wp1_standard_y_2];
-        s_wp1_standard_x_0;
+    item (FEAT_STATIONS, stn_wp1_standard_2) {
+        property {
+            class:          "WAYP";
+            name:           string(STN_WP1_STANDARD);
+        }
+        graphics {
+            sprite_layouts: [sl_wp1_standard_x_2, sl_wp1_standard_y_2];
+            s_wp1_standard_x_0;
+        }
     }
 }

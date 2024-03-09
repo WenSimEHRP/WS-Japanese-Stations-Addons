@@ -1,8 +1,24 @@
 grf {
-   grfid:                  "WS\24\05";
-   name:                   string(STR_GRF_NAME);
-   desc:                   string(STR_GRF_DESC);
-   url:                    string(STR_GRF_URL);
-   version:                1;
-   min_compatible_version: 1;
+    grfid:      "WS\24\05";
+    name:       string(STR_GRF_NAME);
+    desc:       string(STR_GRF_DESC);
+    url:        string(STR_GRF_URL);
+    version:    1;
+    min_compatible_version:1;
+        param 0 {
+            param_waypoints {
+                type: bool;
+                def_value: 0;
+                name: string(PARAM_ENABLE_WAYPOINTS);
+                desc: string(PARAM_ENABLE_WAYPOINTS_DESC);
+            }
+        }
+        param 1 {
+            param_stations {
+                type: bool;
+                def_value: 1;
+                name: string(PARAM_ENABLE_STATIONS);
+                desc: string(PARAM_ENABLE_STATIONS_DESC);
+            }
+        }
 }

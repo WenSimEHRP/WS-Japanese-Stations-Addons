@@ -76,39 +76,40 @@ spritelayout sl_st1_cargo_platform_y_2 {
         yextent: 16; zextent: 6;
     }
 }
+if (param_stations) {
+    item (FEAT_STATIONS, stn_st1_cargo_platform_0) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_CARGO_PLATFORM);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_cargo_platform_x_0, sl_st1_cargo_platform_y_0];
+            s_st1_cargo_platform_x_0;
+        }
+    }
 
-item (FEAT_STATIONS, stn_st1_cargo_platform_0) {
-    property {
-        class:          "WSJ0";
-        classname:      string(CLS_WSJ0);
-        name:           string(STN_ST1_CARGO_PLATFORM);
+    item (FEAT_STATIONS, stn_st1_cargo_platform_1) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_CARGO_PLATFORM);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_cargo_platform_x_1, sl_st1_cargo_platform_y_1];
+            s_st1_cargo_platform_x_0;
+        }
     }
-    graphics {
-        sprite_layouts: [sl_st1_cargo_platform_x_0, sl_st1_cargo_platform_y_0];
-        s_st1_cargo_platform_x_0;
-    }
-}
 
-item (FEAT_STATIONS, stn_st1_cargo_platform_1) {
-    property {
-        class:          "WSJ0";
-        classname:      string(CLS_WSJ0);
-        name:           string(STN_ST1_CARGO_PLATFORM);
-    }
-    graphics {
-        sprite_layouts: [sl_st1_cargo_platform_x_1, sl_st1_cargo_platform_y_1];
-        s_st1_cargo_platform_x_0;
-    }
-}
-
-item (FEAT_STATIONS, stn_st1_cargo_platform_2) {
-    property {
-        class:          "WSJ0";
-        classname:      string(CLS_WSJ0);
-        name:           string(STN_ST1_CARGO_PLATFORM);
-    }
-    graphics {
-        sprite_layouts: [sl_st1_cargo_platform_x_2, sl_st1_cargo_platform_y_2];
-        s_st1_cargo_platform_x_0;
+    item (FEAT_STATIONS, stn_st1_cargo_platform_2) {
+        property {
+            class:          "WSJ0";
+            classname:      string(CLS_WSJ0);
+            name:           string(STN_ST1_CARGO_PLATFORM);
+        }
+        graphics {
+            sprite_layouts: [sl_st1_cargo_platform_x_2, sl_st1_cargo_platform_y_2];
+            s_st1_cargo_platform_x_0;
+        }
     }
 }
