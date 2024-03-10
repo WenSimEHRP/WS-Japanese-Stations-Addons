@@ -1,12 +1,9 @@
-spriteset(s_%name_x_0) {t_platform_extended_0  ("%name")}
-spriteset(s_%name_y_0) {t_platform_extended_6  ("%name")}
-spriteset(s_%name_x_1) {t_platform_extended_1  ("%name")}
-spriteset(s_%name_y_1) {t_platform_extended_7  ("%name")}
-spriteset(s_%name_x_2) {t_platform_extended_2  ("%name")}
-spriteset(s_%name_y_2) {t_platform_extended_8  ("%name")}
-spriteset(s_%name_x_3) {t_platform_extended_3  ("%name")}
-spriteset(s_%name_y_3) {t_platform_extended_9  ("%name")}
-spriteset(s_%name_x_4) {t_platform_extended_4  ("%name")}
-spriteset(s_%name_y_4) {t_platform_extended_10 ("%name")}
-spriteset(s_%name_x_5) {t_platform_extended_5  ("%name")}
-spriteset(s_%name_y_5) {t_platform_extended_11 ("%name")}
+#define SPRITESET_EXTENDED(num0, num1)\
+spriteset(s_%name_##num0) {x:t_platform_extended_##num0 ("%name") y:t_platform_extended_##num1  ("%name")}\
+
+SPRITESET_EXTENDED(0, 6)
+SPRITESET_EXTENDED(1, 7)
+SPRITESET_EXTENDED(2, 8)
+SPRITESET_EXTENDED(3, 9)
+SPRITESET_EXTENDED(4, 10)
+SPRITESET_EXTENDED(5, 11)

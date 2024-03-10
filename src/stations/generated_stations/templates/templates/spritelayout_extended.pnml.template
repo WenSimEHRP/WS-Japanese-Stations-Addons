@@ -1,9 +1,9 @@
 #define SPRITELAYOUT_PLAT(Utype, type, num, _xoffset, _yoffset, _zoffset,  \
-                                _xextent, _yextent, _zextent)              \
+                                            _xextent, _yextent, _zextent)  \
 spritelayout sl_%name_##type##_##num {                                     \
     ground {sprite: GROUNDSPRITE_RAIL_##Utype;}                            \
     building {                                                             \
-        sprite: s_%name_##type##_##num;                                    \
+        sprite: s_%name_##num(type);                                       \
         xoffset: _xoffset;  yoffset: _yoffset;                             \
         zoffset: _zoffset;  xextent: _xextent;                             \
         yextent: _yextent;  zextent: _zextent;                             \
@@ -11,19 +11,19 @@ spritelayout sl_%name_##type##_##num {                                     \
 }                                                                          \
 
 #define SPRITELAYOUT_DUAL(Utype, type, sp1, sp2, _xoffset, _yoffset, _zoffset, \
-                                _xextent, _yextent, _zextent,                  \
-                                $xoffset, $yoffset, $zoffset,                  \
-                                $xextent, $yextent, $zextent)                  \
+                                                 _xextent, _yextent, _zextent, \
+                                                 $xoffset, $yoffset, $zoffset, \
+                                                 $xextent, $yextent, $zextent) \
 spritelayout sl_%name_##type##_##sp1##sp2 {                                    \
     ground {sprite: GROUNDSPRITE_RAIL_##Utype;}                                \
     building {                                                                 \
-        sprite: s_%name_##type##_##sp1;                                        \
+        sprite: s_%name_##sp1(type);                                           \
         xoffset: _xoffset;  yoffset: _yoffset;                                 \
         zoffset: _zoffset;  xextent: _xextent;                                 \
         yextent: _yextent;  zextent: _zextent;                                 \
     }                                                                          \
     building {                                                                 \
-        sprite: s_%name_##type##_##sp2;                                        \
+        sprite: s_%name_##sp2(type);                                           \
         xoffset: $xoffset;  yoffset: $yoffset;                                 \
         zoffset: $zoffset;  xextent: $xextent;                                 \
         yextent: $yextent;  zextent: $zextent;                                 \
@@ -48,218 +48,3 @@ SPRITELAYOUT_PLAT(X, x, 5, 0, 10, 0, 16, 6, 6)
 SPRITELAYOUT_PLAT(Y, y, 5, 10, 0, 0, 6, 16, 6)
 SPRITELAYOUT_DUAL(X, x, 4, 5, 0, 0, 0, 16, 6, 6, 0, 10, 0, 16, 6, 6)
 SPRITELAYOUT_DUAL(Y, y, 4, 5, 0, 0, 0, 6, 16, 6, 10, 0, 0, 6, 16, 6)
-/*
-spritelayout sl_%name_x_0 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_0 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_1 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_1 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_1;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_01 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-    building {
-        sprite: s_%name_x_1;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_01 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_0;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-    building {
-        sprite: s_%name_y_1;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-spritelayout sl_%name_x_2 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_2;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_2 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_2;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_3 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_3;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_3 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_3;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_23 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_2;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-    building {
-        sprite: s_%name_x_3;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_23 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_2;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-    building {
-        sprite: s_%name_y_3;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-spritelayout sl_%name_x_4 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_4;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_4 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_4;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_5 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_5;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_5 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_5;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-
-spritelayout sl_%name_x_45 {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    building {
-        sprite: s_%name_x_4;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-    building {
-        sprite: s_%name_x_5;
-        xoffset: 0;  yoffset: 10;
-        zoffset: 0;  xextent: 16;
-        yextent: 6;  zextent: 6;
-    }
-}
-
-spritelayout sl_%name_y_45 {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    building {
-        sprite: s_%name_y_4;
-        xoffset: 0;  yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-    building {
-        sprite: s_%name_y_5;
-        xoffset: 10; yoffset: 0;
-        zoffset: 0;  xextent: 6;
-        yextent: 16; zextent: 6;
-    }
-}
-*/

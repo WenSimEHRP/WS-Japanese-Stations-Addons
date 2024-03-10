@@ -6,7 +6,7 @@ item (FEAT_STATIONS, stn_%name_##num) {                         \
     }                                                           \
     graphics {                                                  \
         sprite_layouts: [sl_%name_x_##num, sl_%name_y_##num];   \
-        s_%name_x_0;                                            \
+        s_%name_0;                                              \
     }                                                           \
 }                                                               \
 

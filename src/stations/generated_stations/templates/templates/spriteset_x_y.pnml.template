@@ -1,4 +1,2 @@
-spriteset(s_%name_x_0) {t_platform_0("%name")}
-spriteset(s_%name_x_1) {t_platform_1("%name")}
-spriteset(s_%name_y_0) {t_platform_2("%name")}
-spriteset(s_%name_y_1) {t_platform_3("%name")}
+spriteset(s_%name_0) {x:t_platform_0("%name") y:t_platform_2("%name")}
+spriteset(s_%name_1) {x:t_platform_1("%name") y:t_platform_3("%name")}
