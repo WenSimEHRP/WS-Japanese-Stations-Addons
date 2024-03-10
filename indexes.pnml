@@ -5,6 +5,8 @@
 #include "src\stations\generated_stations\st2_extended_platform.pnml"
 #include "src\stations\generated_stations\st2_extended_platform_white.pnml"
 #include "src\stations\generated_stations\st2_extended_platform_yellow.pnml"
+#include "src\stations\generated_stations\wp132_glass_sound_barrier.pnml"
+#include "src\stations\generated_stations\wp132_glass_sound_barrier_track_edge.pnml"
 #include "src\stations\generated_stations\wp1_cement_barrier.pnml"
 #include "src\stations\generated_stations\wp1_cement_barrier_bridge.pnml"
 #include "src\stations\generated_stations\wp1_standard.pnml"

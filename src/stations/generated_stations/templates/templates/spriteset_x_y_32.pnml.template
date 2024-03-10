@@ -1,0 +1,2 @@
+spriteset(s_%name_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_0("%name") y:t_platform_2("%name")}
+spriteset(s_%name_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_1("%name") y:t_platform_3("%name")}

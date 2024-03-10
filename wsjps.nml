@@ -310,6 +310,62 @@ item (FEAT_STATIONS, stn_st2_extended_platform_yellow_45) { property { class: "W
 # 5 ".\\_index_st2.pnml.template" 2
 }
 # 8 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\wp132_glass_sound_barrier.pnml" 1
+# 1 ".\\_index_wp132.pnml.template"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\_index_wp132.pnml.template"
+# 1 ".\\templates/spriteset_x_y_32.pnml.template" 1
+spriteset(s_wp132_glass_sound_barrier_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_0("wp132_glass_sound_barrier") y:t_platform_2("wp132_glass_sound_barrier")}
+spriteset(s_wp132_glass_sound_barrier_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_1("wp132_glass_sound_barrier") y:t_platform_3("wp132_glass_sound_barrier")}
+# 2 ".\\_index_wp132.pnml.template" 2
+# 1 ".\\templates/spritelayout_x_y.pnml.template" 1
+# 33 ".\\templates/spritelayout_x_y.pnml.template"
+spritelayout sl_wp132_glass_sound_barrier_x_0 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_wp132_glass_sound_barrier_0(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_y_0 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_wp132_glass_sound_barrier_0(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_x_1 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_wp132_glass_sound_barrier_1(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_y_1 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_wp132_glass_sound_barrier_1(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_x_01 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_wp132_glass_sound_barrier_0(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_wp132_glass_sound_barrier_1(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_y_01 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_wp132_glass_sound_barrier_0(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_wp132_glass_sound_barrier_1(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+# 3 ".\\_index_wp132.pnml.template" 2
+
+if (param_waypoints) {
+# 1 ".\\templates/item_waypoint_x_y.pnml.template" 1
+# 13 ".\\templates/item_waypoint_x_y.pnml.template"
+item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_0) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_x_0, sl_wp132_glass_sound_barrier_y_0]; s_wp132_glass_sound_barrier_0; } }
+item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_1) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_x_1, sl_wp132_glass_sound_barrier_y_1]; s_wp132_glass_sound_barrier_0; } }
+item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_01) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_x_01, sl_wp132_glass_sound_barrier_y_01]; s_wp132_glass_sound_barrier_0; } }
+# 6 ".\\_index_wp132.pnml.template" 2
+}
+# 9 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\wp132_glass_sound_barrier_track_edge.pnml" 1
+# 1 ".\\_index_wp132.pnml.template"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\_index_wp132.pnml.template"
+# 1 ".\\templates/spriteset_x_y_32.pnml.template" 1
+spriteset(s_wp132_glass_sound_barrier_track_edge_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_0("wp132_glass_sound_barrier_track_edge") y:t_platform_2("wp132_glass_sound_barrier_track_edge")}
+spriteset(s_wp132_glass_sound_barrier_track_edge_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_1("wp132_glass_sound_barrier_track_edge") y:t_platform_3("wp132_glass_sound_barrier_track_edge")}
+# 2 ".\\_index_wp132.pnml.template" 2
+# 1 ".\\templates/spritelayout_x_y.pnml.template" 1
+# 33 ".\\templates/spritelayout_x_y.pnml.template"
+spritelayout sl_wp132_glass_sound_barrier_track_edge_x_0 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_wp132_glass_sound_barrier_track_edge_0(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_track_edge_y_0 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_wp132_glass_sound_barrier_track_edge_0(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_track_edge_x_1 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_wp132_glass_sound_barrier_track_edge_1(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_track_edge_y_1 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_wp132_glass_sound_barrier_track_edge_1(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_track_edge_x_01 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_wp132_glass_sound_barrier_track_edge_0(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_wp132_glass_sound_barrier_track_edge_1(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
+spritelayout sl_wp132_glass_sound_barrier_track_edge_y_01 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_wp132_glass_sound_barrier_track_edge_0(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_wp132_glass_sound_barrier_track_edge_1(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
+# 3 ".\\_index_wp132.pnml.template" 2
+
+if (param_waypoints) {
+# 1 ".\\templates/item_waypoint_x_y.pnml.template" 1
+# 13 ".\\templates/item_waypoint_x_y.pnml.template"
+item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_track_edge_0) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_track_edge_x_0, sl_wp132_glass_sound_barrier_track_edge_y_0]; s_wp132_glass_sound_barrier_track_edge_0; } }
+item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_track_edge_1) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_track_edge_x_1, sl_wp132_glass_sound_barrier_track_edge_y_1]; s_wp132_glass_sound_barrier_track_edge_0; } }
+item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_track_edge_01) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_track_edge_x_01, sl_wp132_glass_sound_barrier_track_edge_y_01]; s_wp132_glass_sound_barrier_track_edge_0; } }
+# 6 ".\\_index_wp132.pnml.template" 2
+}
+# 10 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_cement_barrier.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -337,7 +393,7 @@ item (FEAT_STATIONS, stn_wp1_cement_barrier_1) { property { class: "WAYP"; name:
 item (FEAT_STATIONS, stn_wp1_cement_barrier_01) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER); } graphics { sprite_layouts: [sl_wp1_cement_barrier_x_01, sl_wp1_cement_barrier_y_01]; s_wp1_cement_barrier_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 9 "indexes.pnml" 2
+# 11 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_cement_barrier_bridge.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -365,7 +421,7 @@ item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_1) { property { class: "WAYP"
 item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_01) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER_BRIDGE); } graphics { sprite_layouts: [sl_wp1_cement_barrier_bridge_x_01, sl_wp1_cement_barrier_bridge_y_01]; s_wp1_cement_barrier_bridge_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 10 "indexes.pnml" 2
+# 12 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_standard.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -393,7 +449,7 @@ item (FEAT_STATIONS, stn_wp1_standard_1) { property { class: "WAYP"; name: strin
 item (FEAT_STATIONS, stn_wp1_standard_01) { property { class: "WAYP"; name: string(STN_WP1_STANDARD); } graphics { sprite_layouts: [sl_wp1_standard_x_01, sl_wp1_standard_y_01]; s_wp1_standard_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 11 "indexes.pnml" 2
+# 13 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_tetsubashi.pnml" 1
 # 1 ".\\_index_wp1.pnml.template"
 # 1 "<built-in>"
@@ -421,5 +477,5 @@ item (FEAT_STATIONS, stn_wp1_tetsubashi_1) { property { class: "WAYP"; name: str
 item (FEAT_STATIONS, stn_wp1_tetsubashi_01) { property { class: "WAYP"; name: string(STN_WP1_TETSUBASHI); } graphics { sprite_layouts: [sl_wp1_tetsubashi_x_01, sl_wp1_tetsubashi_y_01]; s_wp1_tetsubashi_0; } }
 # 6 ".\\_index_wp1.pnml.template" 2
 }
-# 12 "indexes.pnml" 2
+# 14 "indexes.pnml" 2
 # 5 "wsjps.pnml" 2
