@@ -1,0 +1,10 @@
+#define SPRITESET_EXTENDED(num0, num1)                                          \
+spriteset(s_%name_##num0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP)                   \
+{x:t_platform_extended_##num0 ("%name") y:t_platform_extended_##num1  ("%name")}\
+
+SPRITESET_EXTENDED(0, 6)
+SPRITESET_EXTENDED(1, 7)
+SPRITESET_EXTENDED(2, 8)
+SPRITESET_EXTENDED(3, 9)
+SPRITESET_EXTENDED(4, 10)
+SPRITESET_EXTENDED(5, 11)
