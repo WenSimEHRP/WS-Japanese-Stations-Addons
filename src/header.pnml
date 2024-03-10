@@ -21,4 +21,12 @@ grf {
                 desc: string(PARAM_ENABLE_STATIONS_DESC);
             }
         }
+        param 2 {
+            param_extended_stations {
+                type: bool;
+                def_value: 0;
+                name: string(PARAM_ENABLE_EXTENDED_STATIONS);
+                desc: string(PARAM_ENABLE_EXTENDED_STATIONS_DESC);
+            }
+        }
 }

@@ -1,5 +1,5 @@
 #include "templates/spriteset_extended.pnml.template"
 #include "templates/spritelayout_extended.pnml.template"
-if (param_stations) {
+if (param_stations && param_extended_stations) {
     #include "templates/item_station_extended.pnml.template"
 }

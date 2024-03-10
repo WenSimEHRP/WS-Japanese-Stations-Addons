@@ -26,6 +26,14 @@ grf {
                 desc: string(PARAM_ENABLE_STATIONS_DESC);
             }
         }
+        param 2 {
+            param_extended_stations {
+                type: bool;
+                def_value: 0;
+                name: string(PARAM_ENABLE_EXTENDED_STATIONS);
+                desc: string(PARAM_ENABLE_EXTENDED_STATIONS_DESC);
+            }
+        }
 }
 # 2 "wsjps.pnml" 2
 # 1 "src/version_check.pnml" 1
@@ -183,7 +191,7 @@ spritelayout sl_st2_extended_platform_y_5 { ground {sprite: GROUNDSPRITE_RAIL_Y;
 spritelayout sl_st2_extended_platform_x_45 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_4(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_5(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
 spritelayout sl_st2_extended_platform_y_45 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_4(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_5(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
 # 3 ".\\_index_st2.pnml.template" 2
-if (param_stations) {
+if (param_stations && param_extended_stations) {
 # 1 ".\\templates/item_station_extended.pnml.template" 1
 # 14 ".\\templates/item_station_extended.pnml.template"
 item (FEAT_STATIONS, stn_st2_extended_platform_0) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM); } graphics { sprite_layouts: [sl_st2_extended_platform_x_0, sl_st2_extended_platform_y_0]; s_st2_extended_platform_0; } }
@@ -235,7 +243,7 @@ spritelayout sl_st2_extended_platform_white_y_5 { ground {sprite: GROUNDSPRITE_R
 spritelayout sl_st2_extended_platform_white_x_45 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_white_4(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_white_5(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
 spritelayout sl_st2_extended_platform_white_y_45 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_white_4(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_white_5(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
 # 3 ".\\_index_st2.pnml.template" 2
-if (param_stations) {
+if (param_stations && param_extended_stations) {
 # 1 ".\\templates/item_station_extended.pnml.template" 1
 # 14 ".\\templates/item_station_extended.pnml.template"
 item (FEAT_STATIONS, stn_st2_extended_platform_white_0) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_0, sl_st2_extended_platform_white_y_0]; s_st2_extended_platform_white_0; } }
@@ -287,7 +295,7 @@ spritelayout sl_st2_extended_platform_yellow_y_5 { ground {sprite: GROUNDSPRITE_
 spritelayout sl_st2_extended_platform_yellow_x_45 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_st2_extended_platform_yellow_4(x); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_5(x); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
 spritelayout sl_st2_extended_platform_yellow_y_45 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_st2_extended_platform_yellow_4(y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_st2_extended_platform_yellow_5(y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
 # 3 ".\\_index_st2.pnml.template" 2
-if (param_stations) {
+if (param_stations && param_extended_stations) {
 # 1 ".\\templates/item_station_extended.pnml.template" 1
 # 14 ".\\templates/item_station_extended.pnml.template"
 item (FEAT_STATIONS, stn_st2_extended_platform_yellow_0) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_0, sl_st2_extended_platform_yellow_y_0]; s_st2_extended_platform_yellow_0; } }
