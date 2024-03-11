@@ -1,4 +1,5 @@
 import glob
+import os
 
 def read_indexes(path: str, filetype = 'pnml') -> list[str]:
     return glob.glob(path + '/**/*.' + filetype, recursive=True)
@@ -12,7 +13,10 @@ def write_file(path: str, data: list[str]) -> None:
         file.writelines(data)
 
 def main():
-    indexes = read_indexes('src\stations')
+    if os.name == 'nt':
+        indexes = read_indexes('src\stations')
+    else:
+        indexes = read_indexes('src/stations')
     # output_data = read_file('wsjps.pnml')
     output_data = []
     for index in indexes:

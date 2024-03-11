@@ -101,8 +101,10 @@ def main():
 
     files = GetFileList('src/stations/generated_stations/gfx', 'png')
     #files_original_name = [file.split('\\')[-1].split('.')[0] for file in files if 'snow' not in file.lower()]
-    files_original_name = [file.split('\\')[-1].split('.')[0] for file in files]
-
+    if os.name == 'nt': # why would windows do that???
+        files_original_name = [file.split('\\')[-1].split('.')[0] for file in files]
+    else:
+        files_original_name = [file.split('/')[-1].split('.')[0] for file in files]
     for file in files_original_name:
         # create the new files
         file_data = ProcessPnmlFile(f'src/stations/generated_stations/templates/{file.split("_")[0]}.pnml.template', [file, file.split('_')[0]])
