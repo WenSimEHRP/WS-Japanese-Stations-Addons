@@ -1,2 +1,9 @@
-spriteset(s_%name_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_0("%name") y:t_platform_2("%name")}
-spriteset(s_%name_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {x:t_platform_1("%name") y:t_platform_3("%name")}
+#define SPRITESET_PLAT(num0, num1)                                  \
+spriteset(s_%name0_##num0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {    \
+    X:     t_platform_##num0("%name0")                              \
+    Y:     t_platform_##num1("%name0")                              \
+    X_snow:t_platform_##num0("snow_%name0")                         \
+    Y_snow:t_platform_##num1("snow_%name0")}                        \
+
+SPRITESET_PLAT(0, 2)
+SPRITESET_PLAT(1, 3)

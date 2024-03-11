@@ -1,9 +1,18 @@
 #define SPRITELAYOUT_PLAT(Utype, type, num, _xoffset, _yoffset, _zoffset,  \
                                             _xextent, _yextent, _zextent)  \
-spritelayout sl_%name_##type##_##num {                                     \
+spritelayout sl_%name0_##type##_##num {                                    \
     ground {sprite: GROUNDSPRITE_RAIL_##Utype;}                            \
     building {                                                             \
-        sprite: s_%name_##num(type);                                       \
+        sprite: s_%name0_##num(Utype);                                     \
+        xoffset: _xoffset;  yoffset: _yoffset;                             \
+        zoffset: _zoffset;  xextent: _xextent;                             \
+        yextent: _yextent;  zextent: _zextent;                             \
+    }                                                                      \
+}                                                                          \
+spritelayout sl_%name0_##type##_##num##_snow {                             \
+    ground {sprite: GROUNDSPRITE_RAIL_##Utype + 26;}                       \
+    building {                                                             \
+        sprite: s_%name0_##num(Utype##_snow);                              \
         xoffset: _xoffset;  yoffset: _yoffset;                             \
         zoffset: _zoffset;  xextent: _xextent;                             \
         yextent: _yextent;  zextent: _zextent;                             \
@@ -14,16 +23,31 @@ spritelayout sl_%name_##type##_##num {                                     \
                                                  _xextent, _yextent, _zextent, \
                                                  $xoffset, $yoffset, $zoffset, \
                                                  $xextent, $yextent, $zextent) \
-spritelayout sl_%name_##type##_##sp1##sp2 {                                    \
+spritelayout sl_%name0_##type##_##sp1##sp2 {                                   \
     ground {sprite: GROUNDSPRITE_RAIL_##Utype;}                                \
     building {                                                                 \
-        sprite: s_%name_##sp1(type);                                           \
+        sprite: s_%name0_##sp1(Utype);                                         \
         xoffset: _xoffset;  yoffset: _yoffset;                                 \
         zoffset: _zoffset;  xextent: _xextent;                                 \
         yextent: _yextent;  zextent: _zextent;                                 \
     }                                                                          \
     building {                                                                 \
-        sprite: s_%name_##sp2(type);                                           \
+        sprite: s_%name0_##sp2(Utype);                                         \
+        xoffset: $xoffset;  yoffset: $yoffset;                                 \
+        zoffset: $zoffset;  xextent: $xextent;                                 \
+        yextent: $yextent;  zextent: $zextent;                                 \
+    }                                                                          \
+}                                                                              \
+spritelayout sl_%name0_##type##_##sp1##sp2##_snow {                            \
+    ground {sprite: GROUNDSPRITE_RAIL_##Utype + 26;}                           \
+    building {                                                                 \
+        sprite: s_%name0_##sp1(Utype##_snow);                                  \
+        xoffset: _xoffset;  yoffset: _yoffset;                                 \
+        zoffset: _zoffset;  xextent: _xextent;                                 \
+        yextent: _yextent;  zextent: _zextent;                                 \
+    }                                                                          \
+    building {                                                                 \
+        sprite: s_%name0_##sp2(Utype##_snow);                                  \
         xoffset: $xoffset;  yoffset: $yoffset;                                 \
         zoffset: $zoffset;  xextent: $xextent;                                 \
         yextent: $yextent;  zextent: $zextent;                                 \

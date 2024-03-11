@@ -1,15 +1,22 @@
-#define ITEM_STATION(num)                                       \
-item (FEAT_STATIONS, stn_%name_##num) {                         \
-    property {                                                  \
-        class:          "WSJ0";                                 \
-        classname:      string(CLS_WSJ0);                       \
-        name:           string(STN_$name);                      \
-    }                                                           \
-    graphics {                                                  \
-        sprite_layouts: [sl_%name_x_##num, sl_%name_y_##num];   \
-        s_%name_0;                                              \
-    }                                                           \
-}                                                               \
+#define ITEM_STATION(num)                                           \
+switch (FEAT_STATIONS, SELF, sw_%name0_##num##_snow, terrain_type){ \
+    TILETYPE_SNOW: return 2;                                        \
+    0;                                                              \
+}                                                                   \
+item (FEAT_STATIONS, stn_%name0_##num) {                            \
+    property {                                                      \
+        class:          "WSJ0";                                     \
+        classname:      string(CLS_WSJ0);                           \
+        name:           string(STN_$name0);                         \
+    }                                                               \
+    graphics {                                                      \
+        sprite_layouts: [sl_%name0_x_##num, sl_%name0_y_##num,      \
+                         sl_%name0_x_##num##_snow,                  \
+                         sl_%name0_y_##num##_snow];                 \
+        select_sprite_layout: sw_%name0_##num##_snow;               \
+        s_%name0_0;                                                 \
+    }                                                               \
+}                                                                   \
 
 ITEM_STATION(0)
 ITEM_STATION(1)

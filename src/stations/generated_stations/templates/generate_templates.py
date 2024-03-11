@@ -7,6 +7,14 @@ script_path = os.path.abspath(__file__)
 script_dir = os.path.dirname(script_path)
 os.chdir(script_dir)
 
+def DeleteFiles(path, type, prefix = '', suffix = ''):
+    '''
+    receives: path string, type string, prefix string, suffix string
+    returns: None, deletes files from path with the given type, prefix and suffix
+    '''
+    for file in glob.glob(f'{path}/{prefix}*{suffix}.{type}'):
+        os.remove(file)
+
 def GetFileList(path, type, prefix = '', suffix = ''):
     '''
     receives: path string, type string, prefix string, suffix string
@@ -16,9 +24,10 @@ def GetFileList(path, type, prefix = '', suffix = ''):
     return files if files else []
 
 def main():
-    files = GetFileList('.', 'template', '_index')
+    DeleteFiles('.', 'pnml.template')
+    files = GetFileList('.', 'index')
     for file in files:
-        subprocess.run(['gcc', '-E', '-x', 'c', '-o', file.replace('_index_',''), file])
+        subprocess.run(['gcc', '-E', '-x', 'c', '-o', file.replace('.index',''), file])
     print('Templates generated')
 
 if __name__ == '__main__':
