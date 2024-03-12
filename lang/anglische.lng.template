@@ -13,7 +13,10 @@ STR_GRF_NAME        :{TITLE} {VERSION}
 STR_GRF_DESC        :{WHITE}{DATE}{}{}{GOLD}{ABBRV}{BLACK} is a station set for OpenTTD.{}Made by WenSim.
 STR_GRF_URL         :{URL}
 
+CLS_WSJT            :{PUSH_COLOUR}{LTBLUE}{ABBRV}{POP_COLOUR} Test Stations
 CLS_WSJ0            :{PUSH_COLOUR}{LTBLUE}{ABBRV}{POP_COLOUR} Platform Components
 CLS_WSJ1            :{PUSH_COLOUR}{LTBLUE}{ABBRV}{POP_COLOUR} Extended Platforms
+
+STN_TEST_STATION    :Test Station
 
 #include "../src/stations/generated_stations/stations.lng"

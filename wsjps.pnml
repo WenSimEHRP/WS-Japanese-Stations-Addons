@@ -2,4 +2,6 @@
 #include "src/version_check.pnml"
 #include "src/templates.pnml"
 
+#include "testing.nml"
+
 #include "indexes.pnml"

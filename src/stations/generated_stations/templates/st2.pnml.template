@@ -1,11 +1,8 @@
-# 1 "./st2.pnml.template.index"
+# 1 ".\\st2.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 31 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 32 "<command-line>" 2
-# 1 "./st2.pnml.template.index"
-# 1 "./templates/spriteset_extended.pnml.template" 1
+# 1 ".\\st2.pnml.template.index"
+# 1 ".\\templates/spriteset_extended.pnml.template" 1
 
 
 
@@ -19,9 +16,9 @@ spriteset(s_%name0_2) { X: t_platform_extended_2("%name0") Y: t_platform_extende
 spriteset(s_%name0_3) { X: t_platform_extended_3("%name0") Y: t_platform_extended_9("%name0") X_snow:t_platform_extended_3("snow_%name0") Y_snow:t_platform_extended_9("snow_%name0")}
 spriteset(s_%name0_4) { X: t_platform_extended_4("%name0") Y: t_platform_extended_10("%name0") X_snow:t_platform_extended_4("snow_%name0") Y_snow:t_platform_extended_10("snow_%name0")}
 spriteset(s_%name0_5) { X: t_platform_extended_5("%name0") Y: t_platform_extended_11("%name0") X_snow:t_platform_extended_5("snow_%name0") Y_snow:t_platform_extended_11("snow_%name0")}
-# 2 "./st2.pnml.template.index" 2
-# 1 "./templates/spritelayout_extended.pnml.template" 1
-# 57 "./templates/spritelayout_extended.pnml.template"
+# 2 ".\\st2.pnml.template.index" 2
+# 1 ".\\templates/spritelayout_extended.pnml.template" 1
+# 57 ".\\templates/spritelayout_extended.pnml.template"
 spritelayout sl_%name0_x_0 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_%name0_0(X); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } } spritelayout sl_%name0_x_0_snow { ground {sprite: GROUNDSPRITE_RAIL_X + 26;} building { sprite: s_%name0_0(X_snow); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
 spritelayout sl_%name0_y_0 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_%name0_0(Y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } } spritelayout sl_%name0_y_0_snow { ground {sprite: GROUNDSPRITE_RAIL_Y + 26;} building { sprite: s_%name0_0(Y_snow); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
 spritelayout sl_%name0_x_1 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_%name0_1(X); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } } spritelayout sl_%name0_x_1_snow { ground {sprite: GROUNDSPRITE_RAIL_X + 26;} building { sprite: s_%name0_1(X_snow); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
@@ -40,10 +37,10 @@ spritelayout sl_%name0_x_5 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sp
 spritelayout sl_%name0_y_5 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_%name0_5(Y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } } spritelayout sl_%name0_y_5_snow { ground {sprite: GROUNDSPRITE_RAIL_Y + 26;} building { sprite: s_%name0_5(Y_snow); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
 spritelayout sl_%name0_x_45 { ground {sprite: GROUNDSPRITE_RAIL_X;} building { sprite: s_%name0_4(X); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_%name0_5(X); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } } spritelayout sl_%name0_x_45_snow { ground {sprite: GROUNDSPRITE_RAIL_X + 26;} building { sprite: s_%name0_4(X_snow); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } building { sprite: s_%name0_5(X_snow); xoffset: 0; yoffset: 10; zoffset: 0; xextent: 16; yextent: 6; zextent: 6; } }
 spritelayout sl_%name0_y_45 { ground {sprite: GROUNDSPRITE_RAIL_Y;} building { sprite: s_%name0_4(Y); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_%name0_5(Y); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } } spritelayout sl_%name0_y_45_snow { ground {sprite: GROUNDSPRITE_RAIL_Y + 26;} building { sprite: s_%name0_4(Y_snow); xoffset: 0; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } building { sprite: s_%name0_5(Y_snow); xoffset: 10; yoffset: 0; zoffset: 0; xextent: 6; yextent: 16; zextent: 6; } }
-# 3 "./st2.pnml.template.index" 2
+# 3 ".\\st2.pnml.template.index" 2
 
-# 1 "./templates/item_station_extended.pnml.template" 1
-# 21 "./templates/item_station_extended.pnml.template"
+# 1 ".\\templates/item_station_extended.pnml.template" 1
+# 21 ".\\templates/item_station_extended.pnml.template"
 switch (FEAT_STATIONS, SELF, sw_%name0_0_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_%name0_0) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_$name0); } graphics { sprite_layouts: [sl_%name0_x_0, sl_%name0_y_0, sl_%name0_x_0_snow, sl_%name0_y_0_snow]; select_sprite_layout: sw_%name0_0_snow; s_%name0_0; } }
 switch (FEAT_STATIONS, SELF, sw_%name0_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_%name0_1) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_$name0); } graphics { sprite_layouts: [sl_%name0_x_1, sl_%name0_y_1, sl_%name0_x_1_snow, sl_%name0_y_1_snow]; select_sprite_layout: sw_%name0_1_snow; s_%name0_0; } }
 switch (FEAT_STATIONS, SELF, sw_%name0_2_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_%name0_2) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_$name0); } graphics { sprite_layouts: [sl_%name0_x_2, sl_%name0_y_2, sl_%name0_x_2_snow, sl_%name0_y_2_snow]; select_sprite_layout: sw_%name0_2_snow; s_%name0_0; } }
@@ -53,4 +50,4 @@ switch (FEAT_STATIONS, SELF, sw_%name0_5_snow, terrain_type){ TILETYPE_SNOW: ret
 switch (FEAT_STATIONS, SELF, sw_%name0_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_%name0_01) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_$name0); } graphics { sprite_layouts: [sl_%name0_x_01, sl_%name0_y_01, sl_%name0_x_01_snow, sl_%name0_y_01_snow]; select_sprite_layout: sw_%name0_01_snow; s_%name0_0; } }
 switch (FEAT_STATIONS, SELF, sw_%name0_23_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_%name0_23) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_$name0); } graphics { sprite_layouts: [sl_%name0_x_23, sl_%name0_y_23, sl_%name0_x_23_snow, sl_%name0_y_23_snow]; select_sprite_layout: sw_%name0_23_snow; s_%name0_0; } }
 switch (FEAT_STATIONS, SELF, sw_%name0_45_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_%name0_45) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_$name0); } graphics { sprite_layouts: [sl_%name0_x_45, sl_%name0_y_45, sl_%name0_x_45_snow, sl_%name0_y_45_snow]; select_sprite_layout: sw_%name0_45_snow; s_%name0_0; } }
-# 5 "./st2.pnml.template.index" 2
+# 5 ".\\st2.pnml.template.index" 2

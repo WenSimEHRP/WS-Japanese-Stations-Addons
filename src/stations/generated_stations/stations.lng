@@ -1,25 +1,27 @@
-STN_ST1_CARGO_PLATFORM                                          :Cargo platform
-STN_ST1_UNDERGROUND_ENTRANCE                                    :Underground entrance
-STN_ST2_EXTENDED_PLATFORM_YELLOW                                :Extended platform yellow
+STN_DEC_BARRIER                                                 :Barrier
+STN_DEC_TEST_STATION_FENCE                                      :Test station fence
+STN_SNOW_ST1                                                    :St1
 STN_SNOW_ST1_CARGO_PLATFORM                                     :St1 cargo platform
 STN_SNOW_ST1_UNDERGROUND_ENTRANCE                               :St1 underground entrance
-STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE                        :Glass sound barrier track edge
+STN_SNOW_ST1_UNDERGROUND_ENTRANCE_STAIRS                        :St1 underground entrance stairs
+STN_SNOW_ST2_EXTENDED_PLATFORM                                  :St2 extended platform
+STN_SNOW_ST2_EXTENDED_PLATFORM_WHITE                            :St2 extended platform white
+STN_SNOW_ST2_EXTENDED_PLATFORM_YELLOW                           :St2 extended platform yellow
 STN_SNOW_WP132_GLASS_SOUND_BARRIER                              :Wp132 glass sound barrier
 STN_SNOW_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE                   :Wp132 glass sound barrier track edge
-STN_WP1_CEMENT_BARRIER_BRIDGE                                   :Cement barrier bridge
-STN_WP132_GLASS_SOUND_BARRIER                                   :Glass sound barrier
-STN_SNOW_ST1_UNDERGROUND_ENTRANCE_STAIRS                        :St1 underground entrance stairs
-STN_SNOW_ST1                                                    :St1
-STN_SNOW_ST2_EXTENDED_PLATFORM_YELLOW                           :St2 extended platform yellow
 STN_SNOW_WP1_CEMENT_BARRIER                                     :Wp1 cement barrier
-STN_SNOW_WP1_STANDARD                                           :Wp1 standard
 STN_SNOW_WP1_CEMENT_BARRIER_BRIDGE                              :Wp1 cement barrier bridge
-STN_ST2_EXTENDED_PLATFORM                                       :Extended platform
-STN_SNOW_ST2_EXTENDED_PLATFORM_WHITE                            :St2 extended platform white
-STN_WP1_STANDARD                                                :Standard
-STN_ST1_UNDERGROUND_ENTRANCE_STAIRS                             :Underground entrance stairs
-STN_WP1_TETSUBASHI                                              :Tetsubashi
-STN_SNOW_ST2_EXTENDED_PLATFORM                                  :St2 extended platform
-STN_ST2_EXTENDED_PLATFORM_WHITE                                 :Extended platform white
-STN_WP1_CEMENT_BARRIER                                          :Cement barrier
+STN_SNOW_WP1_STANDARD                                           :Wp1 standard
 STN_SNOW_WP1_TETSUBASHI                                         :Wp1 tetsubashi
+STN_ST1_CARGO_PLATFORM                                          :Cargo platform
+STN_ST1_UNDERGROUND_ENTRANCE                                    :Underground entrance
+STN_ST1_UNDERGROUND_ENTRANCE_STAIRS                             :Underground entrance stairs
+STN_ST2_EXTENDED_PLATFORM                                       :Extended platform
+STN_ST2_EXTENDED_PLATFORM_WHITE                                 :Extended platform white
+STN_ST2_EXTENDED_PLATFORM_YELLOW                                :Extended platform yellow
+STN_WP132_GLASS_SOUND_BARRIER                                   :Glass sound barrier
+STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE                        :Glass sound barrier track edge
+STN_WP1_CEMENT_BARRIER                                          :Cement barrier
+STN_WP1_CEMENT_BARRIER_BRIDGE                                   :Cement barrier bridge
+STN_WP1_STANDARD                                                :Standard
+STN_WP1_TETSUBASHI                                              :Tetsubashi
