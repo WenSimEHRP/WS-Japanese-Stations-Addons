@@ -69,17 +69,17 @@ spritelayout sl_test_station_x {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     childsprite {sprite: GROUNDSPRITE_RAIL_X + ((LOAD_TEMP(0)) != 0) * 26;}
     building { // fence
-        sprite: CUSTOM(1,0);
+        sprite: CUSTOM(1,0 + LOAD_TEMP(3) * 4);
         xextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(3);
+        hide_sprite: LOAD_TEMP(5);
     }
     building { // fence
-        sprite: CUSTOM(1,1);
+        sprite: CUSTOM(1,1 + LOAD_TEMP(4) * 4);
         xoffset: 15;
         xextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(4);
+        hide_sprite: LOAD_TEMP(6);
     }
     building { // fence
         sprite: CUSTOM(1,2);
