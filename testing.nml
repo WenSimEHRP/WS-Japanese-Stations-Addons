@@ -258,15 +258,33 @@ spritelayout sl_test_station_y {
     }
 }
 
+/* About STORE_TEMP registers
+    * 0:  terrain type, for snow and desert
+    * 1:  build date, for date-dependent graphics
+    * 2:  animation frame, for animated stations
+    * 3:  bufferstop
+    * 4:  bufferstop
+    * 5:  nearby station, bufferstop direction
+    * 6:  nearby station, bufferstop direction
+    * 7:  nearby station, not bufferstop direction, also with landscape
+    * 8:  nearby station, not bufferstop direction, also with landscape
+    * 9:  show platform, northern side
+    * 10: show platform, southern side
+    * 11: platform start and end
+    * 12: track type
 
+    TODO: Add shed support
+    TODO: Add station decal support
+    TODO: Make a universal template
+*/
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for snow|desert
-    STORE_TEMP(build_date < date(1952, 1, 1) ? 1:
-               build_date < date(1986, 1, 1) ? 2: 0, 1), // returns 1 if build date is before 1952, 2 if before 1986
-    //STORE_TEMP((cargo_amount_waiting(PASS) >> 8) > 4 ? cargo_amount_waiting >> 8 : 4, 2),    // cargo amount waiting
-    STORE_TEMP(hasbit(rail_continuation, 1) == 1, 3), // bufferstop
-    STORE_TEMP(hasbit(rail_continuation, 0) == 1, 4), // bufferstop
+    STORE_TEMP(build_date < date(1952, 1, 1) ? 0:
+               build_date < date(1986, 1, 1) ? 1: 2, 1), // returns 1 if build date is before 1952, 2 if before 1986
+    STORE_TEMP(animation_frame, 2), // animation frames
+    STORE_TEMP(hasbit(rail_continuation, 1), 3), // bufferstop
+    STORE_TEMP(hasbit(rail_continuation, 0), 4), // bufferstop
     STORE_TEMP(nearby_tile_is_station(-1, 0), 5), // get nearby station tiles
     STORE_TEMP(nearby_tile_is_station( 1, 0), 6), // get nearby station tiles
     STORE_TEMP(nearby_tile_is_station( 0,-1) &&   // also get the landscape
@@ -285,12 +303,6 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
                track_type == ELRL ? 1011 :
                track_type == MONO ? 1093 :
                track_type == MGLV ? 1175 : 1, 12), // original rail, newgrf rails won't work
-    STORE_TEMP(hasbit(rail_continuation, 1)  << 0|// useless things, THIS IS NOT STM32
-               hasbit(rail_continuation, 0)  << 1|// useless things, THIS IS NOT STM32
-               nearby_tile_is_station(-1, 0) << 2|// useless things, THIS IS NOT STM32
-               nearby_tile_is_station( 1, 0) << 3|// useless things, THIS IS NOT STM32
-               nearby_tile_is_station( 0,-1) << 4|
-               nearby_tile_is_station( 0, 1) << 5, 13)
 ]){return;}
 
 switch (FEAT_STATIONS, SELF, sw_test_station_1, [
