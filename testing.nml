@@ -260,8 +260,10 @@ spritelayout sl_test_station_y {
 
 
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
-    STORE_TEMP(terrain_type == TILETYPE_NORMAL ? 0 : terrain_type == TILETYPE_DESERT ? 1 : 2, 0), // returns 1|2 for snow|desert
-    STORE_TEMP(build_date < date(1952, 1, 1) ? 1 : build_date < date(1986, 1, 1) ? 2 : 0, 1), // returns 1 if build date is before 1952, 2 if before 1986
+    STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
+               (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for snow|desert
+    STORE_TEMP(build_date < date(1952, 1, 1) ? 1:
+               build_date < date(1986, 1, 1) ? 2: 0, 1), // returns 1 if build date is before 1952, 2 if before 1986
     //STORE_TEMP((cargo_amount_waiting(PASS) >> 8) > 4 ? cargo_amount_waiting >> 8 : 4, 2),    // cargo amount waiting
     STORE_TEMP(hasbit(rail_continuation, 1) == 1, 3), // bufferstop
     STORE_TEMP(hasbit(rail_continuation, 0) == 1, 4), // bufferstop
