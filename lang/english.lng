@@ -6,6 +6,11 @@ PARAM_ENABLE_STATIONS :Enable stations
 PARAM_ENABLE_STATIONS_DESC :Enable in-game stations.
 PARAM_ENABLE_EXTENDED_STATIONS :Enable extended stations
 PARAM_ENABLE_EXTENDED_STATIONS_DESC :Enable in-game extended stations.
+PARAM_ENABLE_BUILD_DATE :Station graphics update
+PARAM_ENABLE_BUILD_DATE_DESC :Automatically update station graphics with the current date, otherwise use the build/renovate date of the station.
+PARAM_ENABLE_BUILD_DATE_NEWLY_BUILT :Newly built or renovated
+PARAM_ENABLE_BUILD_DATE_AUTO_UPDATE :Automatically update
+PARAM_ENABLE_BUILD_DATE_ALWAYS_LATEST :Always latest
 STR_GRF_NAME :{TITLE} {VERSION}
 STR_GRF_DESC :{WHITE}{DATE}{}{}{GOLD}{ABBRV}{BLACK} is a station set for OpenTTD.{}Made by WenSim.
 STR_GRF_URL :{URL}
@@ -17,6 +22,12 @@ STN_DEC_BARRIER :Barrier
 STN_DEC_CATNARY_POLE :Catnary pole
 STN_DEC_DUMMY :Dummy
 STN_DEC_ST1_FENCE :St1 fence
+STN_DEC_TEST_STATION_0 :Test station 0
+STN_DEC_TEST_STATION_00 :Test station 00
+STN_DEC_TEST_STATION_01 :Test station 01
+STN_DEC_TEST_STATION_02 :Test station 02
+STN_DEC_TEST_STATION_1 :Test station 1
+STN_DEC_TEST_STATION_2 :Test station 2
 STN_DEC_TEST_STATION_FENCE :Test station fence
 STN_DEC_TEST_STATION_PEOPLE :Test station people
 STN_SNOW_ST1 :St1

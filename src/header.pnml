@@ -29,4 +29,19 @@ grf {
                 desc: string(PARAM_ENABLE_EXTENDED_STATIONS_DESC);
             }
         }
+        param 3 {
+            param_build_date {
+                type: int;
+                def_value: 1;
+                min_value: 0;
+                max_value: 2;
+                name: string(PARAM_ENABLE_BUILD_DATE);
+                desc: string(PARAM_ENABLE_BUILD_DATE_DESC);
+                names: {
+                    0: string(PARAM_ENABLE_BUILD_DATE_NEWLY_BUILT);
+                    1: string(PARAM_ENABLE_BUILD_DATE_AUTO_UPDATE);
+                    2: string(PARAM_ENABLE_BUILD_DATE_ALWAYS_LATEST);
+                };
+            }
+        }
 }

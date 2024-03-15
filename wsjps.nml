@@ -34,6 +34,21 @@ grf {
                 desc: string(PARAM_ENABLE_EXTENDED_STATIONS_DESC);
             }
         }
+        param 3 {
+            param_build_date {
+                type: int;
+                def_value: 1;
+                min_value: 0;
+                max_value: 2;
+                name: string(PARAM_ENABLE_BUILD_DATE);
+                desc: string(PARAM_ENABLE_BUILD_DATE_DESC);
+                names: {
+                    0: string(PARAM_ENABLE_BUILD_DATE_NEWLY_BUILT);
+                    1: string(PARAM_ENABLE_BUILD_DATE_AUTO_UPDATE);
+                    2: string(PARAM_ENABLE_BUILD_DATE_ALWAYS_LATEST);
+                };
+            }
+        }
 }
 # 2 "wsjps.pnml" 2
 # 1 "src/version_check.pnml" 1
@@ -44,14 +59,14 @@ if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(12,0))
 # 3 "wsjps.pnml" 2
 # 1 "src/templates.pnml" 1
 # 9 "src/templates.pnml"
-template t_platform_0(name) {[(64 + 1)*0, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_1(name) {[(64 + 1)*1, 0, 64, 64, -51, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_2(name) {[(64 + 1)*2, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_3(name) {[(64 + 1)*3, 0, 64, 64, -11, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_4(name) {[(64 + 1)*4, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_5(name) {[(64 + 1)*5, 0, 64, 64, -51, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_6(name) {[(64 + 1)*6, 0, 64, 64, -31, -33, "src/stations/generated_stations/gfx/" + name + ".png"]}
-template t_platform_7(name) {[(64 + 1)*7, 0, 64, 64, -11, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_0(name) {[(64 + 1)*0, 0, 64, 64, -31, -33, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_1(name) {[(64 + 1)*1, 0, 64, 64, -51, -43, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_2(name) {[(64 + 1)*2, 0, 64, 64, -31, -33, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_3(name) {[(64 + 1)*3, 0, 64, 64, -11, -43, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_4(name) {[(64 + 1)*4, 0, 64, 64, -31, -33, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_5(name) {[(64 + 1)*5, 0, 64, 64, -51, -43, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_6(name) {[(64 + 1)*6, 0, 64, 64, -31, -33, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_platform_7(name) {[(64 + 1)*7, 0, 64, 64, -11, -43, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
 
 template t_platform_extended_0 (name) {[(64*3 + 1)*0, 0, 64*3, 64*3, -95, -97, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_platform_extended_1 (name) {[(64*3 + 1)*1, 0, 64*3, 64*3, -115, -107, "src/stations/generated_stations/gfx/" + name + ".png"]}
@@ -146,10 +161,56 @@ spriteset (s_people_test_station) {
 }
 
 spriteset (s_test_station) {
-    X: t_platform_0("st1_cargo_platform")
-    X1: t_platform_1("st1_cargo_platform")
-    Y: t_platform_2("st1_cargo_platform")
-    Y1: t_platform_3("st1_cargo_platform")
+    t_platform_0("dec_test_station_0")
+    t_platform_1("dec_test_station_0")
+    t_platform_2("dec_test_station_0")
+    t_platform_3("dec_test_station_0")
+    t_platform_0("dec_test_station_00")
+    t_platform_1("dec_test_station_00")
+    t_platform_2("dec_test_station_00")
+    t_platform_3("dec_test_station_00")
+    t_platform_0("dec_test_station_01")
+    t_platform_1("dec_test_station_01")
+    t_platform_2("dec_test_station_01")
+    t_platform_3("dec_test_station_01")
+    t_platform_0("dec_test_station_02")
+    t_platform_1("dec_test_station_02")
+    t_platform_2("dec_test_station_02")
+    t_platform_3("dec_test_station_02")
+
+    t_platform_0("dec_test_station_1")
+    t_platform_1("dec_test_station_1")
+    t_platform_2("dec_test_station_1")
+    t_platform_3("dec_test_station_1")
+    t_platform_0("dec_test_station_00")
+    t_platform_1("dec_test_station_00")
+    t_platform_2("dec_test_station_00")
+    t_platform_3("dec_test_station_00")
+    t_platform_0("dec_test_station_01")
+    t_platform_1("dec_test_station_01")
+    t_platform_2("dec_test_station_01")
+    t_platform_3("dec_test_station_01")
+    t_platform_0("dec_test_station_02")
+    t_platform_1("dec_test_station_02")
+    t_platform_2("dec_test_station_02")
+    t_platform_3("dec_test_station_02")
+
+    t_platform_0("dec_test_station_2")
+    t_platform_1("dec_test_station_2")
+    t_platform_2("dec_test_station_2")
+    t_platform_3("dec_test_station_2")
+    t_platform_0("dec_test_station_00")
+    t_platform_1("dec_test_station_00")
+    t_platform_2("dec_test_station_00")
+    t_platform_3("dec_test_station_00")
+    t_platform_0("dec_test_station_01")
+    t_platform_1("dec_test_station_01")
+    t_platform_2("dec_test_station_01")
+    t_platform_3("dec_test_station_01")
+    t_platform_0("dec_test_station_02")
+    t_platform_1("dec_test_station_02")
+    t_platform_2("dec_test_station_02")
+    t_platform_3("dec_test_station_02")
 }
 
 spriteset (s_snow_test_station) {
@@ -204,7 +265,7 @@ spritelayout sl_test_station_x {
         hide_sprite: LOAD_TEMP(4);
     }
     building {
-        sprite: CUSTOM(2,0);
+        sprite: CUSTOM(2,0 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
         xoffset: 0;
         yoffset: 0;
         zoffset: 0;
@@ -221,7 +282,7 @@ spritelayout sl_test_station_x {
         sprite: DEFAULT(0);
     }
     building {
-        sprite: CUSTOM(2,1);
+        sprite: CUSTOM(2,1 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
         xoffset: 0;
         yoffset: 10;
         zoffset: 0;
@@ -285,7 +346,7 @@ spritelayout sl_test_station_y {
         hide_sprite: LOAD_TEMP(4);
     }
     building {
-        sprite: CUSTOM(2,2);
+        sprite: CUSTOM(2,2 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
         xoffset: 0;
         yoffset: 0;
         zoffset: 0;
@@ -302,7 +363,7 @@ spritelayout sl_test_station_y {
         sprite: DEFAULT(2);
     }
     building {
-        sprite: CUSTOM(2,3);
+        sprite: CUSTOM(2,3 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
         xoffset: 10;
         yoffset: 0;
         zoffset: 0;
@@ -319,12 +380,16 @@ spritelayout sl_test_station_y {
         sprite: DEFAULT(3);
     }
 }
-# 280 "testing.nml"
+# 326 "testing.nml"
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0),
-    STORE_TEMP(build_date < date(1952, 1, 1) ? 0:
-               build_date < date(1986, 1, 1) ? 1: 2, 1),
+    STORE_TEMP(param_build_date == 2 ? 0 :
+               param_build_date == 0 ?
+                (build_date < date(1952, 1, 1)) +
+                (build_date < date(1986, 1, 1)) :
+                (current_date < date(1952, 1, 1)) +
+                (current_date < date(1986, 1, 1)) , 1),
     STORE_TEMP(animation_frame, 2),
     STORE_TEMP(hasbit(rail_continuation, 1), 3),
     STORE_TEMP(hasbit(rail_continuation, 0), 4),
@@ -340,8 +405,8 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
                  hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
     STORE_TEMP(0, 9),
     STORE_TEMP(0, 10),
-    STORE_TEMP(platform_position_from_start(PLATFORM_SAME_SECTION) << 1|
-                   platform_number_from_end(PLATFORM_SAME_SECTION) << 0, 11),
+    STORE_TEMP(!(nearby_tile_is_station( 1, 0)) << 1|
+               !(nearby_tile_is_station(-1, 0)) << 0, 11),
     STORE_TEMP(track_type == RAIL ? 1011 :
                track_type == ELRL ? 1011 :
                track_type == MONO ? 1093 :
@@ -350,7 +415,9 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
 
 switch (FEAT_STATIONS, SELF, sw_test_station_1, [
     STORE_TEMP(0,0),
-    STORE_TEMP(build_date < date(1952, 1, 1) ? 1 : build_date < date(1986, 1, 1) ? 2 : 0, 1),
+    STORE_TEMP(param_build_date == 2 ? 0 :
+              (current_date < date(1952, 1, 1))+
+              (current_date < date(1986, 1, 1)), 1),
     STORE_TEMP(1,2),
     STORE_TEMP(0,3),
     STORE_TEMP(1,4),
@@ -360,7 +427,107 @@ switch (FEAT_STATIONS, SELF, sw_test_station_1, [
     STORE_TEMP(1,8),
     STORE_TEMP(0,9),
     STORE_TEMP(0,10),
-    STORE_TEMP(1,11),
+    STORE_TEMP(3,11),
+    STORE_TEMP(1,12),
+]){return;}
+
+switch (FEAT_STATIONS, SELF, sw_test_station_2, [
+    STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
+               (terrain_type == TILETYPE_DESERT) << 0, 0),
+    STORE_TEMP(param_build_date == 2 ? 0 :
+               param_build_date == 0 ?
+                (build_date < date(1952, 1, 1)) +
+                (build_date < date(1986, 1, 1)) :
+                (current_date < date(1952, 1, 1)) +
+                (current_date < date(1986, 1, 1)) , 1),
+    STORE_TEMP(animation_frame, 2),
+    STORE_TEMP(hasbit(rail_continuation, 1), 3),
+    STORE_TEMP(hasbit(rail_continuation, 0), 4),
+    STORE_TEMP(nearby_tile_is_station(-1, 0), 5),
+    STORE_TEMP(nearby_tile_is_station( 1, 0), 6),
+    STORE_TEMP(nearby_tile_is_station( 0,-1) &&
+               (!hasbit(nearby_tile_slope(0,0), CORNER_S) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_W) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_N)), 7),
+    STORE_TEMP(nearby_tile_is_station( 0, 1) &&
+               (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_E) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
+    STORE_TEMP(1, 9),
+    STORE_TEMP(0, 10),
+    STORE_TEMP(!(nearby_tile_is_station( 1, 0)) << 1|
+               !(nearby_tile_is_station(-1, 0)) << 0, 11),
+    STORE_TEMP(track_type == RAIL ? 1011 :
+               track_type == ELRL ? 1011 :
+               track_type == MONO ? 1093 :
+               track_type == MGLV ? 1175 : 1, 12),
+]){return;}
+
+switch (FEAT_STATIONS, SELF, sw_test_station_3, [
+    STORE_TEMP(0,0),
+    STORE_TEMP(param_build_date == 2 ? 0 :
+              (current_date < date(1952, 1, 1))+
+              (current_date < date(1986, 1, 1)), 1),
+    STORE_TEMP(1,2),
+    STORE_TEMP(0,3),
+    STORE_TEMP(1,4),
+    STORE_TEMP(0,5),
+    STORE_TEMP(1,6),
+    STORE_TEMP(1,7),
+    STORE_TEMP(1,8),
+    STORE_TEMP(1,9),
+    STORE_TEMP(0,10),
+    STORE_TEMP(3,11),
+    STORE_TEMP(1,12),
+]){return;}
+
+switch (FEAT_STATIONS, SELF, sw_test_station_4, [
+    STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
+               (terrain_type == TILETYPE_DESERT) << 0, 0),
+    STORE_TEMP(param_build_date == 2 ? 0 :
+               param_build_date == 0 ?
+                (build_date < date(1952, 1, 1)) +
+                (build_date < date(1986, 1, 1)) :
+                (current_date < date(1952, 1, 1)) +
+                (current_date < date(1986, 1, 1)) , 1),
+    STORE_TEMP(animation_frame, 2),
+    STORE_TEMP(hasbit(rail_continuation, 1), 3),
+    STORE_TEMP(hasbit(rail_continuation, 0), 4),
+    STORE_TEMP(nearby_tile_is_station(-1, 0), 5),
+    STORE_TEMP(nearby_tile_is_station( 1, 0), 6),
+    STORE_TEMP(nearby_tile_is_station( 0,-1) &&
+               (!hasbit(nearby_tile_slope(0,0), CORNER_S) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_W) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_N)), 7),
+    STORE_TEMP(nearby_tile_is_station( 0, 1) &&
+               (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_E) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
+    STORE_TEMP(0, 9),
+    STORE_TEMP(1, 10),
+    STORE_TEMP(!(nearby_tile_is_station( 1, 0)) << 1|
+               !(nearby_tile_is_station(-1, 0)) << 0, 11),
+    STORE_TEMP(track_type == RAIL ? 1011 :
+               track_type == ELRL ? 1011 :
+               track_type == MONO ? 1093 :
+               track_type == MGLV ? 1175 : 1, 12),
+]){return;}
+
+switch (FEAT_STATIONS, SELF, sw_test_station_5, [
+    STORE_TEMP(0,0),
+    STORE_TEMP(param_build_date == 2 ? 0 :
+              (current_date < date(1952, 1, 1))+
+              (current_date < date(1986, 1, 1)), 1),
+    STORE_TEMP(1,2),
+    STORE_TEMP(0,3),
+    STORE_TEMP(1,4),
+    STORE_TEMP(0,5),
+    STORE_TEMP(1,6),
+    STORE_TEMP(1,7),
+    STORE_TEMP(1,8),
+    STORE_TEMP(0,9),
+    STORE_TEMP(1,10),
+    STORE_TEMP(3,11),
     STORE_TEMP(1,12),
 ]){return;}
 
@@ -381,6 +548,40 @@ item (FEAT_STATIONS, stn_test_station_0) {
         custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
         prepare_layout: sw_test_station_0();
         purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_2) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x, sl_test_station_y];
+        custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
+        prepare_layout: sw_test_station_2();
+        purchase_prepare_layout: sw_test_station_3();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_3) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x, sl_test_station_y];
+        custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
+        prepare_layout: sw_test_station_4();
+        purchase_prepare_layout: sw_test_station_5();
         default: s_dummy;
         PASS: sg_people_test_station;
     }
@@ -414,102 +615,138 @@ item (FEAT_STATIONS, stn_test_station_0) {
 # 1 "<command-line>"
 # 1 ".\\dec.pnml.template.index"
 # 6 "indexes.pnml" 2
-# 1 "src\\stations\\generated_stations\\dec_test_station_fence.pnml" 1
+# 1 "src\\stations\\generated_stations\\dec_test_station_0.pnml" 1
 # 1 ".\\dec.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\dec.pnml.template.index"
 # 7 "indexes.pnml" 2
-# 1 "src\\stations\\generated_stations\\dec_test_station_people.pnml" 1
+# 1 "src\\stations\\generated_stations\\dec_test_station_00.pnml" 1
 # 1 ".\\dec.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\dec.pnml.template.index"
 # 8 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\dec_test_station_01.pnml" 1
+# 1 ".\\dec.pnml.template.index"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\dec.pnml.template.index"
+# 9 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\dec_test_station_02.pnml" 1
+# 1 ".\\dec.pnml.template.index"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\dec.pnml.template.index"
+# 10 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\dec_test_station_1.pnml" 1
+# 1 ".\\dec.pnml.template.index"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\dec.pnml.template.index"
+# 11 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\dec_test_station_2.pnml" 1
+# 1 ".\\dec.pnml.template.index"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\dec.pnml.template.index"
+# 12 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\dec_test_station_fence.pnml" 1
+# 1 ".\\dec.pnml.template.index"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\dec.pnml.template.index"
+# 13 "indexes.pnml" 2
+# 1 "src\\stations\\generated_stations\\dec_test_station_people.pnml" 1
+# 1 ".\\dec.pnml.template.index"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\dec.pnml.template.index"
+# 14 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st1.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 9 "indexes.pnml" 2
+# 15 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st1_cargo_platform.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 10 "indexes.pnml" 2
+# 16 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st1_underground_entrance.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 11 "indexes.pnml" 2
+# 17 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st1_underground_entrance_stairs.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 12 "indexes.pnml" 2
+# 18 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st2_extended_platform.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 13 "indexes.pnml" 2
+# 19 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st2_extended_platform_white.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 14 "indexes.pnml" 2
+# 20 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_st2_extended_platform_yellow.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 15 "indexes.pnml" 2
+# 21 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_test_station.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 16 "indexes.pnml" 2
+# 22 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_wp132_glass_sound_barrier.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 17 "indexes.pnml" 2
+# 23 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_wp132_glass_sound_barrier_track_edge.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 18 "indexes.pnml" 2
+# 24 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_wp1_cement_barrier.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 19 "indexes.pnml" 2
+# 25 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_wp1_cement_barrier_bridge.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 20 "indexes.pnml" 2
+# 26 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_wp1_standard.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 21 "indexes.pnml" 2
+# 27 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\snow_wp1_tetsubashi.pnml" 1
 # 1 ".\\snow.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\snow.pnml.template.index"
-# 22 "indexes.pnml" 2
+# 28 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\st1_cargo_platform.pnml" 1
 # 1 ".\\st1.pnml.template.index"
 # 1 "<built-in>"
@@ -543,7 +780,7 @@ switch (FEAT_STATIONS, SELF, sw_st1_cargo_platform_0_snow, terrain_type){ TILETY
 switch (FEAT_STATIONS, SELF, sw_st1_cargo_platform_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st1_cargo_platform_1) { property { class: "WSJ0"; classname: string(CLS_WSJ0); name: string(STN_ST1_CARGO_PLATFORM); } graphics { sprite_layouts: [sl_st1_cargo_platform_x_1, sl_st1_cargo_platform_y_1, sl_st1_cargo_platform_x_1_snow, sl_st1_cargo_platform_y_1_snow]; select_sprite_layout: sw_st1_cargo_platform_1_snow; s_st1_cargo_platform_0; } }
 switch (FEAT_STATIONS, SELF, sw_st1_cargo_platform_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st1_cargo_platform_01) { property { class: "WSJ0"; classname: string(CLS_WSJ0); name: string(STN_ST1_CARGO_PLATFORM); } graphics { sprite_layouts: [sl_st1_cargo_platform_x_01, sl_st1_cargo_platform_y_01, sl_st1_cargo_platform_x_01_snow, sl_st1_cargo_platform_y_01_snow]; select_sprite_layout: sw_st1_cargo_platform_01_snow; s_st1_cargo_platform_0; } }
 # 6 ".\\st1.pnml.template.index" 2
-# 23 "indexes.pnml" 2
+# 29 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\st1_underground_entrance.pnml" 1
 # 1 ".\\st1.pnml.template.index"
 # 1 "<built-in>"
@@ -577,7 +814,7 @@ switch (FEAT_STATIONS, SELF, sw_st1_underground_entrance_0_snow, terrain_type){ 
 switch (FEAT_STATIONS, SELF, sw_st1_underground_entrance_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st1_underground_entrance_1) { property { class: "WSJ0"; classname: string(CLS_WSJ0); name: string(STN_ST1_UNDERGROUND_ENTRANCE); } graphics { sprite_layouts: [sl_st1_underground_entrance_x_1, sl_st1_underground_entrance_y_1, sl_st1_underground_entrance_x_1_snow, sl_st1_underground_entrance_y_1_snow]; select_sprite_layout: sw_st1_underground_entrance_1_snow; s_st1_underground_entrance_0; } }
 switch (FEAT_STATIONS, SELF, sw_st1_underground_entrance_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st1_underground_entrance_01) { property { class: "WSJ0"; classname: string(CLS_WSJ0); name: string(STN_ST1_UNDERGROUND_ENTRANCE); } graphics { sprite_layouts: [sl_st1_underground_entrance_x_01, sl_st1_underground_entrance_y_01, sl_st1_underground_entrance_x_01_snow, sl_st1_underground_entrance_y_01_snow]; select_sprite_layout: sw_st1_underground_entrance_01_snow; s_st1_underground_entrance_0; } }
 # 6 ".\\st1.pnml.template.index" 2
-# 24 "indexes.pnml" 2
+# 30 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\st1_underground_entrance_stairs.pnml" 1
 # 1 ".\\st1.pnml.template.index"
 # 1 "<built-in>"
@@ -611,7 +848,7 @@ switch (FEAT_STATIONS, SELF, sw_st1_underground_entrance_stairs_0_snow, terrain_
 switch (FEAT_STATIONS, SELF, sw_st1_underground_entrance_stairs_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st1_underground_entrance_stairs_1) { property { class: "WSJ0"; classname: string(CLS_WSJ0); name: string(STN_ST1_UNDERGROUND_ENTRANCE_STAIRS); } graphics { sprite_layouts: [sl_st1_underground_entrance_stairs_x_1, sl_st1_underground_entrance_stairs_y_1, sl_st1_underground_entrance_stairs_x_1_snow, sl_st1_underground_entrance_stairs_y_1_snow]; select_sprite_layout: sw_st1_underground_entrance_stairs_1_snow; s_st1_underground_entrance_stairs_0; } }
 switch (FEAT_STATIONS, SELF, sw_st1_underground_entrance_stairs_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st1_underground_entrance_stairs_01) { property { class: "WSJ0"; classname: string(CLS_WSJ0); name: string(STN_ST1_UNDERGROUND_ENTRANCE_STAIRS); } graphics { sprite_layouts: [sl_st1_underground_entrance_stairs_x_01, sl_st1_underground_entrance_stairs_y_01, sl_st1_underground_entrance_stairs_x_01_snow, sl_st1_underground_entrance_stairs_y_01_snow]; select_sprite_layout: sw_st1_underground_entrance_stairs_01_snow; s_st1_underground_entrance_stairs_0; } }
 # 6 ".\\st1.pnml.template.index" 2
-# 25 "indexes.pnml" 2
+# 31 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\st2_extended_platform.pnml" 1
 # 1 ".\\st2.pnml.template.index"
 # 1 "<built-in>"
@@ -666,7 +903,7 @@ switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_01_snow, terrain_type){ TI
 switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_23_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st2_extended_platform_23) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM); } graphics { sprite_layouts: [sl_st2_extended_platform_x_23, sl_st2_extended_platform_y_23, sl_st2_extended_platform_x_23_snow, sl_st2_extended_platform_y_23_snow]; select_sprite_layout: sw_st2_extended_platform_23_snow; s_st2_extended_platform_0; } }
 switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_45_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st2_extended_platform_45) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM); } graphics { sprite_layouts: [sl_st2_extended_platform_x_45, sl_st2_extended_platform_y_45, sl_st2_extended_platform_x_45_snow, sl_st2_extended_platform_y_45_snow]; select_sprite_layout: sw_st2_extended_platform_45_snow; s_st2_extended_platform_0; } }
 # 5 ".\\st2.pnml.template.index" 2
-# 26 "indexes.pnml" 2
+# 32 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\st2_extended_platform_white.pnml" 1
 # 1 ".\\st2.pnml.template.index"
 # 1 "<built-in>"
@@ -721,7 +958,7 @@ switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_white_01_snow, terrain_typ
 switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_white_23_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st2_extended_platform_white_23) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_23, sl_st2_extended_platform_white_y_23, sl_st2_extended_platform_white_x_23_snow, sl_st2_extended_platform_white_y_23_snow]; select_sprite_layout: sw_st2_extended_platform_white_23_snow; s_st2_extended_platform_white_0; } }
 switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_white_45_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st2_extended_platform_white_45) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_WHITE); } graphics { sprite_layouts: [sl_st2_extended_platform_white_x_45, sl_st2_extended_platform_white_y_45, sl_st2_extended_platform_white_x_45_snow, sl_st2_extended_platform_white_y_45_snow]; select_sprite_layout: sw_st2_extended_platform_white_45_snow; s_st2_extended_platform_white_0; } }
 # 5 ".\\st2.pnml.template.index" 2
-# 27 "indexes.pnml" 2
+# 33 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\st2_extended_platform_yellow.pnml" 1
 # 1 ".\\st2.pnml.template.index"
 # 1 "<built-in>"
@@ -776,7 +1013,7 @@ switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_yellow_01_snow, terrain_ty
 switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_yellow_23_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st2_extended_platform_yellow_23) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_23, sl_st2_extended_platform_yellow_y_23, sl_st2_extended_platform_yellow_x_23_snow, sl_st2_extended_platform_yellow_y_23_snow]; select_sprite_layout: sw_st2_extended_platform_yellow_23_snow; s_st2_extended_platform_yellow_0; } }
 switch (FEAT_STATIONS, SELF, sw_st2_extended_platform_yellow_45_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_st2_extended_platform_yellow_45) { property { class: "WSJ1"; classname: string(CLS_WSJ1); name: string(STN_ST2_EXTENDED_PLATFORM_YELLOW); } graphics { sprite_layouts: [sl_st2_extended_platform_yellow_x_45, sl_st2_extended_platform_yellow_y_45, sl_st2_extended_platform_yellow_x_45_snow, sl_st2_extended_platform_yellow_y_45_snow]; select_sprite_layout: sw_st2_extended_platform_yellow_45_snow; s_st2_extended_platform_yellow_0; } }
 # 5 ".\\st2.pnml.template.index" 2
-# 28 "indexes.pnml" 2
+# 34 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp132_glass_sound_barrier.pnml" 1
 # 1 ".\\wp132.pnml.template.index"
 # 1 "<built-in>"
@@ -810,7 +1047,7 @@ switch (FEAT_STATIONS, SELF, sw_wp132_glass_sound_barrier_0_snow, terrain_type){
 switch (FEAT_STATIONS, SELF, sw_wp132_glass_sound_barrier_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_1) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_x_1, sl_wp132_glass_sound_barrier_y_1, sl_wp132_glass_sound_barrier_x_1_snow, sl_wp132_glass_sound_barrier_y_1_snow]; select_sprite_layout: sw_wp132_glass_sound_barrier_1_snow; s_wp132_glass_sound_barrier_0; } }
 switch (FEAT_STATIONS, SELF, sw_wp132_glass_sound_barrier_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_01) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_x_01, sl_wp132_glass_sound_barrier_y_01, sl_wp132_glass_sound_barrier_x_01_snow, sl_wp132_glass_sound_barrier_y_01_snow]; select_sprite_layout: sw_wp132_glass_sound_barrier_01_snow; s_wp132_glass_sound_barrier_0; } }
 # 6 ".\\wp132.pnml.template.index" 2
-# 29 "indexes.pnml" 2
+# 35 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp132_glass_sound_barrier_track_edge.pnml" 1
 # 1 ".\\wp132.pnml.template.index"
 # 1 "<built-in>"
@@ -844,7 +1081,7 @@ switch (FEAT_STATIONS, SELF, sw_wp132_glass_sound_barrier_track_edge_0_snow, ter
 switch (FEAT_STATIONS, SELF, sw_wp132_glass_sound_barrier_track_edge_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_track_edge_1) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_track_edge_x_1, sl_wp132_glass_sound_barrier_track_edge_y_1, sl_wp132_glass_sound_barrier_track_edge_x_1_snow, sl_wp132_glass_sound_barrier_track_edge_y_1_snow]; select_sprite_layout: sw_wp132_glass_sound_barrier_track_edge_1_snow; s_wp132_glass_sound_barrier_track_edge_0; } }
 switch (FEAT_STATIONS, SELF, sw_wp132_glass_sound_barrier_track_edge_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp132_glass_sound_barrier_track_edge_01) { property { class: "WAYP"; name: string(STN_WP132_GLASS_SOUND_BARRIER_TRACK_EDGE); } graphics { sprite_layouts: [sl_wp132_glass_sound_barrier_track_edge_x_01, sl_wp132_glass_sound_barrier_track_edge_y_01, sl_wp132_glass_sound_barrier_track_edge_x_01_snow, sl_wp132_glass_sound_barrier_track_edge_y_01_snow]; select_sprite_layout: sw_wp132_glass_sound_barrier_track_edge_01_snow; s_wp132_glass_sound_barrier_track_edge_0; } }
 # 6 ".\\wp132.pnml.template.index" 2
-# 30 "indexes.pnml" 2
+# 36 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_cement_barrier.pnml" 1
 # 1 ".\\wp1.pnml.template.index"
 # 1 "<built-in>"
@@ -878,7 +1115,7 @@ switch (FEAT_STATIONS, SELF, sw_wp1_cement_barrier_0_snow, terrain_type){ TILETY
 switch (FEAT_STATIONS, SELF, sw_wp1_cement_barrier_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_cement_barrier_1) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER); } graphics { sprite_layouts: [sl_wp1_cement_barrier_x_1, sl_wp1_cement_barrier_y_1, sl_wp1_cement_barrier_x_1_snow, sl_wp1_cement_barrier_y_1_snow]; select_sprite_layout: sw_wp1_cement_barrier_1_snow; s_wp1_cement_barrier_0; } }
 switch (FEAT_STATIONS, SELF, sw_wp1_cement_barrier_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_cement_barrier_01) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER); } graphics { sprite_layouts: [sl_wp1_cement_barrier_x_01, sl_wp1_cement_barrier_y_01, sl_wp1_cement_barrier_x_01_snow, sl_wp1_cement_barrier_y_01_snow]; select_sprite_layout: sw_wp1_cement_barrier_01_snow; s_wp1_cement_barrier_0; } }
 # 6 ".\\wp1.pnml.template.index" 2
-# 31 "indexes.pnml" 2
+# 37 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_cement_barrier_bridge.pnml" 1
 # 1 ".\\wp1.pnml.template.index"
 # 1 "<built-in>"
@@ -912,7 +1149,7 @@ switch (FEAT_STATIONS, SELF, sw_wp1_cement_barrier_bridge_0_snow, terrain_type){
 switch (FEAT_STATIONS, SELF, sw_wp1_cement_barrier_bridge_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_1) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER_BRIDGE); } graphics { sprite_layouts: [sl_wp1_cement_barrier_bridge_x_1, sl_wp1_cement_barrier_bridge_y_1, sl_wp1_cement_barrier_bridge_x_1_snow, sl_wp1_cement_barrier_bridge_y_1_snow]; select_sprite_layout: sw_wp1_cement_barrier_bridge_1_snow; s_wp1_cement_barrier_bridge_0; } }
 switch (FEAT_STATIONS, SELF, sw_wp1_cement_barrier_bridge_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_cement_barrier_bridge_01) { property { class: "WAYP"; name: string(STN_WP1_CEMENT_BARRIER_BRIDGE); } graphics { sprite_layouts: [sl_wp1_cement_barrier_bridge_x_01, sl_wp1_cement_barrier_bridge_y_01, sl_wp1_cement_barrier_bridge_x_01_snow, sl_wp1_cement_barrier_bridge_y_01_snow]; select_sprite_layout: sw_wp1_cement_barrier_bridge_01_snow; s_wp1_cement_barrier_bridge_0; } }
 # 6 ".\\wp1.pnml.template.index" 2
-# 32 "indexes.pnml" 2
+# 38 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_standard.pnml" 1
 # 1 ".\\wp1.pnml.template.index"
 # 1 "<built-in>"
@@ -946,7 +1183,7 @@ switch (FEAT_STATIONS, SELF, sw_wp1_standard_0_snow, terrain_type){ TILETYPE_SNO
 switch (FEAT_STATIONS, SELF, sw_wp1_standard_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_standard_1) { property { class: "WAYP"; name: string(STN_WP1_STANDARD); } graphics { sprite_layouts: [sl_wp1_standard_x_1, sl_wp1_standard_y_1, sl_wp1_standard_x_1_snow, sl_wp1_standard_y_1_snow]; select_sprite_layout: sw_wp1_standard_1_snow; s_wp1_standard_0; } }
 switch (FEAT_STATIONS, SELF, sw_wp1_standard_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_standard_01) { property { class: "WAYP"; name: string(STN_WP1_STANDARD); } graphics { sprite_layouts: [sl_wp1_standard_x_01, sl_wp1_standard_y_01, sl_wp1_standard_x_01_snow, sl_wp1_standard_y_01_snow]; select_sprite_layout: sw_wp1_standard_01_snow; s_wp1_standard_0; } }
 # 6 ".\\wp1.pnml.template.index" 2
-# 33 "indexes.pnml" 2
+# 39 "indexes.pnml" 2
 # 1 "src\\stations\\generated_stations\\wp1_tetsubashi.pnml" 1
 # 1 ".\\wp1.pnml.template.index"
 # 1 "<built-in>"
@@ -980,5 +1217,5 @@ switch (FEAT_STATIONS, SELF, sw_wp1_tetsubashi_0_snow, terrain_type){ TILETYPE_S
 switch (FEAT_STATIONS, SELF, sw_wp1_tetsubashi_1_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_tetsubashi_1) { property { class: "WAYP"; name: string(STN_WP1_TETSUBASHI); } graphics { sprite_layouts: [sl_wp1_tetsubashi_x_1, sl_wp1_tetsubashi_y_1, sl_wp1_tetsubashi_x_1_snow, sl_wp1_tetsubashi_y_1_snow]; select_sprite_layout: sw_wp1_tetsubashi_1_snow; s_wp1_tetsubashi_0; } }
 switch (FEAT_STATIONS, SELF, sw_wp1_tetsubashi_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_tetsubashi_01) { property { class: "WAYP"; name: string(STN_WP1_TETSUBASHI); } graphics { sprite_layouts: [sl_wp1_tetsubashi_x_01, sl_wp1_tetsubashi_y_01, sl_wp1_tetsubashi_x_01_snow, sl_wp1_tetsubashi_y_01_snow]; select_sprite_layout: sw_wp1_tetsubashi_01_snow; s_wp1_tetsubashi_0; } }
 # 6 ".\\wp1.pnml.template.index" 2
-# 34 "indexes.pnml" 2
+# 40 "indexes.pnml" 2
 # 7 "wsjps.pnml" 2

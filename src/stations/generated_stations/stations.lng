@@ -2,6 +2,12 @@ STN_DEC_BARRIER                                                 :Barrier
 STN_DEC_CATNARY_POLE                                            :Catnary pole
 STN_DEC_DUMMY                                                   :Dummy
 STN_DEC_ST1_FENCE                                               :St1 fence
+STN_DEC_TEST_STATION_0                                          :Test station 0
+STN_DEC_TEST_STATION_00                                         :Test station 00
+STN_DEC_TEST_STATION_01                                         :Test station 01
+STN_DEC_TEST_STATION_02                                         :Test station 02
+STN_DEC_TEST_STATION_1                                          :Test station 1
+STN_DEC_TEST_STATION_2                                          :Test station 2
 STN_DEC_TEST_STATION_FENCE                                      :Test station fence
 STN_DEC_TEST_STATION_PEOPLE                                     :Test station people
 STN_SNOW_ST1                                                    :St1
