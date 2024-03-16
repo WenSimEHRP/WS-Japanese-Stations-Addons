@@ -143,7 +143,7 @@ spriteset (s_snow_test_station) {
     t_nochange("snow_test_station",3)
 }
 
-spritelayout sl_test_station_x {
+spritelayout sl_test_station_x(platform_state) {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     childsprite {sprite: LOAD_TEMP(12) + 1 + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
     building { // fence
@@ -195,7 +195,7 @@ spritelayout sl_test_station_x {
         xextent: 16;
         yextent: 6;
         zextent: 6;
-        hide_sprite: LOAD_TEMP(9);
+        hide_sprite: (platform_state & 1 << 1) >> 1;
     }
     childsprite {
         sprite: CUSTOM(3,0);
@@ -212,7 +212,7 @@ spritelayout sl_test_station_x {
         xextent: 16;
         yextent: 6;
         zextent: 6;
-        hide_sprite: LOAD_TEMP(10);
+        hide_sprite: (platform_state & 1 << 0) >> 0;
     }
     childsprite {
         sprite: CUSTOM(3,1);
@@ -224,7 +224,7 @@ spritelayout sl_test_station_x {
 
 }
 
-spritelayout sl_test_station_y {
+spritelayout sl_test_station_y(platform_state) {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     childsprite {sprite: LOAD_TEMP(12) + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
     building { // fence
@@ -276,7 +276,7 @@ spritelayout sl_test_station_y {
         xextent: 6;
         yextent: 16;
         zextent: 6;
-        hide_sprite: LOAD_TEMP(9);
+        hide_sprite: (platform_state & 1 << 1) >> 1;
     }
     childsprite {
         sprite: CUSTOM(3,2);
@@ -293,7 +293,7 @@ spritelayout sl_test_station_y {
         xextent: 6;
         yextent: 16;
         zextent: 6;
-        hide_sprite: LOAD_TEMP(10);
+        hide_sprite: (platform_state & 1 << 0) >> 0;
     }
     childsprite {
         sprite: CUSTOM(3,3);
@@ -327,11 +327,11 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for desert|snow
     STORE_TEMP(param_build_date == 2 ? 0 :
-               param_build_date == 0 ? // why is this part reversed??
-                (build_date   < date(1952, 1, 1)) +
-                (build_date   < date(1986, 1, 1)) :
+               param_build_date ?
                 (current_date < date(1952, 1, 1)) +
-                (current_date < date(1986, 1, 1)) , 1), // returns 1 if build date is before 1952, 2 if before 1986
+                (current_date < date(1986, 1, 1)) :
+                (build_date   < date(1952, 1, 1)) +
+                (build_date   < date(1986, 1, 1)) , 1), // returns 2 if build date is before 1952, 1 if before 1986
     STORE_TEMP(animation_frame, 2), // animation frames
     STORE_TEMP(hasbit(rail_continuation, 1), 3), // bufferstop
     STORE_TEMP(hasbit(rail_continuation, 0), 4), // bufferstop
@@ -345,8 +345,8 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
                (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
                  hasbit(nearby_tile_slope(0,0), CORNER_E) ||
                  hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
-    STORE_TEMP(0, 9),  // show platform, northern side
-    STORE_TEMP(0, 10), // show platform, southern side
+    //STORE_TEMP(0, 9),  // show platform, northern side
+    //STORE_TEMP(0, 10), // show platform, southern side
     STORE_TEMP(!(nearby_tile_is_station( 1, 0)) << 1|
                !(nearby_tile_is_station(-1, 0)) << 0, 11), // for platform start and end
     STORE_TEMP(track_type == RAIL ? 1011 :
@@ -367,113 +367,8 @@ switch (FEAT_STATIONS, SELF, sw_test_station_1, [
     STORE_TEMP(1,6),
     STORE_TEMP(1,7),
     STORE_TEMP(1,8),
-    STORE_TEMP(0,9),
-    STORE_TEMP(0,10),
-    STORE_TEMP(3,11),
-    STORE_TEMP(1,12),
-]){return;}
-
-/* switches
- TODO: fild a way to recude this part, it's the same as the first one
- * and the only difference is the platform
- */
-
-switch (FEAT_STATIONS, SELF, sw_test_station_2, [
-    STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
-               (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for desert|snow
-    STORE_TEMP(param_build_date == 2 ? 0 :
-               param_build_date == 0 ? // why is this part reversed??
-                (build_date   < date(1952, 1, 1)) +
-                (build_date   < date(1986, 1, 1)) :
-                (current_date < date(1952, 1, 1)) +
-                (current_date < date(1986, 1, 1)) , 1), // returns 1 if build date is before 1952, 2 if before 1986
-    STORE_TEMP(animation_frame, 2), // animation frames
-    STORE_TEMP(hasbit(rail_continuation, 1), 3), // bufferstop
-    STORE_TEMP(hasbit(rail_continuation, 0), 4), // bufferstop
-    STORE_TEMP(nearby_tile_is_station(-1, 0), 5), // get nearby station tiles
-    STORE_TEMP(nearby_tile_is_station( 1, 0), 6), // get nearby station tiles
-    STORE_TEMP(nearby_tile_is_station( 0,-1) &&   // also get the landscape
-               (!hasbit(nearby_tile_slope(0,0), CORNER_S) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_W) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_N)), 7),
-    STORE_TEMP(nearby_tile_is_station( 0, 1) &&
-               (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_E) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
-    STORE_TEMP(1, 9),  // show platform, northern side
-    STORE_TEMP(0, 10), // show platform, southern side
-    STORE_TEMP(!(nearby_tile_is_station( 1, 0)) << 1|
-               !(nearby_tile_is_station(-1, 0)) << 0, 11), // for platform start and end
-    STORE_TEMP(track_type == RAIL ? 1011 :
-               track_type == ELRL ? 1011 :
-               track_type == MONO ? 1093 :
-               track_type == MGLV ? 1175 : 1, 12), // original rail, newgrf rails won't work
-]){return;}
-
-switch (FEAT_STATIONS, SELF, sw_test_station_3, [
-    STORE_TEMP(0,0),
-    STORE_TEMP(param_build_date == 2 ? 0 :
-              (current_date < date(1952, 1, 1))+
-              (current_date < date(1986, 1, 1)), 1),
-    STORE_TEMP(1,2),
-    STORE_TEMP(0,3),
-    STORE_TEMP(1,4),
-    STORE_TEMP(0,5),
-    STORE_TEMP(1,6),
-    STORE_TEMP(1,7),
-    STORE_TEMP(1,8),
-    STORE_TEMP(1,9),
-    STORE_TEMP(0,10),
-    STORE_TEMP(3,11),
-    STORE_TEMP(1,12),
-]){return;}
-
-switch (FEAT_STATIONS, SELF, sw_test_station_4, [
-    STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
-               (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for desert|snow
-    STORE_TEMP(param_build_date == 2 ? 0 :
-               param_build_date == 0 ? // why is this part reversed??
-                (build_date   < date(1952, 1, 1)) +
-                (build_date   < date(1986, 1, 1)) :
-                (current_date < date(1952, 1, 1)) +
-                (current_date < date(1986, 1, 1)) , 1), // returns 1 if build date is before 1952, 2 if before 1986
-    STORE_TEMP(animation_frame, 2), // animation frames
-    STORE_TEMP(hasbit(rail_continuation, 1), 3), // bufferstop
-    STORE_TEMP(hasbit(rail_continuation, 0), 4), // bufferstop
-    STORE_TEMP(nearby_tile_is_station(-1, 0), 5), // get nearby station tiles
-    STORE_TEMP(nearby_tile_is_station( 1, 0), 6), // get nearby station tiles
-    STORE_TEMP(nearby_tile_is_station( 0,-1) &&   // also get the landscape
-               (!hasbit(nearby_tile_slope(0,0), CORNER_S) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_W) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_N)), 7),
-    STORE_TEMP(nearby_tile_is_station( 0, 1) &&
-               (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_E) ||
-                 hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
-    STORE_TEMP(0, 9),  // show platform, northern side
-    STORE_TEMP(1, 10), // show platform, southern side
-    STORE_TEMP(!(nearby_tile_is_station( 1, 0)) << 1|
-               !(nearby_tile_is_station(-1, 0)) << 0, 11), // for platform start and end
-    STORE_TEMP(track_type == RAIL ? 1011 :
-               track_type == ELRL ? 1011 :
-               track_type == MONO ? 1093 :
-               track_type == MGLV ? 1175 : 1, 12), // original rail, newgrf rails won't work
-]){return;}
-
-switch (FEAT_STATIONS, SELF, sw_test_station_5, [
-    STORE_TEMP(0,0),
-    STORE_TEMP(param_build_date == 2 ? 0 :
-              (current_date < date(1952, 1, 1))+
-              (current_date < date(1986, 1, 1)), 1),
-    STORE_TEMP(1,2),
-    STORE_TEMP(0,3),
-    STORE_TEMP(1,4),
-    STORE_TEMP(0,5),
-    STORE_TEMP(1,6),
-    STORE_TEMP(1,7),
-    STORE_TEMP(1,8),
-    STORE_TEMP(0,9),
-    STORE_TEMP(1,10),
+    //STORE_TEMP(0,9),
+    //STORE_TEMP(0,10),
     STORE_TEMP(3,11),
     STORE_TEMP(1,12),
 ]){return;}
@@ -491,7 +386,24 @@ item (FEAT_STATIONS, stn_test_station_0) {
         draw_pylon_tiles:       STAT_ALL_TILES;
     }
     graphics {
-        sprite_layouts:             [sl_test_station_x, sl_test_station_y];
+        sprite_layouts:             [sl_test_station_x(0), sl_test_station_y(0)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_1) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(1), sl_test_station_y(1)];
         custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
         prepare_layout:             sw_test_station_0();
         purchase_prepare_layout:    sw_test_station_1();
@@ -508,27 +420,10 @@ item (FEAT_STATIONS, stn_test_station_2) {
         draw_pylon_tiles:       STAT_ALL_TILES;
     }
     graphics {
-        sprite_layouts:             [sl_test_station_x, sl_test_station_y];
+        sprite_layouts:             [sl_test_station_x(2), sl_test_station_y(2)];
         custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
-        prepare_layout:             sw_test_station_2();
-        purchase_prepare_layout:    sw_test_station_3();
-        default:                    s_dummy;
-        PASS:                       sg_people_test_station;
-    }
-}
-
-item (FEAT_STATIONS, stn_test_station_3) {
-    property {
-        class:                  "WSJT";
-        classname:              string(CLS_WSJT);
-        name:                   string(STN_TEST_STATION);
-        draw_pylon_tiles:       STAT_ALL_TILES;
-    }
-    graphics {
-        sprite_layouts:             [sl_test_station_x, sl_test_station_y];
-        custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station];
-        prepare_layout:             sw_test_station_4();
-        purchase_prepare_layout:    sw_test_station_5();
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
         default:                    s_dummy;
         PASS:                       sg_people_test_station;
     }
