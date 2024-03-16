@@ -347,9 +347,13 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
 
 switch (FEAT_STATIONS, SELF, sw_test_station_1, [
     STORE_TEMP(0,0),
-    STORE_TEMP(param_build_date == 2 ? 0 :
-              (current_date < date(1952, 1, 1))+
-              (current_date < date(1986, 1, 1)), 1),
+    STORE_TEMP(param_build_date >= 2 ?
+               param_build_date - 2:
+               param_build_date ?
+                (current_date < date(1952, 1, 1)) +
+                (current_date < date(1986, 1, 1)) :
+                (build_date   < date(1952, 1, 1)) +
+                (build_date   < date(1986, 1, 1)) , 1),
     STORE_TEMP(1,2),
     STORE_TEMP(0,3),
     STORE_TEMP(1,4),
@@ -416,5 +420,204 @@ item (FEAT_STATIONS, stn_test_station_2) {
         purchase_prepare_layout:    sw_test_station_1();
         default:                    s_dummy;
         PASS:                       sg_people_test_station;
+    }
+}
+
+template t_full     (name, x) {[(SIZE_X + 1)*x, 0, SIZE_X, SIZE_Y, -31, -33, NOCROP, PATH]}
+//template t_full_crop(name, x) {[(SIZE_X + 1)*x, 0, SIZE_X, SIZE_Y, -31, -33, CROP  , PATH]}
+
+spriteset (s_full_station) {
+    t_full("dec_full_station_0",0)
+    t_nochange("dec_full_station_0",1)
+    t_nochange("dec_full_station_0",2)
+    t_nochange("dec_full_station_0",3)
+    t_nochange("dec_full_station_0",4)
+    t_nochange("dec_full_station_0",5)
+    t_nochange("dec_full_station_0",6)
+    t_nochange("dec_full_station_0",7)
+    t_nochange("dec_full_station_0",8)
+}
+
+spritelayout sl_full_station_x {
+    ground {sprite: GROUNDSPRITE_NORMAL;}
+    building { // fence
+        sprite: CUSTOM(0,0);
+        xextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(5);
+    }
+    building { // fence
+        sprite: CUSTOM(0,1);
+        xoffset: 15;
+        xextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(6);
+    }
+    building { // fence
+        sprite: CUSTOM(0,2);
+        xextent: 16;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(7);
+    }
+    building { // fence
+        sprite: CUSTOM(0,3);
+        yoffset: 15;
+        xextent: 16;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(8);
+    }
+    building {
+        sprite: CUSTOM(1,0);
+    }
+    childsprite {
+        sprite: CUSTOM(1,5);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(7);
+    }
+    childsprite {
+        sprite: CUSTOM(1,6);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(8);
+    }
+    childsprite {
+        sprite: CUSTOM(1,7);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(6);
+    }
+    childsprite {
+        sprite: CUSTOM(1,8);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(5);
+    }
+    childsprite {
+        sprite: CUSTOM(1,1);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(7);
+    }
+    childsprite {
+        sprite: CUSTOM(1,2);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(8);
+    }
+    childsprite {
+        sprite: CUSTOM(1,3);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(8);
+    }
+    childsprite {
+        sprite: CUSTOM(1,4);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(7);
+    }
+
+}
+
+spritelayout sl_full_station_y {
+    ground {sprite: GROUNDSPRITE_NORMAL;}
+    building { // fence
+        sprite: CUSTOM(0,2);
+        xextent: 16;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(5);
+    }
+    building { // fence
+        sprite: CUSTOM(0,3);
+        yoffset: 15;
+        xextent: 16;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(6);
+    }
+    building { // fence
+        sprite: CUSTOM(0,0);
+        xextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(7);
+    }
+    building { // fence
+        sprite: CUSTOM(0,1);
+        xoffset: 15;
+        xextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(8);
+    }
+}
+
+switch (FEAT_STATIONS, SELF, sw_full_station_0, [
+    STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
+               (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for desert|snow
+    STORE_TEMP(param_build_date >= 2 ?
+               param_build_date - 2:
+               param_build_date ?
+                (current_date < date(1952, 1, 1)) +
+                (current_date < date(1986, 1, 1)) :
+                (build_date   < date(1952, 1, 1)) +
+                (build_date   < date(1986, 1, 1)) , 1), // returns 2 if build date is before 1952, 1 if before 1986
+    STORE_TEMP(animation_frame, 2), // animation frames
+    //STORE_TEMP(hasbit(rail_continuation, 1), 3), // bufferstop
+    //STORE_TEMP(hasbit(rail_continuation, 0), 4), // bufferstop
+    STORE_TEMP(nearby_tile_is_station(-1, 0), 5), // get nearby station tiles
+    STORE_TEMP(nearby_tile_is_station( 1, 0), 6), // get nearby station tiles
+    STORE_TEMP(nearby_tile_is_station( 0,-1) &&   // also get the landscape
+               (!hasbit(nearby_tile_slope(0,0), CORNER_S) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_W) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_N)), 7),
+    STORE_TEMP(nearby_tile_is_station( 0, 1) &&
+               (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_E) ||
+                 hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
+    STORE_TEMP(nearby_tile_is_station( 1, 1) << 0|
+               nearby_tile_is_station(-1, 1) << 1|
+               nearby_tile_is_station( 1,-1) << 2|
+               nearby_tile_is_station(-1,-1) << 3, 9),
+]){return;}
+
+switch(FEAT_STATIONS, SELF, sw_full_station_1, [
+    STORE_TEMP(0,0),
+    STORE_TEMP(param_build_date >= 2 ?
+               param_build_date - 2:
+               param_build_date ?
+                (current_date < date(1952, 1, 1)) +
+                (current_date < date(1986, 1, 1)) :
+                (build_date   < date(1952, 1, 1)) +
+                (build_date   < date(1986, 1, 1)) , 1),
+    STORE_TEMP(1,2),
+    //STORE_TEMP(0,3),
+    //STORE_TEMP(1,4),
+    STORE_TEMP(0,5),
+    STORE_TEMP(0,6),
+    STORE_TEMP(0,7),
+    STORE_TEMP(0,8),
+    //STORE_TEMP(0,9),
+    //STORE_TEMP(0,10),
+    //STORE_TEMP(3,11),
+    //STORE_TEMP(1,12),
+]){return;}
+
+item (FEAT_STATIONS, stn_full_station_0) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_full_station_x, sl_full_station_y];
+        custom_spritesets:          [s_fence_test_station, s_full_station];
+        prepare_layout:             sw_full_station_0();
+        purchase_prepare_layout:    sw_full_station_1();
+        //default:                    s_dummy;
+        //PASS:                       sg_people_test_station;
     }
 }
