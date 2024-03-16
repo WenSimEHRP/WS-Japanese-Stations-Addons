@@ -315,7 +315,8 @@ spritelayout sl_test_station_y(platform_state) {
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW  ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0), // returns 1|2 for desert|snow
-    STORE_TEMP(param_build_date == 2 ? 0 :
+    STORE_TEMP(param_build_date >= 2 ?
+               param_build_date - 2:
                param_build_date ?
                 (current_date < date(1952, 1, 1)) +
                 (current_date < date(1986, 1, 1)) :

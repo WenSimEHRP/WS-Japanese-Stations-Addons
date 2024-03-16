@@ -39,13 +39,15 @@ grf {
                 type: int;
                 def_value: 1;
                 min_value: 0;
-                max_value: 2;
+                max_value: 4;
                 name: string(PARAM_ENABLE_BUILD_DATE);
                 desc: string(PARAM_ENABLE_BUILD_DATE_DESC);
                 names: {
                     0: string(PARAM_ENABLE_BUILD_DATE_NEWLY_BUILT);
                     1: string(PARAM_ENABLE_BUILD_DATE_AUTO_UPDATE);
                     2: string(PARAM_ENABLE_BUILD_DATE_ALWAYS_LATEST);
+                    3: string(PARAM_ENABLE_BUILD_DATE_ALWAYS_ERA_2);
+                    4: string(PARAM_ENABLE_BUILD_DATE_ALWAYS_ERA_1);
                 };
             }
         }
@@ -373,7 +375,8 @@ spritelayout sl_test_station_y(platform_state) {
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0),
-    STORE_TEMP(param_build_date == 2 ? 0 :
+    STORE_TEMP(param_build_date >= 2 ?
+               param_build_date - 2:
                param_build_date ?
                 (current_date < date(1952, 1, 1)) +
                 (current_date < date(1986, 1, 1)) :
@@ -486,13 +489,13 @@ item (FEAT_STATIONS, stn_test_station_2) {
 # 1 "<command-line>"
 # 1 ".\\dec.pnml.template.index"
 # 3 "indexes.pnml" 2
-# 1 "src\\stations\\generated_stations\\dec_catnary_pole.pnml" 1
+# 1 "src\\stations\\generated_stations\\dec_dummy.pnml" 1
 # 1 ".\\dec.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 ".\\dec.pnml.template.index"
 # 4 "indexes.pnml" 2
-# 1 "src\\stations\\generated_stations\\dec_dummy.pnml" 1
+# 1 "src\\stations\\generated_stations\\dec_flex.pnml" 1
 # 1 ".\\dec.pnml.template.index"
 # 1 "<built-in>"
 # 1 "<command-line>"

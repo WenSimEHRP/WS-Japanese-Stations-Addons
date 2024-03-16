@@ -1,6 +1,6 @@
 STN_DEC_BARRIER                                                 :Barrier
-STN_DEC_CATNARY_POLE                                            :Catnary pole
 STN_DEC_DUMMY                                                   :Dummy
+STN_DEC_FLEX                                                    :Flex
 STN_DEC_ST1_FENCE                                               :St1 fence
 STN_DEC_TEST_STATION_0                                          :Test station 0
 STN_DEC_TEST_STATION_00                                         :Test station 00

@@ -14,6 +14,8 @@ PARAM_ENABLE_BUILD_DATE_DESC            :Automatically update station graphics w
 PARAM_ENABLE_BUILD_DATE_NEWLY_BUILT     :Newly built or renovated
 PARAM_ENABLE_BUILD_DATE_AUTO_UPDATE     :Automatically update
 PARAM_ENABLE_BUILD_DATE_ALWAYS_LATEST   :Always latest
+PARAM_ENABLE_BUILD_DATE_ALWAYS_ERA_2    :Always era 2
+PARAM_ENABLE_BUILD_DATE_ALWAYS_ERA_1    :Always era 1
 
 STR_GRF_NAME        :{TITLE} {VERSION}
 STR_GRF_DESC        :{WHITE}{DATE}{}{}{GOLD}{ABBRV}{BLACK} is a station set for OpenTTD.{}Made by WenSim.

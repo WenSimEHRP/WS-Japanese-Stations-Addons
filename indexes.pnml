@@ -1,7 +1,7 @@
 #include "src\stations\dummy.pnml"
 #include "src\stations\generated_stations\dec_barrier.pnml"
-#include "src\stations\generated_stations\dec_catnary_pole.pnml"
 #include "src\stations\generated_stations\dec_dummy.pnml"
+#include "src\stations\generated_stations\dec_flex.pnml"
 #include "src\stations\generated_stations\dec_st1_fence.pnml"
 #include "src\stations\generated_stations\dec_test_station_0.pnml"
 #include "src\stations\generated_stations\dec_test_station_00.pnml"
