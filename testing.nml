@@ -26,7 +26,7 @@ cargotable {
 template t_barrier_0(name) {[(SIZE_X + 1)*0, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
 template t_barrier_1(name) {[(SIZE_X + 1)*1, 0, SIZE_X, SIZE_Y,  -7, -45, PATH]}
 template t_barrier_2(name) {[(SIZE_X + 1)*2, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
-template t_barrier_3(name) {[(SIZE_X + 1)*3, 0, SIZE_X, SIZE_Y, -63, -47, PATH]}
+template t_barrier_3(name) {[(SIZE_X + 1)*3, 0, SIZE_X, SIZE_Y, -55, -45, PATH]}
 
 template t_fence_0(name) {[(SIZE_X + 1)*0, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
 template t_fence_1(name) {[(SIZE_X + 1)*1, 0, SIZE_X, SIZE_Y,  -1, -48, PATH]}
@@ -176,14 +176,15 @@ spritelayout sl_test_station_x(platform_state) {
     }
     building { // bufferstop
         sprite: CUSTOM(0,0);
-        xextent: 4;
+        xextent: 8;
         zextent: 8;
         hide_sprite: LOAD_TEMP(3);
     }
     building { // bufferstop
         sprite: CUSTOM(0,1);
         xoffset: 12;
-        xextent: 4;
+        xextent: 3;
+        yextent: 8;
         zextent: 8;
         hide_sprite: LOAD_TEMP(4);
     }
@@ -257,15 +258,16 @@ spritelayout sl_test_station_y(platform_state) {
     }
     building { // bufferstop
         sprite: CUSTOM(0,2);
-        yextent: 1;
+        yextent: 8;
         zextent: 8;
         hide_sprite: LOAD_TEMP(3);
     }
     building { // bufferstop
         sprite: CUSTOM(0,3);
-        yoffset: 15;
-        yextent: 1;
-        zextent: 6;
+        yoffset: 12;
+        yextent: 3;
+        xextent: 8;
+        zextent: 8;
         hide_sprite: LOAD_TEMP(4);
     }
     building { // platform
