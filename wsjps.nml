@@ -496,6 +496,10 @@ spriteset (s_full_station) {
     t_nochange("dec_full_station_0",6)
     t_nochange("dec_full_station_0",7)
     t_nochange("dec_full_station_0",8)
+    t_nochange("dec_full_station_0",9)
+    t_nochange("dec_full_station_0",10)
+    t_nochange("dec_full_station_0",11)
+    t_nochange("dec_full_station_0",12)
 }
 
 spritelayout sl_full_station_x {
@@ -579,6 +583,30 @@ spritelayout sl_full_station_x {
         palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(7);
     }
+    childsprite {
+        sprite: CUSTOM(1,9);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: (LOAD_TEMP(9) & 1 << 3) >> 3 || !(LOAD_TEMP(5) && LOAD_TEMP(7));
+    }
+    childsprite {
+        sprite: CUSTOM(1,10);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: (LOAD_TEMP(9) & 1 << 0) >> 0 || !(LOAD_TEMP(6) && LOAD_TEMP(8));
+    }
+    childsprite {
+        sprite: CUSTOM(1,11);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: (LOAD_TEMP(9) & 1 << 1) >> 1 || !(LOAD_TEMP(5) && LOAD_TEMP(8));
+    }
+    childsprite {
+        sprite: CUSTOM(1,12);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: (LOAD_TEMP(9) & 1 << 2) >> 2 || !(LOAD_TEMP(6) && LOAD_TEMP(7));
+    }
 
 }
 
@@ -637,7 +665,10 @@ switch (FEAT_STATIONS, SELF, sw_full_station_0, [
                (!hasbit(nearby_tile_slope(0,0), CORNER_N) ||
                  hasbit(nearby_tile_slope(0,0), CORNER_E) ||
                  hasbit(nearby_tile_slope(0,0), CORNER_S)), 8),
-# 588 "testing.nml"
+    STORE_TEMP(nearby_tile_is_station( 1, 1) << 0|
+               nearby_tile_is_station(-1, 1) << 1|
+               nearby_tile_is_station( 1,-1) << 2|
+               nearby_tile_is_station(-1,-1) << 3, 9),
 ]){return;}
 
 switch(FEAT_STATIONS, SELF, sw_full_station_1, [
