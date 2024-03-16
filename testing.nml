@@ -15,6 +15,19 @@ cargotable {
     PASS, MAIL
 }
 
+// we use recolour here to save space and time
+spriteset(platform_recolour_0) {
+    recolour_sprite {} // dummy
+    recolour_sprite {  // white stripe
+        0x41: 0x0C;
+        0x42: 0x0D;
+    }
+    recolour_sprite {  // bare ground
+        0x41: 0x08;
+        0x42: 0x08;
+    }
+}
+
 #define SIZE_X 64
 #define SIZE_Y 64
 #define SIZE_X_EXTENDED 64*3
@@ -100,40 +113,6 @@ spriteset (s_test_station) {
     t_platform_1("dec_test_station_02")
     t_platform_2("dec_test_station_02")
     t_platform_3("dec_test_station_02") // 16 in total, 4 per group, 4 groups, 4 platforms
-
-    t_platform_0("dec_test_station_1")
-    t_platform_1("dec_test_station_1")
-    t_platform_2("dec_test_station_1")
-    t_platform_3("dec_test_station_1")
-    t_platform_0("dec_test_station_00")
-    t_platform_1("dec_test_station_00")
-    t_platform_2("dec_test_station_00")
-    t_platform_3("dec_test_station_00")
-    t_platform_0("dec_test_station_01")
-    t_platform_1("dec_test_station_01")
-    t_platform_2("dec_test_station_01")
-    t_platform_3("dec_test_station_01")
-    t_platform_0("dec_test_station_02")
-    t_platform_1("dec_test_station_02")
-    t_platform_2("dec_test_station_02")
-    t_platform_3("dec_test_station_02")
-
-    t_platform_0("dec_test_station_2")
-    t_platform_1("dec_test_station_2")
-    t_platform_2("dec_test_station_2")
-    t_platform_3("dec_test_station_2")
-    t_platform_0("dec_test_station_00")
-    t_platform_1("dec_test_station_00")
-    t_platform_2("dec_test_station_00")
-    t_platform_3("dec_test_station_00")
-    t_platform_0("dec_test_station_01")
-    t_platform_1("dec_test_station_01")
-    t_platform_2("dec_test_station_01")
-    t_platform_3("dec_test_station_01")
-    t_platform_0("dec_test_station_02")
-    t_platform_1("dec_test_station_02")
-    t_platform_2("dec_test_station_02")
-    t_platform_3("dec_test_station_02")
 }
 
 spriteset (s_snow_test_station) {
@@ -189,13 +168,15 @@ spritelayout sl_test_station_x(platform_state) {
         hide_sprite: LOAD_TEMP(4);
     }
     building { // platform
-        sprite: CUSTOM(2,0 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
+        sprite: CUSTOM(2,0 + LOAD_TEMP(11) * 4);
         xoffset: 0;
         yoffset: 0;
         zoffset: 0;
         xextent: 16;
         yextent: 6;
         zextent: 6;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: (platform_state & 1 << 1) >> 1;
     }
     childsprite {
@@ -206,13 +187,15 @@ spritelayout sl_test_station_x(platform_state) {
         sprite: DEFAULT(0);
     }
     building { //platform
-        sprite: CUSTOM(2,1 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
+        sprite: CUSTOM(2,1 + LOAD_TEMP(11) * 4);
         xoffset: 0;
         yoffset: 10;
         zoffset: 0;
         xextent: 16;
         yextent: 6;
         zextent: 6;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: (platform_state & 1 << 0) >> 0;
     }
     childsprite {
@@ -271,13 +254,15 @@ spritelayout sl_test_station_y(platform_state) {
         hide_sprite: LOAD_TEMP(4);
     }
     building { // platform
-        sprite: CUSTOM(2,2 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
+        sprite: CUSTOM(2,2 + LOAD_TEMP(11) * 4);
         xoffset: 0;
         yoffset: 0;
         zoffset: 0;
         xextent: 6;
         yextent: 16;
         zextent: 6;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: (platform_state & 1 << 1) >> 1;
     }
     childsprite {
@@ -288,13 +273,15 @@ spritelayout sl_test_station_y(platform_state) {
         sprite: DEFAULT(2);
     }
     building { // platform
-        sprite: CUSTOM(2,3 + LOAD_TEMP(11) * 4 + LOAD_TEMP(1) * 16);
+        sprite: CUSTOM(2,3 + LOAD_TEMP(11) * 4);
         xoffset: 10;
         yoffset: 0;
         zoffset: 0;
         xextent: 6;
         yextent: 16;
         zextent: 6;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: (platform_state & 1 << 0) >> 0;
     }
     childsprite {

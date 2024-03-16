@@ -7,8 +7,6 @@
 #include "src\stations\generated_stations\dec_test_station_00.pnml"
 #include "src\stations\generated_stations\dec_test_station_01.pnml"
 #include "src\stations\generated_stations\dec_test_station_02.pnml"
-#include "src\stations\generated_stations\dec_test_station_1.pnml"
-#include "src\stations\generated_stations\dec_test_station_2.pnml"
 #include "src\stations\generated_stations\dec_test_station_fence.pnml"
 #include "src\stations\generated_stations\dec_test_station_people.pnml"
 #include "src\stations\generated_stations\snow_st1.pnml"
