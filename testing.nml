@@ -504,6 +504,8 @@ item (FEAT_STATIONS, stn_test_station_2) {
 template t_full     (name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, -31-4, -33-4, NOCROP, PATH]}
 //template t_full_crop(name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, -31, -33, CROP  , PATH]}
 
+#define RANDOM(min, max) ((min) + (__LINE__ * 1145141919 + 810) % ((max) - (min) + 1))
+
 spriteset (s_full_station) {
     t_full("dec_full_station_0",0)
     t_nochange("dec_full_station_0",1)
@@ -519,32 +521,32 @@ spriteset (s_full_station) {
     t_nochange("dec_full_station_0",11)
     t_nochange("dec_full_station_0",12)
     recolour_sprite {
-        198: 8;
-        199: 7;
-        200: 8;
-        201: 9;
-        202: 6;
+        198: RANDOM(7,10);
+        199: RANDOM(7,10);
+        200: RANDOM(7,10);
+        201: RANDOM(7,10);
+        202: RANDOM(7,10);
     }
     recolour_sprite {
-        198: 7;
-        199: 9;
-        200: 8;
-        201: 7;
-        202: 7;
+        198: RANDOM(7,10);
+        199: RANDOM(7,10);
+        200: RANDOM(7,10);
+        201: RANDOM(7,10);
+        202: RANDOM(7,10);
     }
     recolour_sprite {
-        198: 9;
-        199: 7;
-        200: 8;
-        201: 6;
-        202: 10;
+        198: RANDOM(7,10);
+        199: RANDOM(7,10);
+        200: RANDOM(7,10);
+        201: RANDOM(7,10);
+        202: RANDOM(7,10);
     }
     recolour_sprite {
-        198: 7;
-        199: 9;
-        200: 10;
-        201: 9;
-        202: 8;
+        198: RANDOM(7,10);
+        199: RANDOM(7,10);
+        200: RANDOM(7,10);
+        201: RANDOM(7,10);
+        202: RANDOM(7,10);
     }
 }
 
