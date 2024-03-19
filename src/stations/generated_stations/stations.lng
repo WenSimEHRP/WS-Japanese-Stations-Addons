@@ -12,6 +12,7 @@ STN_DEC_TEST_STATION_FENCE                                      :Test station fe
 STN_DEC_TEST_STATION_PEOPLE                                     :Test station people
 STN_DEC_TEST_STATION_SCREEN_DOOR                                :Test station screen door
 STN_DEC_TEST_STATION_SHED_0                                     :Test station shed 0
+STN_DEC_TEST_STATION_SHED_1                                     :Test station shed 1
 STN_SNOW_ST1                                                    :St1
 STN_SNOW_ST1_CARGO_PLATFORM                                     :St1 cargo platform
 STN_SNOW_ST1_UNDERGROUND_ENTRANCE                               :St1 underground entrance

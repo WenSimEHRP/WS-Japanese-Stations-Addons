@@ -122,6 +122,16 @@ spriteset (s_test_station) {
     t_platform_1("dec_test_station_02")
     t_platform_2("dec_test_station_02")
     t_platform_3("dec_test_station_02") // 16 in total, 4 per group, 4 groups, 4 platforms
+    // recolour rules, index starts from 16
+    recolour_sprite {} // dummy
+    recolour_sprite {  // white stripe
+        0x41: 0x0C;
+        0x42: 0x0D;
+    }
+    recolour_sprite {  // bare ground
+        0x41: 0x08;
+        0x42: 0x08;
+    }
 }
 
 spriteset (s_snow_test_station) {
@@ -153,19 +163,45 @@ spriteset (s_shed_0_test_station) {
     t_nochange("dec_test_station_shed_0",7)
     recolour_sprite {} // dummy
     recolour_sprite { // era 2
-        179: 0x10;
-        112: 0x10;
-        113: 0x10;
-        104: 0x10;
-        105: 0x10;
+        179: 113;
+        113: 112;
+        112: 105;
+        106: 112;
+        105: 105;
+        104: 104;
     }
     recolour_sprite { // era 1
-        179: 0x16;
-        112: 0x16;
-        113: 0x16;
-        104: 0x16;
-        105: 0x16;
+        179: 35;
+        112: 35;
+        113: 36;
+        106: 36;
+        105: 34;
+        104: 5;
+        14:  5;
+        13:  4;
+        12:  3;
+        10:  2;
+        3:   6;
     }
+}
+
+spriteset(s_shed_1_test_station) {
+    t_nochange("dec_test_station_shed_1",0)
+    t_nochange("dec_test_station_shed_1",1)
+    t_nochange("dec_test_station_shed_1",2)
+    t_nochange("dec_test_station_shed_1",3)
+    t_nochange("dec_test_station_shed_1",4)
+    t_nochange("dec_test_station_shed_1",5)
+    t_nochange("dec_test_station_shed_1",6)
+    t_nochange("dec_test_station_shed_1",7)
+    recolour_sprite {} // dummy
+    recolour_sprite {
+        16..23: 32..39; // era 2
+    }
+    recolour_sprite {
+        16..23: 104..111;// era 1
+    }
+
 }
 
 //TODO finish decal and shed support
@@ -246,7 +282,7 @@ spritelayout sl_test_station_x(platform_state, hide_decals) {
         yextent: 6;
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
+        palette: CUSTOM(2, LOAD_TEMP(1) + 16);
         hide_sprite: getbits(platform_state, 1, 1);}
     childsprite { // platform snow
         sprite: CUSTOM(3,0);
@@ -259,12 +295,12 @@ spritelayout sl_test_station_x(platform_state, hide_decals) {
     childsprite { // platform decals snow
         sprite: CUSTOM(4,0+4); // if there are shed snow is not shown
         hide_sprite: !hide_decals || (LOAD_TEMP(0) != 2);}
-    childsprite { // sheds snow
+    childsprite { // sheds
         sprite: CUSTOM(4,0);
         recolour_mode: RECOLOUR_REMAP;
         palette: CUSTOM(4,(LOAD_TEMP(1)) + 8);
         hide_sprite: getbits(hide_decals, 1, 1);}
-    childsprite {
+    childsprite { // sheds snow
         sprite: CUSTOM(4,0+4);
         hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);}
     building { //platform, southern side
@@ -276,13 +312,27 @@ spritelayout sl_test_station_x(platform_state, hide_decals) {
         yextent: 6;
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
+        palette: CUSTOM(2, LOAD_TEMP(1) + 16);
         hide_sprite: getbits(platform_state, 0, 1);}
     childsprite { // snow on platform
         sprite: CUSTOM(3,1);
-        hide_sprite: LOAD_TEMP(0) != 2;}
+        hide_sprite: !getbits(hide_decals, 1, 1) ||LOAD_TEMP(0) != 2;}
     childsprite { // people on platform
         sprite: DEFAULT(1);}
+    childsprite { // platform decals, style varys
+        sprite: CUSTOM(4,1);
+        hide_sprite: getbits(hide_decals, 0, 1);}
+    childsprite { // platform decals snow
+        sprite: CUSTOM(4,1+4); // if there are shed snow is not shown
+        hide_sprite: !hide_decals || (LOAD_TEMP(0) != 2);}
+    childsprite { // sheds
+        sprite: CUSTOM(4,1);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: CUSTOM(4,(LOAD_TEMP(1)) + 8);
+        hide_sprite: getbits(hide_decals, 1, 1);}
+    childsprite { // sheds snow
+        sprite: CUSTOM(4,1+4);
+        hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);}
 
 }
 
@@ -460,6 +510,23 @@ item (FEAT_STATIONS, stn_test_station_0) {
     graphics {
         sprite_layouts:             [sl_test_station_x(0,0), sl_test_station_y(0,0)];
         custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_0_test_station];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_0_shed_1) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(0,0), sl_test_station_y(0,0)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_1_test_station];
         prepare_layout:             sw_test_station_0();
         purchase_prepare_layout:    sw_test_station_1();
         default:                    s_dummy;

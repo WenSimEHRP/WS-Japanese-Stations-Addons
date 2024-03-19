@@ -188,6 +188,16 @@ spriteset (s_test_station) {
     t_platform_1("dec_test_station_02")
     t_platform_2("dec_test_station_02")
     t_platform_3("dec_test_station_02")
+
+    recolour_sprite {}
+    recolour_sprite {
+        0x41: 0x0C;
+        0x42: 0x0D;
+    }
+    recolour_sprite {
+        0x41: 0x08;
+        0x42: 0x08;
+    }
 }
 
 spriteset (s_snow_test_station) {
@@ -219,19 +229,45 @@ spriteset (s_shed_0_test_station) {
     t_nochange("dec_test_station_shed_0",7)
     recolour_sprite {}
     recolour_sprite {
-        179: 0x10;
-        112: 0x10;
-        113: 0x10;
-        104: 0x10;
-        105: 0x10;
+        179: 113;
+        113: 112;
+        112: 105;
+        106: 112;
+        105: 105;
+        104: 104;
     }
     recolour_sprite {
-        179: 0x16;
-        112: 0x16;
-        113: 0x16;
-        104: 0x16;
-        105: 0x16;
+        179: 35;
+        112: 35;
+        113: 36;
+        106: 36;
+        105: 34;
+        104: 5;
+        14: 5;
+        13: 4;
+        12: 3;
+        10: 2;
+        3: 6;
     }
+}
+
+spriteset(s_shed_1_test_station) {
+    t_nochange("dec_test_station_shed_1",0)
+    t_nochange("dec_test_station_shed_1",1)
+    t_nochange("dec_test_station_shed_1",2)
+    t_nochange("dec_test_station_shed_1",3)
+    t_nochange("dec_test_station_shed_1",4)
+    t_nochange("dec_test_station_shed_1",5)
+    t_nochange("dec_test_station_shed_1",6)
+    t_nochange("dec_test_station_shed_1",7)
+    recolour_sprite {}
+    recolour_sprite {
+        16..23: 32..39;
+    }
+    recolour_sprite {
+        16..23: 104..111;
+    }
+
 }
 
 
@@ -312,7 +348,7 @@ spritelayout sl_test_station_x(platform_state, hide_decals) {
         yextent: 6;
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
+        palette: CUSTOM(2, LOAD_TEMP(1) + 16);
         hide_sprite: getbits(platform_state, 1, 1);}
     childsprite {
         sprite: CUSTOM(3,0);
@@ -342,13 +378,27 @@ spritelayout sl_test_station_x(platform_state, hide_decals) {
         yextent: 6;
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
+        palette: CUSTOM(2, LOAD_TEMP(1) + 16);
         hide_sprite: getbits(platform_state, 0, 1);}
     childsprite {
         sprite: CUSTOM(3,1);
-        hide_sprite: LOAD_TEMP(0) != 2;}
+        hide_sprite: !getbits(hide_decals, 1, 1) ||LOAD_TEMP(0) != 2;}
     childsprite {
         sprite: DEFAULT(1);}
+    childsprite {
+        sprite: CUSTOM(4,1);
+        hide_sprite: getbits(hide_decals, 0, 1);}
+    childsprite {
+        sprite: CUSTOM(4,1+4);
+        hide_sprite: !hide_decals || (LOAD_TEMP(0) != 2);}
+    childsprite {
+        sprite: CUSTOM(4,1);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: CUSTOM(4,(LOAD_TEMP(1)) + 8);
+        hide_sprite: getbits(hide_decals, 1, 1);}
+    childsprite {
+        sprite: CUSTOM(4,1+4);
+        hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);}
 
 }
 
@@ -436,7 +486,7 @@ spritelayout sl_test_station_y(platform_state, hide_sprite) {
         sprite: DEFAULT(3);
     }
 }
-# 393 "testing.nml"
+# 443 "testing.nml"
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0),
@@ -514,6 +564,23 @@ item (FEAT_STATIONS, stn_test_station_0) {
     }
 }
 
+item (FEAT_STATIONS, stn_test_station_0_shed_1) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x(0,0), sl_test_station_y(0,0)];
+        custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_1_test_station];
+        prepare_layout: sw_test_station_0();
+        purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
 item (FEAT_STATIONS, stn_test_station_1) {
     property {
         class: "WSJT";
@@ -568,32 +635,32 @@ spriteset (s_full_station) {
     t_nochange("dec_full_station_0",11)
     t_nochange("dec_full_station_0",12)
     recolour_sprite {
-        198: ((7) + (524 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (525 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (526 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (527 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (528 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (591 * 1145141919 + 810) % ((10) - (7) + 1));
+        199: ((7) + (592 * 1145141919 + 810) % ((10) - (7) + 1));
+        200: ((7) + (593 * 1145141919 + 810) % ((10) - (7) + 1));
+        201: ((7) + (594 * 1145141919 + 810) % ((10) - (7) + 1));
+        202: ((7) + (595 * 1145141919 + 810) % ((10) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (531 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (532 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (533 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (534 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (535 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (598 * 1145141919 + 810) % ((10) - (7) + 1));
+        199: ((7) + (599 * 1145141919 + 810) % ((10) - (7) + 1));
+        200: ((7) + (600 * 1145141919 + 810) % ((10) - (7) + 1));
+        201: ((7) + (601 * 1145141919 + 810) % ((10) - (7) + 1));
+        202: ((7) + (602 * 1145141919 + 810) % ((10) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (538 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (539 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (540 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (541 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (542 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (605 * 1145141919 + 810) % ((10) - (7) + 1));
+        199: ((7) + (606 * 1145141919 + 810) % ((10) - (7) + 1));
+        200: ((7) + (607 * 1145141919 + 810) % ((10) - (7) + 1));
+        201: ((7) + (608 * 1145141919 + 810) % ((10) - (7) + 1));
+        202: ((7) + (609 * 1145141919 + 810) % ((10) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (545 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (546 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (547 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (548 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (549 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (612 * 1145141919 + 810) % ((10) - (7) + 1));
+        199: ((7) + (613 * 1145141919 + 810) % ((10) - (7) + 1));
+        200: ((7) + (614 * 1145141919 + 810) % ((10) - (7) + 1));
+        201: ((7) + (615 * 1145141919 + 810) % ((10) - (7) + 1));
+        202: ((7) + (616 * 1145141919 + 810) % ((10) - (7) + 1));
     }
 }
 
