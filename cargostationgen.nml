@@ -1,0 +1,39 @@
+# 1 ".\\cargostation.nml"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 ".\\cargostation.nml"
+spriteset(s_cargo_contianer){
+
+    recolour_sprite {}
+    recolour_sprite {
+        0..255: 0;
+    }
+    recolour_sprite {
+        0..255: 1;
+    }
+}
+# 26 ".\\cargostation.nml"
+a = (((26 * 114514 ^ 1919810) ^ (LOAD_TEMP(14) + 810)) % 16);
+
+spritelayout sl_cargo_container_platform {
+
+    building {
+        sprite: CUSTOM(...);
+        hide_sprite: ...;
+    }
+    childsprite {
+        sprite: CUSTOM(LOAD_TEMP(13));
+        hide_sprite: ((((((36 * 114514 ^ 1919810) ^ (LOAD_TEMP(13) + 810)) % 16)) & 0xF) < 8);
+    }
+    childsprite {
+        sprite: CUSTOM(LOAD_TEMP(13));
+    }
+}
+
+switch(FEAT_STATIONS, SELF, sw_cargo_station, [
+    STORE_TEMP(0,0)
+    STORE_TEMP(0,1)
+    STORE_TEMP(0,2)
+
+    STORE_TEMP(random_bits_tile, 13)
+])

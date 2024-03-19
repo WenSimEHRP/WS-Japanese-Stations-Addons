@@ -1,0 +1,55 @@
+spriteset(s_cargo_contianer){
+    // placeholder
+    recolour_sprite {} // dummy
+    recolour_sprite {
+        0..255: 0;
+    } // red to blue
+    recolour_sprite {
+        0..255: 1;
+    } // red to green
+}
+//TODO finish this
+//TODO draw cargo sprites
+
+//* ratio of red:blue:green == 4:2:1
+//* each variant of cargo contianer has the same possibility of being generated
+// we want some random cargo containers, thus we add some random cargo generation
+// and also random cargo recolouring.
+
+// here we don't use a random switch, instead we use random_bits to generate a random number
+// ahhh false thingy
+
+// we use a random number generator to generate a random number
+#define RNG(a) (((__LINE__ * 114514 ^ 1919810) ^ (a + 810)) % 16)
+#define PRO(num, probability) (((num) & 0xF) < probability) // probability is 0..15, num is 0..15
+#define WEIGHTED_RANDOM_NUM(num, w0, w1, w2, w3)\
+(((((num) % (w0 + w1 + w2 + w3)) < (w0 + w1)) ? ((num) % w0) :\
+((((num) % (w1 + w2 + w3)) < (w1 + w2)) ? ((num) % w1 + w0) :\
+(((((num) % (w2 + w3)) < w2) ? ((num) % w2 + w0 + w1) :\
+((num) % w3 + w0 + w1 + w2)))))\
+
+
+a = RNG(LOAD_TEMP(14));
+
+spritelayout sl_cargo_container_platform {
+    //...
+    building { // platform
+        sprite: CUSTOM(...);
+        hide_sprite: ...;
+    }
+    childsprite { // building, independent
+        sprite: DEFAULT(LOAD_TEMP(13));
+        hide_sprite: PRO(RNG(LOAD_TEMP(13)), 8);
+    }
+    childsprite { // dependent on the previous building
+        sprite: DEFAULT(LOAD_TEMP(13));
+    }
+}
+
+switch(FEAT_STATIONS, SELF, sw_cargo_station, [
+    STORE_TEMP(0,0) // climite
+    STORE_TEMP(0,1) // era
+    STORE_TEMP(0,2) // animation frame
+    //...
+    STORE_TEMP(random_bits_tile, 13) // range of random_bits_tile is 0..15
+])
