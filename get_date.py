@@ -1,6 +1,11 @@
 # this program gets datetime
 # and prints it to the console
 import datetime
+import subprocess
+
+def get_commit_number():
+    result = subprocess.run(['git', 'rev-list', '--count', 'HEAD'], stdout=subprocess.PIPE)
+    return result.stdout.decode('utf-8').strip()
 
 # get the current date and time in UTC
 current_date = datetime.datetime.utcnow()
@@ -16,6 +21,8 @@ with open("custom_tags.txt", "r") as f:
 for index,item in enumerate(content):
     if "DATE" in item:
         content[index] = 'DATE    :' + current_date_str + "\n"
+    if "COMMIT" in item:
+        content[index] = 'COMMIT  :c' + get_commit_number() + "\n"
 
 # write the new content back to the file
 with open("custom_tags.txt", "w") as f:

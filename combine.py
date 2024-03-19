@@ -17,7 +17,7 @@ def main():
         indexes = read_indexes('src\stations')
     else:
         indexes = read_indexes('src/stations')
-    # output_data = read_file('wsjps.pnml')
+    # output_data = read_file('wins.pnml')
     output_data = []
     for index in indexes:
         output_data.append(f'#include "{index}"\n')

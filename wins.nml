@@ -1,7 +1,7 @@
-# 1 "wsjps.pnml"
+# 1 "wins.pnml"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "wsjps.pnml"
+# 1 "wins.pnml"
 # 1 "src/header.pnml" 1
 grf {
     grfid: "WS\24\05";
@@ -52,13 +52,13 @@ grf {
             }
         }
 }
-# 2 "wsjps.pnml" 2
+# 2 "wins.pnml" 2
 # 1 "src/version_check.pnml" 1
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(12,0)) {
     error(FATAL, string(STR_OPENTTD));
     exit;
 }
-# 3 "wsjps.pnml" 2
+# 3 "wins.pnml" 2
 # 1 "src/templates.pnml" 1
 # 9 "src/templates.pnml"
 template t_platform_0(name) {[(64 + 1)*0, 0, 64, 64, -31, -33, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
@@ -82,7 +82,7 @@ template t_platform_extended_8 (name) {[(64*3 + 1)*8, 0, 64*3, 64*3, -95, -97, "
 template t_platform_extended_9 (name) {[(64*3 + 1)*9, 0, 64*3, 64*3, -75, -107, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_platform_extended_10(name) {[(64*3 + 1)*10, 0, 64*3, 64*3, -95, -97, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_platform_extended_11(name) {[(64*3 + 1)*11, 0, 64*3, 64*3, -75, -107, "src/stations/generated_stations/gfx/" + name + ".png"]}
-# 4 "wsjps.pnml" 2
+# 4 "wins.pnml" 2
 
 # 1 "testing.nml" 1
 railtypetable {
@@ -1010,7 +1010,7 @@ item (FEAT_STATIONS, stn_anim_station_0) {
         anim_next_frame: CB_RESULT_NEXT_FRAME;
     }
 }
-# 6 "wsjps.pnml" 2
+# 6 "wins.pnml" 2
 
 # 1 "indexes.pnml" 1
 # 1 "src\\stations\\dummy.pnml" 1
@@ -1654,4 +1654,4 @@ switch (FEAT_STATIONS, SELF, sw_wp1_tetsubashi_1_snow, terrain_type){ TILETYPE_S
 switch (FEAT_STATIONS, SELF, sw_wp1_tetsubashi_01_snow, terrain_type){ TILETYPE_SNOW: return 2; 0; } item (FEAT_STATIONS, stn_wp1_tetsubashi_01) { property { class: "WAYP"; name: string(STN_WP1_TETSUBASHI); } graphics { sprite_layouts: [sl_wp1_tetsubashi_x_01, sl_wp1_tetsubashi_y_01, sl_wp1_tetsubashi_x_01_snow, sl_wp1_tetsubashi_y_01_snow]; select_sprite_layout: sw_wp1_tetsubashi_01_snow; s_wp1_tetsubashi_0; } }
 # 6 ".\\wp1.pnml.template.index" 2
 # 42 "indexes.pnml" 2
-# 7 "wsjps.pnml" 2
+# 7 "wins.pnml" 2
