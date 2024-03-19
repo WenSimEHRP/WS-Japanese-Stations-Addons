@@ -289,7 +289,7 @@ spritelayout sl_test_station_x(platform_state, hide_sprite) {
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 1) >> 1;}
+        hide_sprite: getbits(platform_state, 1, 1);}
     childsprite {
         sprite: CUSTOM(3,0);
         hide_sprite: LOAD_TEMP(0) != 2;}
@@ -313,7 +313,7 @@ spritelayout sl_test_station_x(platform_state, hide_sprite) {
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 0) >> 0;}
+        hide_sprite: getbits(platform_state, 0, 1);}
     childsprite {
         sprite: CUSTOM(3,1);
         hide_sprite: LOAD_TEMP(0) != 2;}
@@ -377,7 +377,7 @@ spritelayout sl_test_station_y(platform_state, hide_sprite) {
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 1) >> 1;
+        hide_sprite: getbits(platform_state, 1, 1);
     }
     childsprite {
         sprite: CUSTOM(3,2);
@@ -396,7 +396,7 @@ spritelayout sl_test_station_y(platform_state, hide_sprite) {
         zextent: 6;
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 0) >> 0;
+        hide_sprite: getbits(platform_state, 0, 1);
     }
     childsprite {
         sprite: CUSTOM(3,3);
