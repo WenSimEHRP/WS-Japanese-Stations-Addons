@@ -28,33 +28,33 @@ spriteset(platform_recolour_0) {
     }
 }
 
-#define SIZE_X 64
-#define SIZE_Y 64
-#define SIZE_X_EXTENDED 64*3
-#define SIZE_Y_EXTENDED 64*3
+//#define SIZE_X 64
+//#define SIZE_Y 64
+//#define SIZE_X_EXTENDED 64*3
+//#define SIZE_Y_EXTENDED 64*3
 
-#define PATH "src/stations/generated_stations/gfx/" + name + ".png"
+//#define PATH "src/stations/generated_stations/gfx/" + name + ".png"
 // offset part
 
-template t_barrier_0(name) {[(SIZE_X + 1)*0, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
-template t_barrier_1(name) {[(SIZE_X + 1)*1, 0, SIZE_X, SIZE_Y,  -7, -45, PATH]}
-template t_barrier_2(name) {[(SIZE_X + 1)*2, 0, SIZE_X, SIZE_Y, -31, -33, PATH]}
-template t_barrier_3(name) {[(SIZE_X + 1)*3, 0, SIZE_X, SIZE_Y, -55, -45, PATH]}
+template t_barrier_0(name) {[(SIZE_X + 2)*0, 0, SIZE_X, SIZE_Y, -31-4, -33-4, PATH]}
+template t_barrier_1(name) {[(SIZE_X + 2)*1, 0, SIZE_X, SIZE_Y,  -7-4, -45-4, PATH]}
+template t_barrier_2(name) {[(SIZE_X + 2)*2, 0, SIZE_X, SIZE_Y, -31-4, -33-4, PATH]}
+template t_barrier_3(name) {[(SIZE_X + 2)*3, 0, SIZE_X, SIZE_Y, -55-4, -45-4, PATH]}
 
-template t_fence_0(name) {[(SIZE_X + 1)*0, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
-template t_fence_1(name) {[(SIZE_X + 1)*1, 0, SIZE_X, SIZE_Y,  -1, -48, PATH]}
-template t_fence_2(name) {[(SIZE_X + 1)*2, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
-template t_fence_3(name) {[(SIZE_X + 1)*3, 0, SIZE_X, SIZE_Y, -61, -48, PATH]}
-template t_fence_4(name) {[(SIZE_X + 1)*4, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
-template t_fence_5(name) {[(SIZE_X + 1)*5, 0, SIZE_X, SIZE_Y,  -1, -48, PATH]}
-template t_fence_6(name) {[(SIZE_X + 1)*6, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
-template t_fence_7(name) {[(SIZE_X + 1)*7, 0, SIZE_X, SIZE_Y, -61, -48, PATH]}
-template t_fence_8(name) {[(SIZE_X + 1)*8, 0, SIZE_X, SIZE_Y, -49, -43, PATH]}
-template t_fence_9(name) {[(SIZE_X + 1)*9, 0, SIZE_X, SIZE_Y, -19, -57, PATH]}
-template t_fence_10(name) {[(SIZE_X + 1)*10, 0, SIZE_X, SIZE_Y, -49, -43, PATH]}
-template t_fence_11(name) {[(SIZE_X + 1)*11, 0, SIZE_X, SIZE_Y, -19, -57, PATH]}
+template t_fence_0(name)  {[(SIZE_X + 2)*0,  0, SIZE_X, SIZE_Y, -31-4, -34-4, PATH]}
+template t_fence_1(name)  {[(SIZE_X + 2)*1,  0, SIZE_X, SIZE_Y,  -1-4, -48-4, PATH]}
+template t_fence_2(name)  {[(SIZE_X + 2)*2,  0, SIZE_X, SIZE_Y, -31-4, -34-4, PATH]}
+template t_fence_3(name)  {[(SIZE_X + 2)*3,  0, SIZE_X, SIZE_Y, -61-4, -48-4, PATH]}
+template t_fence_4(name)  {[(SIZE_X + 2)*4,  0, SIZE_X, SIZE_Y, -31-4, -34-4, PATH]}
+template t_fence_5(name)  {[(SIZE_X + 2)*5,  0, SIZE_X, SIZE_Y,  -1-4, -48-4, PATH]}
+template t_fence_6(name)  {[(SIZE_X + 2)*6,  0, SIZE_X, SIZE_Y, -31-4, -34-4, PATH]}
+template t_fence_7(name)  {[(SIZE_X + 2)*7,  0, SIZE_X, SIZE_Y, -61-4, -48-4, PATH]}
+template t_fence_8(name)  {[(SIZE_X + 2)*8,  0, SIZE_X, SIZE_Y, -49-4, -43-4, PATH]}
+template t_fence_9(name)  {[(SIZE_X + 2)*9,  0, SIZE_X, SIZE_Y, -19-4, -57-4, PATH]}
+template t_fence_10(name) {[(SIZE_X + 2)*10, 0, SIZE_X, SIZE_Y, -49-4, -43-4, PATH]}
+template t_fence_11(name) {[(SIZE_X + 2)*11, 0, SIZE_X, SIZE_Y, -19-4, -57-4, PATH]}
 
-template t_nochange(name, x) {[(SIZE_X + 1)*x, 0, SIZE_X, SIZE_Y, 0, 0, PATH]}
+template t_nochange(name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, 0, 0, PATH]}
 
 spriteset (s_dummy, "src/stations/generated_stations/gfx/dec_dummy.png") {
     [0,0,1,1,0,0] // 01
@@ -501,8 +501,8 @@ item (FEAT_STATIONS, stn_test_station_2) {
     }
 }
 
-template t_full     (name, x) {[(SIZE_X + 1)*x, 0, SIZE_X, SIZE_Y, -31, -33, NOCROP, PATH]}
-//template t_full_crop(name, x) {[(SIZE_X + 1)*x, 0, SIZE_X, SIZE_Y, -31, -33, CROP  , PATH]}
+template t_full     (name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, -31-4, -33-4, NOCROP, PATH]}
+//template t_full_crop(name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, -31, -33, CROP  , PATH]}
 
 spriteset (s_full_station) {
     t_full("dec_full_station_0",0)
