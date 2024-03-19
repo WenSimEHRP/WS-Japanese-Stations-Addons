@@ -128,6 +128,10 @@ template t_fence_4(name) {[(64 + 1)*4, 0, 64, 64, -31, -34, "src/stations/genera
 template t_fence_5(name) {[(64 + 1)*5, 0, 64, 64, -1, -48, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_fence_6(name) {[(64 + 1)*6, 0, 64, 64, -31, -34, "src/stations/generated_stations/gfx/" + name + ".png"]}
 template t_fence_7(name) {[(64 + 1)*7, 0, 64, 64, -61, -48, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_fence_8(name) {[(64 + 1)*8, 0, 64, 64, -49, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_fence_9(name) {[(64 + 1)*9, 0, 64, 64, -19, -57, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_fence_10(name) {[(64 + 1)*10, 0, 64, 64, -49, -43, "src/stations/generated_stations/gfx/" + name + ".png"]}
+template t_fence_11(name) {[(64 + 1)*11, 0, 64, 64, -19, -57, "src/stations/generated_stations/gfx/" + name + ".png"]}
 
 template t_nochange(name, x) {[(64 + 1)*x, 0, 64, 64, 0, 0, "src/stations/generated_stations/gfx/" + name + ".png"]}
 
@@ -158,14 +162,19 @@ spriteset (s_bufferstop) {
 }
 
 spriteset (s_fence_test_station) {
-    NE: t_fence_0("dec_test_station_fence")
-    SW: t_fence_1("dec_test_station_fence")
-    NW: t_fence_2("dec_test_station_fence")
-    SE: t_fence_3("dec_test_station_fence")
-    NE_s: t_fence_4("dec_test_station_fence")
-    SW_s: t_fence_5("dec_test_station_fence")
-    NW_s: t_fence_6("dec_test_station_fence")
-    SE_s: t_fence_7("dec_test_station_fence")
+    t_fence_0("dec_test_station_fence")
+    t_fence_1("dec_test_station_fence")
+    t_fence_2("dec_test_station_fence")
+    t_fence_3("dec_test_station_fence")
+
+    t_fence_4("dec_test_station_fence")
+    t_fence_5("dec_test_station_fence")
+    t_fence_6("dec_test_station_fence")
+    t_fence_7("dec_test_station_fence")
+    t_fence_8("dec_test_station_fence")
+    t_fence_9("dec_test_station_fence")
+    t_fence_10("dec_test_station_fence")
+    t_fence_11("dec_test_station_fence")
 }
 
 spriteset (s_people_test_station) {
@@ -244,16 +253,44 @@ spritelayout sl_test_station_x(platform_state, hide_sprite) {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     childsprite {sprite: LOAD_TEMP(12) + 1 + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
     building {
-        sprite: CUSTOM(1,0 + LOAD_TEMP(3) * 4);
+        sprite: CUSTOM(1,0);
         xextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(5);}
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(3);}
     building {
-        sprite: CUSTOM(1,1 + LOAD_TEMP(4) * 4);
+        sprite: CUSTOM(1,0+4);
+        xextent: 1;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 1, 1) || LOAD_TEMP(5) && LOAD_TEMP(3);}
+    building {
+        sprite: CUSTOM(1,0+4+1);
+        xoffset: 15;
+        xextent: 1;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 1, 1) || LOAD_TEMP(6) && LOAD_TEMP(4);}
+    building {
+        sprite: CUSTOM(1,1);
         xoffset: 15;
         xextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(6);}
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(4);}
+    building {
+        sprite: CUSTOM(1,0+4+4);
+        xextent: 1;
+        yoffset: 9;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 0, 1) || LOAD_TEMP(5) && LOAD_TEMP(3);}
+    building {
+        sprite: CUSTOM(1,0+4+4+1);
+        xoffset: 15;
+        xextent: 1;
+        yoffset: 9;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 0, 1) || LOAD_TEMP(6) && LOAD_TEMP(4);}
     building {
         sprite: CUSTOM(1,2);
         xextent: 16;
@@ -406,7 +443,7 @@ spritelayout sl_test_station_y(platform_state, hide_sprite) {
         sprite: DEFAULT(3);
     }
 }
-# 350 "testing.nml"
+# 387 "testing.nml"
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0),

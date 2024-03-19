@@ -49,6 +49,10 @@ template t_fence_4(name) {[(SIZE_X + 1)*4, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
 template t_fence_5(name) {[(SIZE_X + 1)*5, 0, SIZE_X, SIZE_Y,  -1, -48, PATH]}
 template t_fence_6(name) {[(SIZE_X + 1)*6, 0, SIZE_X, SIZE_Y, -31, -34, PATH]}
 template t_fence_7(name) {[(SIZE_X + 1)*7, 0, SIZE_X, SIZE_Y, -61, -48, PATH]}
+template t_fence_8(name) {[(SIZE_X + 1)*8, 0, SIZE_X, SIZE_Y, -49, -43, PATH]}
+template t_fence_9(name) {[(SIZE_X + 1)*9, 0, SIZE_X, SIZE_Y, -19, -57, PATH]}
+template t_fence_10(name) {[(SIZE_X + 1)*10, 0, SIZE_X, SIZE_Y, -49, -43, PATH]}
+template t_fence_11(name) {[(SIZE_X + 1)*11, 0, SIZE_X, SIZE_Y, -19, -57, PATH]}
 
 template t_nochange(name, x) {[(SIZE_X + 1)*x, 0, SIZE_X, SIZE_Y, 0, 0, PATH]}
 
@@ -79,14 +83,19 @@ spriteset (s_bufferstop) {
 }
 
 spriteset (s_fence_test_station) {
-    NE:   t_fence_0("dec_test_station_fence")
-    SW:   t_fence_1("dec_test_station_fence")
-    NW:   t_fence_2("dec_test_station_fence")
-    SE:   t_fence_3("dec_test_station_fence")
-    NE_s: t_fence_4("dec_test_station_fence") // special case
-    SW_s: t_fence_5("dec_test_station_fence") // special case
-    NW_s: t_fence_6("dec_test_station_fence") // special case
-    SE_s: t_fence_7("dec_test_station_fence") // special case
+    t_fence_0("dec_test_station_fence")
+    t_fence_1("dec_test_station_fence")
+    t_fence_2("dec_test_station_fence")
+    t_fence_3("dec_test_station_fence")
+    // platform fences
+    t_fence_4("dec_test_station_fence")
+    t_fence_5("dec_test_station_fence")
+    t_fence_6("dec_test_station_fence")
+    t_fence_7("dec_test_station_fence")
+    t_fence_8("dec_test_station_fence")
+    t_fence_9("dec_test_station_fence")
+    t_fence_10("dec_test_station_fence")
+    t_fence_11("dec_test_station_fence")
 }
 
 spriteset (s_people_test_station) {
@@ -164,17 +173,45 @@ spriteset (s_shed_0_test_station) {
 spritelayout sl_test_station_x(platform_state, hide_sprite) {
     ground {sprite: GROUNDSPRITE_RAIL_X;}
     childsprite {sprite: LOAD_TEMP(12) + 1 + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
-    building { // fence
-        sprite: CUSTOM(1,0 + LOAD_TEMP(3) * 4);
+    building { // fence, along track side north
+        sprite: CUSTOM(1,0);
         xextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(5);}
-    building { // fence
-        sprite: CUSTOM(1,1 + LOAD_TEMP(4) * 4);
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(3);}
+    building { // fence, alt north north
+        sprite: CUSTOM(1,0+4);
+        xextent: 1;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 1, 1) || LOAD_TEMP(5) && LOAD_TEMP(3);}
+    building { // fence, alt north south
+        sprite: CUSTOM(1,0+4+1);
+        xoffset: 15;
+        xextent: 1;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 1, 1) || LOAD_TEMP(6) && LOAD_TEMP(4);}
+    building { // fence, along track side south
+        sprite: CUSTOM(1,1);
         xoffset: 15;
         xextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(6);}
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(4);}
+    building { // fence, alt south north
+        sprite: CUSTOM(1,0+4+4);
+        xextent: 1;
+        yoffset: 9;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 0, 1) || LOAD_TEMP(5) && LOAD_TEMP(3);}
+    building { // fence, alt south south
+        sprite: CUSTOM(1,0+4+4+1);
+        xoffset: 15;
+        xextent: 1;
+        yoffset: 9;
+        yextent: 6;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 0, 1) || LOAD_TEMP(6) && LOAD_TEMP(4);}
     building { // fence
         sprite: CUSTOM(1,2);
         xextent: 16;
