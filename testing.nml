@@ -51,8 +51,8 @@ template t_fence_6(name)  {[(SIZE_X + 2)*6,  0, SIZE_X, SIZE_Y, -31-4, -34-4, PA
 template t_fence_7(name)  {[(SIZE_X + 2)*7,  0, SIZE_X, SIZE_Y, -61-4, -48-4, PATH]}
 template t_fence_8(name)  {[(SIZE_X + 2)*8,  0, SIZE_X, SIZE_Y, -49-4, -43-4, PATH]}
 template t_fence_9(name)  {[(SIZE_X + 2)*9,  0, SIZE_X, SIZE_Y, -19-4, -57-4, PATH]}
-template t_fence_10(name) {[(SIZE_X + 2)*10, 0, SIZE_X, SIZE_Y, -49-4, -43-4, PATH]}
-template t_fence_11(name) {[(SIZE_X + 2)*11, 0, SIZE_X, SIZE_Y, -19-4, -57-4, PATH]}
+template t_fence_10(name) {[(SIZE_X + 2)*10, 0, SIZE_X, SIZE_Y,   -17,   -47, PATH]}
+template t_fence_11(name) {[(SIZE_X + 2)*11, 0, SIZE_X, SIZE_Y,   -47, -57-4, PATH]}
 
 template t_nochange(name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, 0, 0, PATH]}
 
@@ -164,6 +164,7 @@ spriteset (s_shed_0_test_station) {
     recolour_sprite {} // dummy
     recolour_sprite { // era 2
         179: 113;
+        123: 108;
         113: 112;
         112: 105;
         106: 112;
@@ -172,6 +173,7 @@ spriteset (s_shed_0_test_station) {
     }
     recolour_sprite { // era 1
         179: 35;
+        123: 36;
         112: 35;
         113: 36;
         106: 36;
@@ -336,23 +338,55 @@ spritelayout sl_test_station_x(platform_state, hide_decals) {
 
 }
 
-spritelayout sl_test_station_y(platform_state, hide_sprite) {
+spritelayout sl_test_station_y(platform_state, hide_decals) {
     ground {sprite: GROUNDSPRITE_RAIL_Y;}
     childsprite {sprite: LOAD_TEMP(12) + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
-    building { // fence
-        sprite: CUSTOM(1,2 + LOAD_TEMP(3) * 4);
+    building { // fence, along track side north
+        sprite: CUSTOM(1,2);
         xextent: 16;
         yextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(5);
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(3);
     }
-    building { // fence
-        sprite: CUSTOM(1,3 + LOAD_TEMP(4) * 4);
+    building { // fence, alt north north
+        sprite: CUSTOM(1,2+4);
+        xextent: 6;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 1, 1) || LOAD_TEMP(5) && LOAD_TEMP(3);
+    }
+    building { // fence, alt north south
+        sprite: CUSTOM(1,2+4+1);
+        yoffset: 15;
+        xextent: 6;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 1, 1) || LOAD_TEMP(6) && LOAD_TEMP(4);
+    }
+    building { // fence, along track side south
+        sprite: CUSTOM(1,3);
         yoffset: 15;
         xextent: 16;
         yextent: 1;
         zextent: 8;
-        hide_sprite: LOAD_TEMP(6);
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(4);
+    }
+    building { // fence, alt south north
+        sprite: CUSTOM(1,10);
+        xoffset: 9;
+        xextent: 6;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 0, 1) || LOAD_TEMP(5) && LOAD_TEMP(3);
+    }
+    building { // fence, alt south south
+        sprite: CUSTOM(1,11);
+        xoffset: 9;
+        yoffset: 15;
+        xextent: 6;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: getbits(platform_state, 0, 1) || LOAD_TEMP(6) && LOAD_TEMP(4);
     }
     building { // fence
         sprite: CUSTOM(1,0);
@@ -393,12 +427,30 @@ spritelayout sl_test_station_y(platform_state, hide_sprite) {
         palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: getbits(platform_state, 1, 1);
     }
-    childsprite {
+    childsprite { // platform snow
         sprite: CUSTOM(3,2);
         hide_sprite: LOAD_TEMP(0) != 2;
     }
-    childsprite {
+    childsprite { // people on platform
         sprite: DEFAULT(2);
+    }
+    childsprite { // platform decals, style varys
+        sprite: CUSTOM(4,2);
+        hide_sprite: getbits(hide_decals, 0, 1);
+    }
+    childsprite { // platform decals snow
+        sprite: CUSTOM(4,2+4); // if there are shed snow is not shown
+        hide_sprite: !hide_decals || (LOAD_TEMP(0) != 2);
+    }
+    childsprite { // sheds
+        sprite: CUSTOM(4,2);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: CUSTOM(4,(LOAD_TEMP(1)) + 8);
+        hide_sprite: getbits(hide_decals, 1, 1);
+    }
+    childsprite { // sheds snow
+        sprite: CUSTOM(4,2+4);
+        hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);
     }
     building { // platform
         sprite: CUSTOM(2,3 + LOAD_TEMP(11) * 4);
@@ -412,12 +464,30 @@ spritelayout sl_test_station_y(platform_state, hide_sprite) {
         palette: platform_recolour_0(LOAD_TEMP(1));
         hide_sprite: getbits(platform_state, 0, 1);
     }
-    childsprite {
+    childsprite { // snow on platform
         sprite: CUSTOM(3,3);
         hide_sprite: LOAD_TEMP(0) != 2;
     }
-    childsprite {
+    childsprite { // people on platform
         sprite: DEFAULT(3);
+    }
+    childsprite { // platform decals, style varys
+        sprite: CUSTOM(4,3);
+        hide_sprite: getbits(hide_decals, 0, 1);
+    }
+    childsprite { // platform decals snow
+        sprite: CUSTOM(4,3+4); // if there are shed snow is not shown
+        hide_sprite: !hide_decals || (LOAD_TEMP(0) != 2);
+    }
+    childsprite { // sheds
+        sprite: CUSTOM(4,3);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: CUSTOM(4,(LOAD_TEMP(1)) + 8);
+        hide_sprite: getbits(hide_decals, 1, 1);
+    }
+    childsprite { // sheds snow
+        sprite: CUSTOM(4,3+4);
+        hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);
     }
 }
 
@@ -534,6 +604,57 @@ item (FEAT_STATIONS, stn_test_station_0_shed_1) {
     }
 }
 
+item (FEAT_STATIONS, stn_test_station_noshed) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(0,3), sl_test_station_y(0,3)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_dummy];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_1_shed_0) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x(1, 0), sl_test_station_y(1, 0)];
+        custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_0_test_station, s_dummy];
+        prepare_layout: sw_test_station_0();
+        purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_1_shed_1) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x(1, 0), sl_test_station_y(1, 0)];
+        custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_1_test_station, s_dummy];
+        prepare_layout: sw_test_station_0();
+        purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
 item (FEAT_STATIONS, stn_test_station_1) {
     property {
         class:                  "WSJT";
@@ -544,6 +665,40 @@ item (FEAT_STATIONS, stn_test_station_1) {
     graphics {
         sprite_layouts:             [sl_test_station_x(1, 3), sl_test_station_y(1, 3)];
         custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_dummy, s_dummy];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_2_shed_0) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(2,0), sl_test_station_y(2,0)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_0_test_station, s_dummy];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_2_shed_1) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(2,0), sl_test_station_y(2,0)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_shed_1_test_station, s_dummy];
         prepare_layout:             sw_test_station_0();
         purchase_prepare_layout:    sw_test_station_1();
         default:                    s_dummy;
