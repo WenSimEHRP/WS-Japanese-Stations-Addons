@@ -1,7 +1,7 @@
-DATE    :2024-03-20 19:31 UTC
+DATE    :2024-03-21 00:58 UTC
 VERSION :0.1a
 URL     :https://github.com/WenSimEHRP/WS-Japanese-Stations-Addons
 TITLE   :WenSim's Improved Nihon Stations
 ABBRV   :WINS
-COMMIT  :c46
+COMMIT  :c49
 OTTD_VER:12.0

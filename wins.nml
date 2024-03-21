@@ -556,7 +556,7 @@ spritelayout sl_test_station_y(platform_state, hide_decals) {
         hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);
     }
 }
-# 513 "testing.nml"
+# 511 "testing.nml"
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0),
@@ -790,32 +790,83 @@ spriteset (s_full_station) {
     t_nochange("dec_full_station_0",11)
     t_nochange("dec_full_station_0",12)
     recolour_sprite {
-        198: ((7) + (746 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (747 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (748 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (749 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (750 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (744 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (745 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (746 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (747 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (748 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (753 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (754 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (755 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (756 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (757 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (751 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (752 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (753 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (754 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (755 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (760 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (761 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (762 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (763 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (764 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (758 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (759 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (760 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (761 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (762 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (767 * 1145141919 + 810) % ((10) - (7) + 1));
-        199: ((7) + (768 * 1145141919 + 810) % ((10) - (7) + 1));
-        200: ((7) + (769 * 1145141919 + 810) % ((10) - (7) + 1));
-        201: ((7) + (770 * 1145141919 + 810) % ((10) - (7) + 1));
-        202: ((7) + (771 * 1145141919 + 810) % ((10) - (7) + 1));
+        198: ((7) + (765 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (766 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (767 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (768 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (769 * 1145141919 + 810) % ((9) - (7) + 1));
+    }
+}
+
+spriteset (s_full_station_1) {
+    t_full("dec_full_station_1",0)
+    t_nochange("dec_full_station_1",1)
+    t_nochange("dec_full_station_1",2)
+    t_nochange("dec_full_station_1",3)
+    t_nochange("dec_full_station_1",4)
+    t_nochange("dec_full_station_1",5)
+    t_nochange("dec_full_station_1",6)
+    t_nochange("dec_full_station_1",7)
+    t_nochange("dec_full_station_1",8)
+    t_nochange("dec_full_station_1",9)
+    t_nochange("dec_full_station_1",10)
+    t_nochange("dec_full_station_1",11)
+    t_nochange("dec_full_station_1",12)
+    t_nochange("dec_full_station_1",13)
+    t_nochange("dec_full_station_1",14)
+    t_nochange("dec_full_station_1",15)
+    t_nochange("dec_full_station_1",16)
+    recolour_sprite {
+        198: ((7) + (792 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (793 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (794 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (795 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (796 * 1145141919 + 810) % ((9) - (7) + 1));
+    }
+    recolour_sprite {
+        198: ((7) + (799 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (800 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (801 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (802 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (803 * 1145141919 + 810) % ((9) - (7) + 1));
+    }
+    recolour_sprite {
+        198: ((7) + (806 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (807 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (808 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (809 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (810 * 1145141919 + 810) % ((9) - (7) + 1));
+    }
+    recolour_sprite {
+        198: ((7) + (813 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (814 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (815 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (816 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (817 * 1145141919 + 810) % ((9) - (7) + 1));
+    }
+    recolour_sprite {
+        0..255: 0;
     }
 }
 
@@ -906,25 +957,25 @@ spritelayout sl_full_station_x {
         sprite: CUSTOM(1,9);
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (LOAD_TEMP(9) & 1 << 3) >> 3 || !(LOAD_TEMP(5) && LOAD_TEMP(7));
+        hide_sprite: getbits(LOAD_TEMP(9), 3, 1) || !(LOAD_TEMP(5) && LOAD_TEMP(7));
     }
     childsprite {
         sprite: CUSTOM(1,10);
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (LOAD_TEMP(9) & 1 << 0) >> 0 || !(LOAD_TEMP(6) && LOAD_TEMP(8));
+        hide_sprite: getbits(LOAD_TEMP(9), 0, 1) || !(LOAD_TEMP(6) && LOAD_TEMP(8));
     }
     childsprite {
         sprite: CUSTOM(1,11);
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (LOAD_TEMP(9) & 1 << 1) >> 1 || !(LOAD_TEMP(5) && LOAD_TEMP(8));
+        hide_sprite: getbits(LOAD_TEMP(9), 1, 1) || !(LOAD_TEMP(5) && LOAD_TEMP(8));
     }
     childsprite {
         sprite: CUSTOM(1,12);
         recolour_mode: RECOLOUR_REMAP;
         palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (LOAD_TEMP(9) & 1 << 2) >> 2 || !(LOAD_TEMP(6) && LOAD_TEMP(7));
+        hide_sprite: getbits(LOAD_TEMP(9), 2, 1) || !(LOAD_TEMP(6) && LOAD_TEMP(7));
     }
 
 }
@@ -959,6 +1010,131 @@ spritelayout sl_full_station_y {
         zextent: 8;
         hide_sprite: LOAD_TEMP(8);
     }
+}
+
+spritelayout sl_full_station_x_1 {
+    ground {
+        sprite: CUSTOM(1,0);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: CUSTOM(1, (LOAD_TEMP(10) % 4) + 17);}
+    building {
+        sprite: CUSTOM(0,0);
+        xextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(5);
+    }
+    building {
+        sprite: CUSTOM(0,1);
+        xoffset: 15;
+        xextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(6);
+    }
+    building {
+        sprite: CUSTOM(0,2);
+        xextent: 16;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(7);
+    }
+    building {
+        sprite: CUSTOM(0,3);
+        yoffset: 15;
+        xextent: 16;
+        yextent: 1;
+        zextent: 8;
+        hide_sprite: LOAD_TEMP(8);
+    }
+    building {
+        sprite: CUSTOM(1,0);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: CUSTOM(1,21);
+    }
+    childsprite {
+        sprite: CUSTOM(1,5);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(7);
+    }
+    childsprite {
+        sprite: CUSTOM(1,6);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(8);
+    }
+    childsprite {
+        sprite: CUSTOM(1,7);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(6);
+    }
+    childsprite {
+        sprite: CUSTOM(1,8);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(5);
+    }
+    childsprite {
+        sprite: CUSTOM(1,1);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(7);
+    }
+    childsprite {
+        sprite: CUSTOM(1,2);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(8);
+    }
+    childsprite {
+        sprite: CUSTOM(1,3);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(5) || LOAD_TEMP(8);
+    }
+    childsprite {
+        sprite: CUSTOM(1,4);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: LOAD_TEMP(6) || LOAD_TEMP(7);
+    }
+    childsprite {
+        sprite: CUSTOM(1,13);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: getbits(LOAD_TEMP(9), 3, 1) || !(LOAD_TEMP(5) && LOAD_TEMP(7));
+    }
+    childsprite {
+        sprite: CUSTOM(1,14);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: getbits(LOAD_TEMP(9), 0, 1) || !(LOAD_TEMP(6) && LOAD_TEMP(8));
+    }
+    childsprite {
+        sprite: CUSTOM(1,15);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: getbits(LOAD_TEMP(9), 1, 1) || !(LOAD_TEMP(5) && LOAD_TEMP(8));
+    }
+    childsprite {
+        sprite: CUSTOM(1,16);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: getbits(LOAD_TEMP(9), 2, 1) || !(LOAD_TEMP(6) && LOAD_TEMP(7));
+    }
+    childsprite {
+        sprite: CUSTOM(1,11);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: !(!LOAD_TEMP(5) && LOAD_TEMP(8));
+    }
+    childsprite {
+        sprite: CUSTOM(1,12);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: platform_recolour_0(LOAD_TEMP(1));
+        hide_sprite: !(LOAD_TEMP(6) && !LOAD_TEMP(7));
+    }
+
 }
 
 switch (FEAT_STATIONS, SELF, sw_full_station_0, [
@@ -1032,230 +1208,22 @@ item (FEAT_STATIONS, stn_full_station_0) {
     }
 }
 
-spriteset (s_screendoor_anim_station) {
-    t_nochange("dec_test_station_screen_door",0)
-    t_nochange("dec_test_station_screen_door",1)
-    t_nochange("dec_test_station_screen_door",2)
-    t_nochange("dec_test_station_screen_door",3)
-    t_nochange("dec_test_station_screen_door",4)
-    t_nochange("dec_test_station_screen_door",5)
-    t_nochange("dec_test_station_screen_door",6)
-    t_nochange("dec_test_station_screen_door",7)
-}
-
-
-spritelayout sl_anim_station_x(platform_state) {
-    ground {sprite: GROUNDSPRITE_RAIL_X;}
-    childsprite {sprite: LOAD_TEMP(12) + 1 + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
-    building {
-        sprite: CUSTOM(1,0 + LOAD_TEMP(3) * 4);
-        xextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(5);
-    }
-    building {
-        sprite: CUSTOM(1,1 + LOAD_TEMP(4) * 4);
-        xoffset: 15;
-        xextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(6);
-    }
-    building {
-        sprite: CUSTOM(1,2);
-        xextent: 16;
-        yextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(7);
-    }
-    building {
-        sprite: CUSTOM(1,3);
-        yoffset: 15;
-        xextent: 16;
-        yextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(8);
-    }
-    building {
-        sprite: CUSTOM(0,0);
-        xextent: 8;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(3);
-    }
-    building {
-        sprite: CUSTOM(0,1);
-        xoffset: 12;
-        xextent: 3;
-        yextent: 8;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(4);
-    }
-    building {
-        sprite: CUSTOM(2,0 + LOAD_TEMP(11) * 4);
-        xoffset: 0;
-        yoffset: 0;
-        zoffset: 0;
-        xextent: 16;
-        yextent: 6;
-        zextent: 6;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 1) >> 1;
-    }
-    childsprite {
-        sprite: CUSTOM(3,0);
-        hide_sprite: LOAD_TEMP(0) != 2;
-    }
-    childsprite {
-        sprite: DEFAULT(0);
-    }
-    childsprite {
-        sprite: CUSTOM(4,0 + 4);
-        xoffset: LOAD_TEMP(2) <= 5? -(LOAD_TEMP(2)) * 2 : (LOAD_TEMP(2) - 10) * 2;
-        yoffset: LOAD_TEMP(2) <= 5? LOAD_TEMP(2) : 10 - LOAD_TEMP(2);
-
-    }
-    childsprite {
-        sprite: CUSTOM(4,0);
-    }
-    building {
-        sprite: CUSTOM(2,1 + LOAD_TEMP(11) * 4);
-        xoffset: 0;
-        yoffset: 10;
-        zoffset: 0;
-        xextent: 16;
-        yextent: 6;
-        zextent: 6;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 0) >> 0;
-    }
-    childsprite {
-        sprite: CUSTOM(3,1);
-        hide_sprite: LOAD_TEMP(0) != 2;
-    }
-    childsprite {
-        sprite: DEFAULT(1);
-    }
-
-}
-
-spritelayout sl_anim_station_y(platform_state) {
-    ground {sprite: GROUNDSPRITE_RAIL_Y;}
-    childsprite {sprite: LOAD_TEMP(12) + ((LOAD_TEMP(0)) != 0) * 26; hide_sprite: (LOAD_TEMP(12) == 1);}
-    building {
-        sprite: CUSTOM(1,2 + LOAD_TEMP(3) * 4);
-        xextent: 16;
-        yextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(5);
-    }
-    building {
-        sprite: CUSTOM(1,3 + LOAD_TEMP(4) * 4);
-        yoffset: 15;
-        xextent: 16;
-        yextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(6);
-    }
-    building {
-        sprite: CUSTOM(1,0);
-        xextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(7);
-    }
-    building {
-        sprite: CUSTOM(1,1);
-        xoffset: 15;
-        xextent: 1;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(8);
-    }
-    building {
-        sprite: CUSTOM(0,2);
-        yextent: 8;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(3);
-    }
-    building {
-        sprite: CUSTOM(0,3);
-        yoffset: 12;
-        yextent: 3;
-        xextent: 8;
-        zextent: 8;
-        hide_sprite: LOAD_TEMP(4);
-    }
-    building {
-        sprite: CUSTOM(2,2 + LOAD_TEMP(11) * 4);
-        xoffset: 0;
-        yoffset: 0;
-        zoffset: 0;
-        xextent: 6;
-        yextent: 16;
-        zextent: 6;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 1) >> 1;
-    }
-    childsprite {
-        sprite: CUSTOM(3,2);
-        hide_sprite: LOAD_TEMP(0) != 2;
-    }
-    childsprite {
-        sprite: DEFAULT(2);
-    }
-    building {
-        sprite: CUSTOM(2,3 + LOAD_TEMP(11) * 4);
-        xoffset: 10;
-        yoffset: 0;
-        zoffset: 0;
-        xextent: 6;
-        yextent: 16;
-        zextent: 6;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: platform_recolour_0(LOAD_TEMP(1));
-        hide_sprite: (platform_state & 1 << 0) >> 0;
-    }
-    childsprite {
-        sprite: CUSTOM(3,3);
-        hide_sprite: LOAD_TEMP(0) != 2;
-    }
-    childsprite {
-        sprite: DEFAULT(3);
-    }
-}
-
-switch (FEAT_STATIONS, SELF, sw_anim_station_screendoor_0, animation_frame) {
-    5: return CB_RESULT_STOP_ANIMATION;
-    10: return CB_RESULT_STOP_ANIMATION;
-    0: return CB_RESULT_START_ANIMATION;
-    default: return CB_RESULT_DO_NOTHING;
-}
-
-switch (FEAT_STATIONS, SELF, sw_anim_station_screendoor_1, getbits(extra_callback_info2, 0, 8)) {
-    STAT_ANIM_TRAIN_LEAVES: return sw_anim_station_screendoor_0;
-    STAT_ANIM_TRAIN_ENTERS: return sw_anim_station_screendoor_0;
-    STAT_ANIM_250_TICKS: return CB_RESULT_STOP_ANIMATION;
-}
-
-item (FEAT_STATIONS, stn_anim_station_0) {
+item (FEAT_STATIONS, stn_full_station_1) {
     property {
         class: "WSJT";
         classname: string(CLS_WSJT);
         name: string(STN_TEST_STATION);
-        draw_pylon_tiles: STAT_ALL_TILES;
-        animation_info: [ANIMATION_LOOPING, 10];
-        animation_speed: 2;
-        animation_triggers: bitmask(STAT_ANIM_TRAIN_ENTERS, STAT_ANIM_TRAIN_LEAVES, STAT_ANIM_250_TICKS);
+        draw_pylon_tiles: 0;
+        hide_wire_tiles: STAT_ALL_TILES;
+        non_traversable_tiles: STAT_ALL_TILES;
     }
     graphics {
-        sprite_layouts: [sl_anim_station_x(0), sl_anim_station_y(0)];
-        custom_spritesets: [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_screendoor_anim_station];
-        prepare_layout: sw_test_station_0();
-        purchase_prepare_layout: sw_test_station_1();
-        default: s_dummy;
-        PASS: sg_people_test_station;
-        anim_control: sw_anim_station_screendoor_1;
-        anim_next_frame: CB_RESULT_NEXT_FRAME;
+        sprite_layouts: [sl_full_station_x_1, sl_full_station_y];
+        custom_spritesets: [s_fence_test_station, s_full_station_1];
+        prepare_layout: sw_full_station_0();
+        purchase_prepare_layout: sw_full_station_1();
+
+
     }
 }
 # 6 "wins.pnml" 2

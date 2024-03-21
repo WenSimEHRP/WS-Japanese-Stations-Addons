@@ -24,6 +24,7 @@ STN_DEC_BARRIER :Barrier
 STN_DEC_DUMMY :Dummy
 STN_DEC_FLEX :Flex
 STN_DEC_FULL_STATION_0 :Full station 0
+STN_DEC_FULL_STATION_1 :Full station 1
 STN_DEC_ST1_FENCE :St1 fence
 STN_DEC_TEST_STATION_0 :Test station 0
 STN_DEC_TEST_STATION_00 :Test station 00
@@ -35,6 +36,7 @@ STN_DEC_TEST_STATION_PEOPLE :Test station people
 STN_DEC_TEST_STATION_SCREEN_DOOR :Test station screen door
 STN_DEC_TEST_STATION_SHED_0 :Test station shed 0
 STN_DEC_TEST_STATION_SHED_1 :Test station shed 1
+STN_DEC_TEST_STATION_SHED_2 :Test station shed 2
 STN_SNOW_ST1 :St1
 STN_SNOW_ST1_CARGO_PLATFORM :St1 cargo platform
 STN_SNOW_ST1_UNDERGROUND_ENTRANCE :St1 underground entrance
