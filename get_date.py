@@ -29,3 +29,15 @@ with open("custom_tags.txt", "w") as f:
     f.write("".join(content))
 
 print("Date and time updated in custom_tags.txt")
+
+with open("src/header.pnml.template", "r") as f:
+    content = f.readlines()
+
+for index,item in enumerate(content):
+    if "${version}" in item:
+        content[index] = f"    version:    {get_commit_number()};\n"
+    if "${min_version}" in item:
+        content[index] = f"    min_compatible_version:{get_commit_number()};\n"
+
+with open("src/header.pnml", "w") as f:
+    f.write("".join(content))
