@@ -98,6 +98,22 @@ spriteset (s_fence_test_station) {
     t_fence_11("dec_test_station_fence")
 }
 
+spriteset (s_fence_test_station_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {
+    t_fence_0("dec_test_station_fence_1")
+    t_fence_1("dec_test_station_fence_1")
+    t_fence_2("dec_test_station_fence_1")
+    t_fence_3("dec_test_station_fence_1")
+    // platform fences
+    t_fence_4("dec_test_station_fence_1")
+    t_fence_5("dec_test_station_fence_1")
+    t_fence_6("dec_test_station_fence_1")
+    t_fence_7("dec_test_station_fence_1")
+    t_fence_8("dec_test_station_fence_1")
+    t_fence_9("dec_test_station_fence_1")
+    t_fence_10("dec_test_station_fence_1")
+    t_fence_11("dec_test_station_fence_1")
+}
+
 spriteset (s_people_test_station) {
     t_nochange("dec_test_station_people",0)
     t_nochange("dec_test_station_people",1)
@@ -714,6 +730,57 @@ item (FEAT_STATIONS, stn_test_station_2) {
     graphics {
         sprite_layouts:             [sl_test_station_x(2,3), sl_test_station_y(2,3)];
         custom_spritesets:          [s_bufferstop, s_fence_test_station, s_test_station, s_snow_test_station, s_dummy, s_dummy];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_0_fence_1) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(0,0), sl_test_station_y(0,0)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station_1, s_test_station, s_snow_test_station, s_shed_0_test_station];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_0_shed_1_fence_1) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(0,0), sl_test_station_y(0,0)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station_1, s_test_station, s_snow_test_station, s_shed_1_test_station];
+        prepare_layout:             sw_test_station_0();
+        purchase_prepare_layout:    sw_test_station_1();
+        default:                    s_dummy;
+        PASS:                       sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_noshed_fence_1) {
+    property {
+        class:                  "WSJT";
+        classname:              string(CLS_WSJT);
+        name:                   string(STN_TEST_STATION);
+        draw_pylon_tiles:       STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts:             [sl_test_station_x(0,3), sl_test_station_y(0,3)];
+        custom_spritesets:          [s_bufferstop, s_fence_test_station_1, s_test_station, s_snow_test_station, s_dummy];
         prepare_layout:             sw_test_station_0();
         purchase_prepare_layout:    sw_test_station_1();
         default:                    s_dummy;

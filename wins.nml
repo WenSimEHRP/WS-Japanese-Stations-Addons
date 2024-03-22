@@ -8,8 +8,8 @@ grf {
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
     url: string(STR_GRF_URL);
-    version: 50;
-    min_compatible_version:50;
+    version: 51;
+    min_compatible_version:51;
         param 0 {
             param_waypoints {
                 type: bool;
@@ -162,6 +162,22 @@ spriteset (s_fence_test_station) {
     t_fence_9("dec_test_station_fence")
     t_fence_10("dec_test_station_fence")
     t_fence_11("dec_test_station_fence")
+}
+
+spriteset (s_fence_test_station_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP) {
+    t_fence_0("dec_test_station_fence_1")
+    t_fence_1("dec_test_station_fence_1")
+    t_fence_2("dec_test_station_fence_1")
+    t_fence_3("dec_test_station_fence_1")
+
+    t_fence_4("dec_test_station_fence_1")
+    t_fence_5("dec_test_station_fence_1")
+    t_fence_6("dec_test_station_fence_1")
+    t_fence_7("dec_test_station_fence_1")
+    t_fence_8("dec_test_station_fence_1")
+    t_fence_9("dec_test_station_fence_1")
+    t_fence_10("dec_test_station_fence_1")
+    t_fence_11("dec_test_station_fence_1")
 }
 
 spriteset (s_people_test_station) {
@@ -556,7 +572,7 @@ spritelayout sl_test_station_y(platform_state, hide_decals) {
         hide_sprite: getbits(hide_decals, 1, 1) || (LOAD_TEMP(0) != 2);
     }
 }
-# 511 "testing.nml"
+# 527 "testing.nml"
 switch (FEAT_STATIONS, SELF, sw_test_station_0, [
     STORE_TEMP((terrain_type == TILETYPE_SNOW ) << 1|
                (terrain_type == TILETYPE_DESERT) << 0, 0),
@@ -770,6 +786,57 @@ item (FEAT_STATIONS, stn_test_station_2) {
     }
 }
 
+item (FEAT_STATIONS, stn_test_station_0_fence_1) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x(0,0), sl_test_station_y(0,0)];
+        custom_spritesets: [s_bufferstop, s_fence_test_station_1, s_test_station, s_snow_test_station, s_shed_0_test_station];
+        prepare_layout: sw_test_station_0();
+        purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_0_shed_1_fence_1) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x(0,0), sl_test_station_y(0,0)];
+        custom_spritesets: [s_bufferstop, s_fence_test_station_1, s_test_station, s_snow_test_station, s_shed_1_test_station];
+        prepare_layout: sw_test_station_0();
+        purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
+item (FEAT_STATIONS, stn_test_station_noshed_fence_1) {
+    property {
+        class: "WSJT";
+        classname: string(CLS_WSJT);
+        name: string(STN_TEST_STATION);
+        draw_pylon_tiles: STAT_ALL_TILES;
+    }
+    graphics {
+        sprite_layouts: [sl_test_station_x(0,3), sl_test_station_y(0,3)];
+        custom_spritesets: [s_bufferstop, s_fence_test_station_1, s_test_station, s_snow_test_station, s_dummy];
+        prepare_layout: sw_test_station_0();
+        purchase_prepare_layout: sw_test_station_1();
+        default: s_dummy;
+        PASS: sg_people_test_station;
+    }
+}
+
 template t_full (name, x) {[(64 + 8 + 2)*x, 0, 64 + 8, 64 + 8, -31-4, -33-4, NOCROP, "src/stations/generated_stations/gfx/" + name + ".png"]}
 
 
@@ -790,32 +857,32 @@ spriteset (s_full_station) {
     t_nochange("dec_full_station_0",11)
     t_nochange("dec_full_station_0",12)
     recolour_sprite {
-        198: ((7) + (744 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (745 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (746 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (747 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (748 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (811 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (812 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (813 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (814 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (815 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (751 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (752 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (753 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (754 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (755 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (818 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (819 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (820 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (821 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (822 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (758 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (759 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (760 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (761 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (762 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (825 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (826 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (827 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (828 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (829 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (765 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (766 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (767 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (768 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (769 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (832 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (833 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (834 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (835 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (836 * 1145141919 + 810) % ((9) - (7) + 1));
     }
 }
 
@@ -838,32 +905,32 @@ spriteset (s_full_station_1) {
     t_nochange("dec_full_station_1",15)
     t_nochange("dec_full_station_1",16)
     recolour_sprite {
-        198: ((7) + (792 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (793 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (794 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (795 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (796 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (859 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (860 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (861 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (862 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (863 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (799 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (800 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (801 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (802 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (803 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (866 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (867 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (868 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (869 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (870 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (806 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (807 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (808 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (809 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (810 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (873 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (874 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (875 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (876 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (877 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
-        198: ((7) + (813 * 1145141919 + 810) % ((9) - (7) + 1));
-        199: ((7) + (814 * 1145141919 + 810) % ((9) - (7) + 1));
-        200: ((7) + (815 * 1145141919 + 810) % ((9) - (7) + 1));
-        201: ((7) + (816 * 1145141919 + 810) % ((9) - (7) + 1));
-        202: ((7) + (817 * 1145141919 + 810) % ((9) - (7) + 1));
+        198: ((7) + (880 * 1145141919 + 810) % ((9) - (7) + 1));
+        199: ((7) + (881 * 1145141919 + 810) % ((9) - (7) + 1));
+        200: ((7) + (882 * 1145141919 + 810) % ((9) - (7) + 1));
+        201: ((7) + (883 * 1145141919 + 810) % ((9) - (7) + 1));
+        202: ((7) + (884 * 1145141919 + 810) % ((9) - (7) + 1));
     }
     recolour_sprite {
         0..255: 0;

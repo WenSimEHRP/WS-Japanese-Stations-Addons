@@ -10,6 +10,7 @@ STN_DEC_TEST_STATION_01                                         :Test station 01
 STN_DEC_TEST_STATION_02                                         :Test station 02
 STN_DEC_TEST_STATION_DECAL_0                                    :Test station decal 0
 STN_DEC_TEST_STATION_FENCE                                      :Test station fence
+STN_DEC_TEST_STATION_FENCE_1                                    :Test station fence 1
 STN_DEC_TEST_STATION_PEOPLE                                     :Test station people
 STN_DEC_TEST_STATION_SCREEN_DOOR                                :Test station screen door
 STN_DEC_TEST_STATION_SHED_0                                     :Test station shed 0
