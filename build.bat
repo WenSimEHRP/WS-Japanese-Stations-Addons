@@ -13,4 +13,4 @@ rem nmlc -s wins.nml
 copy wins.grf D:\Data\Documents\OpenTTD\newgrf
 pause
 :: debug purpose, goto start to run again
-goto start
+:: goto start

@@ -23,7 +23,7 @@ jobs:
         choco install mingw
 
     - name: Build
-      run: build.bat
+      run: .\build.bat
 
     - name: Create Release
       id: create_release
