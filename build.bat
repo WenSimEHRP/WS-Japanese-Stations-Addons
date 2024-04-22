@@ -6,7 +6,8 @@ py generate_stations.py
 py combine.py
 gcc -E -x c -o wins.nml wins.pnml
 gcc -E -x c -P -o lang\english.lng lang\anglische.lng.template
-nmlc -s wins.nml
+nmlc wins.nml
+rem nmlc -s wins.nml
 
 :: move to newgrf directory
 copy wins.grf D:\Data\Documents\OpenTTD\newgrf

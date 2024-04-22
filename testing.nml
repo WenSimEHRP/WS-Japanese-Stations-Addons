@@ -555,6 +555,7 @@ switch (FEAT_STATIONS, SELF, sw_test_station_0, [
                track_type == ELRL ? 1011 :
                track_type == MONO ? 1093 :
                track_type == MGLV ? 1175 : 1, 12), // original rail, newgrf rails won't work
+    STORE_TEMP(cargo_amount_waiting(bitmask(CC_PASSENGERS)), 13), // people waiting
 ]){return;}
 
 switch (FEAT_STATIONS, SELF, sw_test_station_1, [

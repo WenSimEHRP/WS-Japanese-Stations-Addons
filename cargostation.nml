@@ -1,16 +1,19 @@
-spriteset(s_cargo_contianer){
-    // placeholder
-    recolour_sprite {} // dummy
+//template t_nochange(name, x) {[(SIZE_X + 2)*x, 0, SIZE_X, SIZE_Y, 0, 0, PATH]}
+spriteset(cargo_container) {
+    t_nochange("cargo_container", 0)
+    t_nochange("cargo_container", 1)
+    t_nochange("cargo_container", 2)
+    t_nochange("cargo_container", 3) //<- 4 designs
+    recolour_sprite { // use recolour for different colours
+        this: this;
+    }
     recolour_sprite {
-        0..255: 0;
-    } // red to blue
+        this: this;
+    }
     recolour_sprite {
-        0..255: 1;
-    } // red to green
+        this: this;
+    }
 }
-//TODO finish this
-//TODO draw cargo sprites
-
 //* ratio of red:blue:green == 4:2:1
 //* each variant of cargo contianer has the same possibility of being generated
 // we want some random cargo containers, thus we add some random cargo generation
@@ -29,21 +32,38 @@ spriteset(s_cargo_contianer){
  */
 //! random_bits_tile is very limited
 
+#define BUILDING_CARGO_CONTAINER(num)\
+building {\                                         //<- the core of the unit
+    sprite: CUSTOM(0);\                             //<- the sprite
+    xoffset: 16 - num * 2;\                         //<- the x offset
+    xextent: 2;\                                    //<- the x extent
+    yextent: 3;\                                    //<- the y extent
+    zextent: 12;\                                   //<- the z extent
+}\
+childsprite {\                                      //<- the childsprite, where we actually display the sprite
+    sprite: DEFAULT(0,0);\                          //<- the sprite for childsprite, we only use 1 contianer sprite
+    recolour_mode: RECOLOUR_REMAP;\                 //<- the recolour mode, used for recolouring
+    palette: DEFAULT(0, LOAD_TEMP(13) * exp);\      //<- the palette, we use the palette to recolour the sprite
+    hide_sprite: LOAD_TEMP(13);\
+}\
+childsprite {\
+    sprite: DEFAULT(0,0);\
+    yoffset: 6;\
+    recolour_mode: RECOLOUR_REMAP;\
+    palette: DEFAULT(0, LOAD_TEMP(13) * exp);\
+    hide_sprite: exp;\
+}\
 
 spritelayout sl_cargo_container_platform {
-    //...
-    building { // platform
-        sprite: CUSTOM(...);
-        hide_sprite: ...;
-    }
-    #define CONTAINER_SPRITE(num)\
-    childsprite {\
-        sprite: CUSTOM(...);\
-        hide_sprite: getbits(random_bits_tile, 2, 3) > num;}\
-    childsprite { // cargo container, level 1 position 0
-        sprite: CUSTOM(...);
-        hide_sprite: getbits(random_bits_tile, 2, 3) > 0;
-    }
+    ground {GROUNDSPRITE_RAIL_X;}
+    BUILDING_CARGO_CONTAINER(0)
+    BUILDING_CARGO_CONTAINER(1)
+    BUILDING_CARGO_CONTAINER(2)
+    BUILDING_CARGO_CONTAINER(3)
+    BUILDING_CARGO_CONTAINER(4)
+    BUILDING_CARGO_CONTAINER(5)
+    BUILDING_CARGO_CONTAINER(6)
+    BUILDING_CARGO_CONTAINER(7)
 }
 
 switch(FEAT_STATIONS, SELF, sw_cargo_station, [

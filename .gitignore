@@ -1,2 +1,5 @@
 backups
 .nmlcache
+*.grf
+wins.nml
+wins.grf
