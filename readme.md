@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> WSJPS (WINS) is now abandoned.\
+> Please check [JP+ WINS Stations](https://github.com/WenSimEHRP/jppluswins) for JP3 Station replacement.
+> 
+
 ## Dependencies
 
 This project requires the following dependencies:
